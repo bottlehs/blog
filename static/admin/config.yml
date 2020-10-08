@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: bottlehs/blog
-  branch: main
+  branch: develop
 
 media_folder: static/assets
 public_folder: /assets
