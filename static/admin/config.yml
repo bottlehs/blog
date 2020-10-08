@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: bottlehs/blog
-  branch: develop
+  branch: main
 
 media_folder: static/assets
 public_folder: /assets
@@ -11,7 +11,7 @@ collections:
     label: Blog
     folder: content/blog
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}/index"
     fields:
       - {
           label: "Template Key",
