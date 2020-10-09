@@ -10,13 +10,13 @@ tags:
   - ES5
   - ECMAScript 5
 ---
-2009년에 발표된 ES(ECMAScript 5)는 웹 어플리케이션 부터 소셜게임 까지 다양한 곳에서 활용이 되었다. 그 이후, 기존에 자바스크립트의 여러 문제점을 해결하고 선한 ES6(ECMAScript 2015)이 2015년 여름에 발표 되었다. ES6은 ECMAScript 2015라도고 불리고, 기존의 여러 기능을 개선한 버전이다.
+2009년에 발표된 ES(ECMAScript 5)는 웹 어플리케이션 부터 소셜게임 까지 다양한 곳에서 활용이 되었다. 그 이후, 기존에 자바스크립트의 여러 문제점을 해결하고 개선한 ES6(ECMAScript 2015)이 2015년 여름에 발표 되었다. ES6은 ECMAScript 2015라도고 불리고, 기존 여러 기능을 개선한 버전이다.
 
 ![ES6](/assets/ecmascript_2015_language_specification_–_ecma-262_6th_edition.png "최신 ECMAScript 스팩")
 
 [](https://www.ecma-international.org/ecma-262/6.0/)그림-1. 최신 ECMAScript 스팩 (<https://www.ecma-international.org/ecma-262/6.0/>)
 
-ES6의 핵심 기능 중 하나는 대부분이 기존 ES5(ECMAScript 5) 버전을 기반으로 웹 페이지가 동작하고 있기 때문에 하위 호환성을 지원하는 것이다.
+ES6의 핵심 기능 중 하나는 ES5(ECMAScript 5) 버전을 기반으로 개발된 웹 페이지가 동작가능 하도록 하위 호환성을 지원하는 것이다.
 
 ES6에 추가된 주요 기능은 다음과 같다.
 
