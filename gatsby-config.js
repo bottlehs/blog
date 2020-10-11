@@ -53,7 +53,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        options: {
+          trackingId: "UA-180287321-1",
+          head: false,
+          anonymize: true,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          sampleRate: 5,
+          siteSpeedSampleRate: 10,
+          cookieDomain: "bottlehs.com",
+        },        
       },
     },
     `gatsby-plugin-feed`,
