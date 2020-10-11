@@ -8,7 +8,7 @@ module.exports = {
     description: `다양한 IT 기술 및 프로그래밍 관련 글을 작성한다`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      github: `bottlehs`,
     },
   },
   plugins: [
