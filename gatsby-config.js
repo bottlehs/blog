@@ -8,7 +8,7 @@ module.exports = {
     description: `다양한 IT 기술 및 프로그래밍 관련 글을 작성한다`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      github: `bottlehs`,
     },
   },
   plugins: [
@@ -53,7 +53,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        options: {
+          trackingId: "UA-180287321-1",
+          head: false,
+          anonymize: true,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          sampleRate: 5,
+          siteSpeedSampleRate: 10,
+          cookieDomain: "bottlehs.com",
+        },        
       },
     },
     `gatsby-plugin-feed`,
