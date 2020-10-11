@@ -25,7 +25,7 @@ let coffee = 'americano';
 기존 var 키워드로 선언한 변수를 함수 스코프(scope) 변수라고 하며, 함수 안에서 변수를 선언하면 함수 외부를 제외하고 함수 내부 어디서든지 접근할수 있다. 이와 달리 let 은 블록 스코프 변수이며, 블록 스코프 안에서 변수를 선언하면 블록 내부에서만 접근을 할수 있고 외부에서는 접근 할 수 없다.
 
 ```javascript
-function espresso() {
+function coffee() {
   if ( true ) {
     var esspresso = 1;
     let americano = 2;
@@ -39,7 +39,7 @@ function espresso() {
 또한, 같은 스코프에서는 같은 이름의 let 변수를 선언할 수 없다.
 
 ```javascript
-function espresso() {
+function coffee() {
   if ( true ) {
     let esspresso = 1;
     let esspresso = 2; // SyntaxError 발생
@@ -88,7 +88,7 @@ ES6 에서는 상수를 정의할수 있는 키워드가 추가 되었고 상수
 const 는 블록 스코프 상수 이며, 블록 스코프 안에서 상수를 선언하면 블록 내부에서만 접근 할수 있고 외부에서는 접근 할 수 없다.
 
 ```javascript
-function espresso() {
+function coffee() {
   if ( true ) {
     var esspresso = 1;
     const americano = 2;
@@ -102,7 +102,7 @@ function espresso() {
 또한, 같은 스코프에서는 같은 이름의 const 상수를 선언할 수 없다.
 
 ```javascript
-function espresso() {
+function coffee() {
   if ( true ) {
     const esspresso = 1;
     const esspresso = 2; // SyntaxError 발생
