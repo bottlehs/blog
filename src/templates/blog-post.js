@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import GitalkComponent from "gitalk/dist/gitalk-component";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -34,6 +35,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Bio />
         </footer>
       </article>
+      <GitalkComponent options={{
+        clientID: "133d9caf301eba2e561f",
+        clientSecret: "cd689272c46d1254c5c78b72f274b11da5571ac5"
+      }} />      
       <nav className="blog-post-nav">
         <ul
           style={{
