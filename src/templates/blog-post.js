@@ -37,7 +37,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
       <GitalkComponent options={{
         clientID: "133d9caf301eba2e561f",
-        clientSecret: "cd689272c46d1254c5c78b72f274b11da5571ac5"
+        clientSecret: "cd689272c46d1254c5c78b72f274b11da5571ac5",
+        repo: "blog",
+        owner: "bottlehs",
+        admin: ["bottlehs"]
       }} />      
       <nav className="blog-post-nav">
         <ul
