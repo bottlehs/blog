@@ -25,7 +25,6 @@
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-remark": "^2.8.36",
     "gatsby-transformer-sharp": "^2.5.16",
-    "gitalk": "^1.6.2",
     "netlify-cms-app": "^2.12.25",
     "prismjs": "^1.21.0",
     "react": "^16.12.0",
