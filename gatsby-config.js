@@ -83,7 +83,7 @@ module.exports = {
     `gatsby-plugin-feed`,    
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,    
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,    
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,    
   ],
 }
