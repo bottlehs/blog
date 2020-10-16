@@ -310,6 +310,8 @@ a:focus {
 }
 
 .bio .bio-social {
+  margin-top: var(--spacing-0);
+  margin-bottom: var(--spacing-0);
   display: block;
   list-style: none;
 }

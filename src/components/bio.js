@@ -54,13 +54,13 @@ const Bio = () => {
       {author?.name && (
         <div>
           <p>Written by <strong>{author.name}</strong> {author?.summary || null}</p>
-          <ui className="bio-social">
+          <ul className="bio-social">
             <li>
               <a href={`https://github.com/${social?.github || ``}`}>
                 Github
               </a>
             </li>
-          </ui>    
+          </ul>    
         </div>
       )}
     </div>
