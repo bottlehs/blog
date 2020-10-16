@@ -18,6 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-sharp": "^2.6.37",
     "gatsby-plugin-sitemap": "^2.4.16",
+    "gatsby-remark-autolink-headers": "^2.3.15",
     "gatsby-remark-copy-linked-files": "^2.3.17",
     "gatsby-remark-emoji": "0.0.3",
     "gatsby-remark-images": "^3.3.33",
