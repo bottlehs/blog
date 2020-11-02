@@ -10,16 +10,19 @@ tags:
 ---
 
 ## OSX
+
 ```
 open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
 ```
 
 ## Wondows
+
 ```
 "[PATH_TO_CHROME]\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
 ```
 
 ## Linux
+
 ```
 google-chrome --disable-web-security
 ```
