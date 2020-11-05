@@ -47,21 +47,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        options: {
-          trackingId: metaConfig.googleAnalyticsId,
-          head: false,
-          anonymize: true,
-          respectDNT: true,
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-          sampleRate: 5,
-          siteSpeedSampleRate: 10,
-          cookieDomain: "bottlehs.com",
-        },        
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: metaConfig.title,
