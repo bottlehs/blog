@@ -4,6 +4,12 @@ module.exports = {
   siteMetadata: metaConfig,
   plugins: [
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://bottlehs.com`,
+      },
+    },    
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-182874893-1",
