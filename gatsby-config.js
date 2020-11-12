@@ -4,16 +4,9 @@ module.exports = {
   siteMetadata: metaConfig,
   plugins: [
     {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-M7ZWH8L",
-        includeInDevelopment: false,
-      },
-    },    
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "G-ZM3N19M9HS",
+        trackingId: "UA-182874893-1",
         head: true,
         anonymize: true
       },
