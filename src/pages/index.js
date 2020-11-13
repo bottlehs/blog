@@ -40,7 +40,7 @@ const BlogIndex = ({ data, location }) => {
               >
                 <header>
                   <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+                    <Link to={post.fields.slug} itemProp="url" title={title}>
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>

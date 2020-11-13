@@ -343,6 +343,21 @@ a:focus {
   max-width: 100%;
 }
 
+.blog-post-tag {
+  list-style: none;
+  margin: 0;
+}
+
+.blog-post-tag li {
+  display: inline-block;
+  margin: 0 var(--spacing-2) 0 0;
+  font-size: var(--fontSize-0);
+  color: var(--color-text-light);
+}
+
+.blog-post-tag li a {
+}
+
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
 }
