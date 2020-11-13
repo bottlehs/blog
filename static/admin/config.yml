@@ -1,7 +1,11 @@
 backend:
   name: github
   repo: bottlehs/blog
-  branch: develop
+  branch: main
+  base_url: https://api.netlify.com
+  site_domain: cms.netlify.com
+  auth_endpoint: auth
+  api_root: https://api.github.com
 
 media_folder: static/assets
 public_folder: /assets
