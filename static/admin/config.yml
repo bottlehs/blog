@@ -3,7 +3,7 @@ backend:
   repo: bottlehs/blog
   branch: main
   base_url: https://api.netlify.com
-  site_domain: cms.netlify.com
+  site_domain: bottlehs.com
   auth_endpoint: auth
   api_root: https://api.github.com
 
