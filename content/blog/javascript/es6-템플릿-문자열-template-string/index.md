@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: ES6 템플릿 문자열
+title: ES6 템플릿 문자열 (template string)
 date: 2020-11-17T18:07:36.947Z
 description: 템플릿 문자열(Template String)은 문자열을 생성하는 새롭게 도입된 리터럴이다. 문자열을 설정하기 위해
   따옴표(`)를 이용한다. 기존에는 변수를 문자열 안에 삽입하기 위해 따옴표 사이에 그 변수를 넣어 합치는 작업이 필요했는데, 템플릿문자열을
