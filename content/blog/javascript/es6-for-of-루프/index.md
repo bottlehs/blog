@@ -2,20 +2,27 @@
 templateKey: blog-post
 title: ES6 For ... Of 루프
 date: 2020-11-24T19:22:59.726Z
-description: 기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할
+description:
+  기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할
   수 있는 기능을 제공한다. iterator는 어떤 데이터 집합을 순서대로 접근할 때 사용된다. for..of 는
   Symbol.iterator를 호출 하는데 배열과 문자열은 이 속성을 제공하고 있다. 즉, 배열을 순서대로 순회하며, 문자열은 문자를 하나씩
   접근하게 된다. 또한, 사용자 정의 iterator을 커스텀 객체에 만들 수도 있다.
+tags:
+  - For ... Of 루프
+  - ES6
+  - ECMA2015
+  - JS
 ---
+
 기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할 수 있는 기능을 제공한다.
 
 iterator는 어떤 데이터 집합을 순서대로 접근할 때 사용된다. for..of 는 Symbol.iterator를 호출 하는데 배열과 문자열은 이 속성을 제공하고 있다. 즉, 배열을 순서대로 순회하며, 문자열은 문자를 하나씩 접근하게 된다. 또한, 사용자 정의 iterator을 커스텀 객체에 만들 수도 있다.
 
 ```javascript
-let coffee = [10,20,30,40,50];
+let coffee = [10, 20, 30, 40, 50]
 
 for (let value of coffee) {
-   console.log(value);
+  console.log(value)
 }
 
 // 출력 결과
@@ -27,30 +34,30 @@ for (let value of coffee) {
 ```
 
 ```javascript
-for (let char of 'coffee') {
-   console.log(char);
+for (let char of "coffee") {
+  console.log(char)
 }
 
 // 출력 결과
-'c'
-'o'
-'f'
-'f'
-'e'
-'e'
+;("c")
+;("o")
+;("f")
+;("f")
+;("e")
+;("e")
 ```
 
 DOM에 접근하여 반복된 리스트를 가져오는데 유용할 수 있다.
 
 ```javascript
-<ul>
-   <li>americano</li>
-   <li>espresso</li>
+;<ul>
+  <li>americano</li>
+  <li>espresso</li>
 </ul>
 
-let nodes = document.querySelectorAll("li");
-for ( let node of codes ) {
-   console.log(node.textContent);
+let nodes = document.querySelectorAll("li")
+for (let node of codes) {
+  console.log(node.textContent)
 }
 
 // 출력 결과
