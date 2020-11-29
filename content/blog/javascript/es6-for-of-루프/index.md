@@ -39,18 +39,18 @@ for (let char of "coffee") {
 }
 
 // 출력 결과
-;("c")
-;("o")
-;("f")
-;("f")
-;("e")
-;("e")
+("c")
+("o")
+("f")
+("f")
+("e")
+("e")
 ```
 
 DOM에 접근하여 반복된 리스트를 가져오는데 유용할 수 있다.
 
 ```javascript
-;<ul>
+<ul>
   <li>americano</li>
   <li>espresso</li>
 </ul>
@@ -73,11 +73,11 @@ espresso
 const coffee = {
    americano: "아메리카노",
    espresso: "에스프레소"
-};
+}
 
-const keys = Object.keys(coffee);
+const keys = Object.keys(coffee)
 for ( let key of keys ) {
-   console.log(key, coffee[key]);
+   console.log(key, coffee[key])
 }
 
 // 출력 결과
