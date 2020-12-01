@@ -1,5 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import Switch from "react-switch";
+import { RiSunLine, RiMoonClearLine } from 'react-icons/ri';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -28,6 +31,20 @@ const Layout = ({ location, title, children }) => {
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.bottlehs.com">Bottlehs</a>
+        <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <Switch 
+            onChange={e => toggleTheme(theme === 'dark' ? 'light' : 'dark')} 
+            checked={theme === 'dark'}
+            uncheckedIcon={
+              <RiSunLine />
+            }
+            checkedIcon={
+              <RiMoonClearLine />
+            }
+            />
+        )}
+      </ThemeToggler>        
       </footer>
     </div>
   )
