@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+const _ = require("lodash")
 
 const Tag = ({ tags }) => {
   return (
@@ -7,7 +8,7 @@ const Tag = ({ tags }) => {
         {tags.map(tag => {
           return (
             <li key={tag}>
-              {tag}
+              <a href={`/tags/${_.kebabCase(tag.fieldValue)}/`}>{tag}</a>
             </li>
           )
         })}
