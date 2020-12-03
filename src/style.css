@@ -326,6 +326,18 @@ a:focus {
   color: inherit;
 }
 
+.share {
+  margin-bottom: 10px;
+}
+
+.share button {
+  margin-right: 10px;
+}
+
+.share button:hover:not(:active) {
+  opacity: 0.75;
+}
+
 .theme {
   text-align: right;
 }
