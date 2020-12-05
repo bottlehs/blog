@@ -4,17 +4,19 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tag from "../components/tag"
+import Share from "../components/share"
 import { DiscussionEmbed } from "disqus-react"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  const twitterHandle = "_MsLinda";
   const { previous, next } = pageContext
   const disqusConfig = {
     shortname: 'bottlehs',
     config: { identifier: pageContext.slug, siteTitle },
   }  
-
+ 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -34,6 +36,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        <Share title={post.frontmatter.title} url={location.href} content={post.frontmatter.description} twitterHandle={twitterHandle} tags={post.frontmatter.tags}/>
         <Tag tags={post.frontmatter.tags} />
         <DiscussionEmbed {...disqusConfig} />
         <hr />
