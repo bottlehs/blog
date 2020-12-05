@@ -133,21 +133,6 @@ module.exports = {
         enableIdentityWidget: false,
       },
     },
-    {
-      resolve: "gatsby-transformer-remark",
-        options: {
-          plugins: [{
-            resolve: "gatsby-remark-lottie",
-            options: {
-              generatePlaceholders: true,
-              lottieVersion: "5.7.1",
-              renderer: "svg",
-              loop: true,
-              autoplay: true
-            }
-          }]
-        }
-    },
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
