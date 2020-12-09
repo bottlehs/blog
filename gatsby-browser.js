@@ -12,6 +12,3 @@ import "./src/style.dark.css"
 import "prismjs/themes/prism.css"
 // import "prismjs/themes/prism-tomorrow.css"
 // import "prismjs/themes/prism-twilight.css"
-
-// bootstrap CSS styles
-import "bootstrap/dist/css/bootstrap.min.css"
