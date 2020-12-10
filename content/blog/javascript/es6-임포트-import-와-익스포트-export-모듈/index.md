@@ -9,6 +9,8 @@ tags:
   - ES6
   - 임포트(import)
   - 익스포트(export)
+  - JavaScript
+  - ECMAScript6
 ---
 ![ES6 임포트(import)와 익스포트(export) 모듈](/assets/es6.png "ES6 임포트(import)와 익스포트(export) 모듈")
 
