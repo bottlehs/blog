@@ -77,7 +77,7 @@ const coffee = {
 }
 
 const keys = Object.keys(coffee)
-for ( let key of keys ) {
+for (let key of keys) {
    console.log(key, coffee[key])
 }
 

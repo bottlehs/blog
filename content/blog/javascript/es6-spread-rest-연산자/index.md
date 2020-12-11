@@ -17,7 +17,7 @@ tags:
 ES6부터 가변 인자를 표현할 `...` 키워드가 추가 되었다. 기존에는 배열 값을 함수 임자로 넘기려면 `apply()` 내장 메서드나 `argments` 를 통해 변수를 받아서, 이를 Array.prorotype.slice() 함수로 잘라내야 했지만 `...` 키워드를 이용하면 여러 개의 인자를 넘길 수 있다. 이는 Spread 연산자라고 한다.
 
 ```javascript
-function coffee ( americano, espresso ) {
+function coffee (americano, espresso) {
    return americano + espresso;
 }
 const data = [10,20];
@@ -46,7 +46,7 @@ console.log(result); // ["a","b","c","d","e"]
 나머지(Rest) 연산자는 함수의 마지막 파라미터에 "..." 를 붙이는데, 아래와 같이 사용할 수 있다.
 
 ```javascript
-function coffee( americano, espresso, ...arr ) {
+function coffee(americano, espresso, ...arr) {
    console.log(arr); // 30,40,50;
 }
 coffee(10,20,30,40,50);
