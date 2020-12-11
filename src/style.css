@@ -370,6 +370,10 @@ a:focus {
   margin: var(--spacing-0);
 }
 
+.blog-post-nav ul li a {
+  text-decoration: none;
+}
+
 .blog-post section img {
   max-width: 100%;
 }
