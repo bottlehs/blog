@@ -88,6 +88,10 @@ footer {
   padding: var(--spacing-6) var(--spacing-0);
 }
 
+footer a {
+  text-decoration: none;
+}
+
 hr {
   background: var(--color-accent);
   height: 1px;
@@ -242,7 +246,6 @@ a {
 a:hover,
 a:focus {
   color: var(--color-text-hover);
-  text-decoration: none;
 }
 
 /* Custom classes */
