@@ -27,8 +27,11 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --font-body: var(--font-family-sans-serif);
   --font-heading: var(--font-family-monospace);
   --fontWeight-normal: 400;
@@ -51,11 +54,11 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #000000;
-  --color-text: #1a1a1a;
-  --color-text-hover: #057dbc;
+  --color-primary: #292929;
+  --color-text: #292929;
+  --color-text-hover: #000000;
   --color-text-light: #757575;
-  --color-heading: #000000;
+  --color-heading: #292929;
   --color-heading-black: black;
   --color-accent: #d1dce5;
 }
@@ -270,6 +273,7 @@ a:focus {
 
 .post-list-item p {
   margin-bottom: var(--spacing-0);
+  color: var(--color-text-light);
 }
 
 .post-list-item h2 {
@@ -281,6 +285,10 @@ a:focus {
 
 .post-list-item header {
   margin-bottom: var(--spacing-4);
+}
+
+.post-list-item header small {
+  color: var(--color-text-light);
 }
 
 .header-link-home {
@@ -352,6 +360,7 @@ a:focus {
 .blog-post header p {
   font-size: var(--fontSize-2);
   font-family: var(--font-heading);
+  color: var(--color-text-light);
 }
 
 .blog-post-nav ul {
