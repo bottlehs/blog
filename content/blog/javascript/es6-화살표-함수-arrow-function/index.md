@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-title: ES6 화살표 함수 ( arrow function expression )
+title: ES6 화살표 함수 (arrow function expression)
 date: 2020-10-21T13:00:33.383Z
-description: ES6에서는 익명함수를 표현하기 위해 화살표 함수 ( Arrow function ) 표현식을 지원한다.
+description: ES6에서는 익명함수를 표현하기 위해 화살표 함수 (Arrow function) 표현식을 지원한다.
 tags:
   - 화살표 함수
   - Arrow function
@@ -15,7 +15,7 @@ ES6에서는 **익명함수**를 표현하기 위해 화살표 함수(Arrow func
 기존에는 아래와 같이 함수를 선언 하였다.
 
 ```javascript
-var coffee = function ( americano,espresso ) {
+var coffee = function (americano,espresso) {
    var cart = americano * espresso;
    return cart;
 }
@@ -27,7 +27,7 @@ console.log(result) // 200
 위와 같은 함수를 ES6 화살표 함수(Arrow function) 을 사용하면 아래와 같이 간결하게 선언할 수 있다.
 
 ```javascript
-let coffee = ( americano,espresso ) => {
+let coffee = (americano,espresso) => {
    let cart = americano * espresso;
    return cart;
 }
@@ -36,7 +36,7 @@ var result = coffee(10,20);
 console.log(result) // 200
 ```
 
-즉 function 이 생략되고 `=>` 기호가 그 자리에 추가 된다. 또한 아래와 같이 구문이 하나밖에 없으면 `{}` 기호를 생략할 수 있다. 
+즉 function 이 생략되고 `=>` 기호가 그 자리에 추가 된다. 또한 아래와 같이 구문이 하나밖에 없으면 `{}` 기호를 생략할 수 있다.
 
 ```javascript
 let coffee = (americano,espresso) => americano * espresso;
@@ -66,7 +66,7 @@ var result = coffee();
 console.log(result) // 200
 ```
 
-Arrow function은 IE환경에서 아직 제공하지 않는다. 
+Arrow function은 IE환경에서 아직 제공하지 않는다.
 
 ![화살표 함수(Arrow function) 브라우저 호환성](/assets/익명함수_브라우저호환성.png "화살표 함수(Arrow function) 브라우저 호환성")
 
