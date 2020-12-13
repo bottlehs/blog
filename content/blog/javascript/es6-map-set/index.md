@@ -7,6 +7,9 @@ description: Map과 Set은 Java와 같은 다른 프로그래밍 언어에서도
   입력값의 목록이나 특정값 찾기를 수행하기 위해서는 별도의 과정이 필요하다.
 tags:
   - ES6
+  - Map & Set
+  - JavaScript
+  - ECMAScript6  
 ---
 ![ES6 Map & Set](/assets/es6.png "ES6 Map & Set")
 
