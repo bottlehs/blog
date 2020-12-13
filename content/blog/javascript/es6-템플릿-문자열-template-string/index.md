@@ -11,7 +11,7 @@ tags:
   - 템플릿 문자열
   - JavaScript
 ---
-![es6](/assets/es6.png "es6")
+![ES6 템플릿 문자열 (template string)](/assets/es6.png "ES6 템플릿 문자열 (template string)")
 
 템플릿 문자열(Template String)은 문자열을 생성하는 새롭게 도입된 리터럴이다. 문자열을 설정하기 위해 따옴표(`)를 사용한다. 기존에는 변수를 문자열 안에 삽입하기 위해 따옴표 사이에 그 변수를 넣어 합치는 작업이 필요했는데, 템플릿 문자열을 이용하면 이를 간단하게 만들 수 있다.
 

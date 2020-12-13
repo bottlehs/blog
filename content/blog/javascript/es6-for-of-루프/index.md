@@ -13,6 +13,7 @@ tags:
   - ECMA2015
   - JS
 ---
+![ES6 For ... Of 루프](/assets/es6.png "ES6 For ... Of 루프")
 
 기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할 수 있는 기능을 제공한다.
 
@@ -76,7 +77,7 @@ const coffee = {
 }
 
 const keys = Object.keys(coffee)
-for ( let key of keys ) {
+for (let key of keys) {
    console.log(key, coffee[key])
 }
 

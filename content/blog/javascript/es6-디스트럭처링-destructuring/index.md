@@ -10,7 +10,7 @@ tags:
   - JavaScript
   - ECMAScript6
 ---
-![디스트럭처링(Destructuring)](/assets/es6.png "디스트럭처링(Destructuring)")
+![ES6 디스트럭처링(Destructuring)](/assets/es6.png "ES6 디스트럭처링(Destructuring)")
 
 디스트럭처링(Destructuring)은 Object 객체를 개별 변수에 할당하는 것을 말한다. 이를 이용하면, JSON 형태의 객체를 쉽게 매핑하여 변수에 할당할 수 있고, 반환값도 여러 개를 설정할 수 있다.
 
