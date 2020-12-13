@@ -12,6 +12,8 @@ tags:
   - Function
   - JavaScript
 ---
+![ES6 클래스 (Class)](/assets/es6.png "ES6 클래스 (Class)")
+
 기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여 객체지향을 구현 할수 있다.
 
 기존에는 아래와 같이 객체지향을 구현 했다. new 키워드를 붙여 호출하면, 생성자로 동작하여 객체를 생성한 후, 이를 반환 한다.

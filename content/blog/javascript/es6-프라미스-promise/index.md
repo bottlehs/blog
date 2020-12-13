@@ -11,7 +11,7 @@ tags:
   - ECMA2015
   - JS
 ---
-![프라미스(Promise)](/assets/es6.png "프라미스(Promise)")
+![ES6 프라미스(Promise)](/assets/es6.png "ES6 프라미스(Promise)")
 
 프라미스(Promise)는 비동기 호출이 일어났을 때 또는 해당 테스크가 완료했을 때, 이를 처리할 함수나 에러를 처리할 함수를 설정하는 모듈이다. 특히, 비동기 처리가 많이 일어나는 XMLHttpRequest 처리에 주로 사용되며, 반환값이 연계적으로 처리가 가능하기에 순차적인 호출을 보장한다.
 

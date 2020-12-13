@@ -11,6 +11,8 @@ tags:
   - 익명함수
   - JS
 ---
+![ES6 화살표 함수 (arrow function expression)](/assets/es6.png "ES6 화살표 함수 (arrow function expression)")
+
 ES6에서는 **익명함수**를 표현하기 위해 화살표 함수(Arrow function) 표현식을 지원한다.
 기존에는 아래와 같이 함수를 선언 하였다.
 
