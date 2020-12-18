@@ -12,6 +12,8 @@ tags:
   - Functions
   - Authentication
 ---
+![파이어베이스(Firebase) 소개](/assets/logo-standard.png "파이어베이스(Firebase) 소개")
+
 ## 파이어베이스 소개
 
 파이어베이스(https://firebase.google.com)는 웹 모바일 개발에 필요한 통합 앱 플랫폼을 제공하는 BaaS(Backend as a Service) 이다.

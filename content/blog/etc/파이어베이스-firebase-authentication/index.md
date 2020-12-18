@@ -12,6 +12,8 @@ tags:
   - Functions
   - Authentication
 ---
+![파이어베이스(Firebase) Authentication](/assets/logo-standard.png "파이어베이스(Firebase) Authentication")
+
 파이어베이스 인증의 목표는 인증 시스템을 손쉽게 구축하도록 지원한다. 이메일/비밀번호 계정, 전화 인증, Google, Twitter, Facebook, Github 로그인 등을 지원하는 종합적인 ID 솔루션을 제공한다.
 
 아래는 파이어베이스(Firebase) Authentication 부분으로서, 어려 개의 탭이 있는데 하나씩 살펴 보도록 하겠다.

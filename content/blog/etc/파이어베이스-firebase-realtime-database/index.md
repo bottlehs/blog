@@ -14,6 +14,8 @@ tags:
   - Functions
   - Authentication
 ---
+![파이어베이스(Firebase) Realtime Database](/assets/logo-standard.png "파이어베이스(Firebase) Realtime Database")
+
 실시간으로 데이터를 저장하고 동기화할 수 있는 클라우드 호스팅 NoSQL 데이터베이스이다. 파이어페이스 클라우드 함수를 사용하여 데이터베이스가 트리거하는 이벤트에 응답하는 백엔드 코드를 만들 수도 있다. 선언적인 규칙을 설정한 보안 모델을 사용하여 사용자 ID 또는 데이터 패턴 일치를 기준으로 액세스를 허용할 수 있다.
 
 ![파이어베이스(Firebase) Realtime Database](/assets/chatbot_–_firebase_console.jpg "파이어베이스(Firebase) Realtime Database")
