@@ -7,9 +7,9 @@ description: 실시간으로 데이터를 저장하고 동기화할 수 있는 �
   또는 데이터 패턴 일치를 기준으로 액세스를 허용할 수 있다.
 tags:
   - 파이어베이스
-  - FirebaseCloud
-  - FirestoreRealtime
-  - Database
+  - Firebase
+  - Cloud Firestore
+  - Realtime Database
   - Hosting
   - Functions
   - Authentication

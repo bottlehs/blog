@@ -5,10 +5,14 @@ date: 2020-12-18T10:55:50.026Z
 description: 클라우드 스토라지는 사진,동영상등의 파일을 빠르고 손쉽게 저장하고 이를 제공할 수 있다.
 tags:
   - 파이어베이스
-  - FirebaseCloud
-  - FirestoreRealti
+  - Firebase
+  - Cloud Firestore
+  - Realtime Database
+  - Hosting
+  - Functions
+  - Authentication
 ---
-![파이어베이스(Firebase) 소개](/assets/logo-standard.png "파이어베이스(Firebase) 소개")
+![파이어베이스(Firebase) Storage](/assets/logo-standard.png "파이어베이스(Firebase) Storage")
 
 클라우드 스토라지는 사진,동영상등의 파일을 빠르고 손쉽게 저장하고 이를 제공할 수 있다.
 
