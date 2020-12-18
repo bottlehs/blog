@@ -46,3 +46,5 @@ tags:
 * **Storage** : 스토라지
 * **Hosting** : 호스팅
 * **Functions** : 클라우드 function
+
+파이어베이스 요금제는 무료인 Spark 버전 부터, 종량제인 Blaze 버전이 있다. 무료 버전은 기본적인 데이터베이스, 저장소, 함수, 호스팅 등을 사용이 가능하다. 만약, Google Cloud Platform으로 프로젝트를 확장하기 위해서는 Blaze 버전을 선택해야 하며, 이는 Spark 버전의 할당량만큼 무료로 사용 가능하다.

@@ -6,7 +6,13 @@ description: 클라우드 함수는 Node.js 환경에서 실행되는 자바스�
   가령, 실시간 데이터베이스의 데이터 변경 인증을 통한 신규 사용자 가입, Analytics의 전환 이벤트에 대해 트리거되는 함수를 만들 수
   있다.
 tags:
-  - ㅁ
+  - 파이어베이스
+  - Firebase
+  - Cloud Firestore
+  - Realtime Database
+  - Hosting
+  - Functions
+  - Authentication
 ---
 ![파이어베이스(Firebase) Functions](/assets/logo-standard.png "파이어베이스(Firebase) Functions")
 
