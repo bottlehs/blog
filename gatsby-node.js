@@ -1,17 +1,44 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   // Define a template for blog post
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogTag = path.resolve("src/templates/tags.js")
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
+    /*
+    `
+    {
+      postsRemark: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            title,
+            tags
+          }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 1000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+    `
+    */
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -20,10 +47,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              title
+              title,
+              tags
             }
           }
         }
+        tagsGroup: allMarkdownRemark(limit: 1000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }        
       }
     `
   )
@@ -36,7 +69,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  const posts = result.data.postsRemark.nodes
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -58,6 +91,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
+
+  // Extract tag data from query
+  const tags = result.data.tagsGroup.group
+
+  // Make tag pages
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: blogTag,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })  
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
