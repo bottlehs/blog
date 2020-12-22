@@ -61,6 +61,7 @@
   --color-heading: #292929;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-tag: rgba(117, 117, 117, 1);
 }
 
 /* HTML elements */
@@ -391,6 +392,10 @@ a:focus {
 }
 
 .blog-post-tag li a {
+  background: rgb(242, 242, 242);
+  padding: 5px 10px;
+  line-height: 22px;
+  color: var(--color-accent);
 }
 
 .gatsby-highlight {
