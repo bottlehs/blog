@@ -8,7 +8,7 @@ const Tag = ({ tags }) => {
         {tags.map(tag => {
           return (
             <li key={tag}>
-              <a href={`/tags/${_.kebabCase(tag.fieldValue)}/`}>{tag}</a>
+              <a href={`/tags/${_.kebabCase(tag)}/`}>{tag}</a>
             </li>
           )
         })}
