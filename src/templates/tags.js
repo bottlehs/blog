@@ -8,38 +8,56 @@ import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 
 const Tags = ({ data, pageContext, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`  
   const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
+  const totalCount = data.allMarkdownRemark.totalCount
+  const posts = data.allMarkdownRemark.nodes
+
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
 
   return (
-    <Layout location={location} title={tag}>
-      <SEO
-        title={tag}
-        description={tag || ""}
-      />      
+    <Layout location={location} title={siteTitle}>
+      <SEO title={tag} />      
+      <h2 className="tags-heading">{tagHeader}</h2>
+      <ol style={{ listStyle: `none` }}>
+        {posts.map(post => {
+          const title = post.frontmatter.title || post.fields.slug
 
-      <div>
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        {/*
-                This links to a page that does not yet exist.
-                You'll come back to it!
-              */}
-        <Link to="/tags">All tags</Link>
-      </div>
+          return (
+            <li key={post.fields.slug}>
+              <article
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <header>
+                  <h2>
+                    <Link to={post.fields.slug} itemProp="url" title={title}>
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <small>{post.frontmatter.date}</small>
+                </header>
+                <section>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
+            </li>
+          )
+        })}
+      </ol>
+      <hr />
+      <footer>
+        <Bio />
+      </footer>      
+      <Link to="/tags">All tags</Link>
     </Layout>
   )
 }
@@ -71,20 +89,26 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }    
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
         }
       }
     }
