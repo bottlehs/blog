@@ -17,8 +17,8 @@ const Tags = ({ data, pageContext, location }) => {
   return (
     <Layout location={location} title={tag}>
       <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
+        title={tag}
+        description={tag || ""}
       />      
 
       <div>
