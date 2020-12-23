@@ -61,6 +61,7 @@
   --color-heading: #292929;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-tag: rgba(117, 117, 117, 1);
 }
 
 /* HTML elements */
@@ -265,7 +266,12 @@ a:focus {
 }
 
 .main-heading {
-  font-size: var(--fontSize-7);
+  font-size: var(--fontSize-6);
+  margin: 0;
+}
+
+.tags-heading {
+  font-size: var(--fontSize-6);
   margin: 0;
 }
 
@@ -391,6 +397,11 @@ a:focus {
 }
 
 .blog-post-tag li a {
+  background: rgb(242, 242, 242);
+  padding: 5px 10px;
+  line-height: 22px;
+  color: var(--color-tag);
+  text-decoration: initial;
 }
 
 .gatsby-highlight {
