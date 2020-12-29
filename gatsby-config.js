@@ -96,7 +96,14 @@ module.exports = {
               maxWidth: 590,
               linkImagesToOriginal: false
             },
-          },          {
+          },          
+          {
+            resolve: `gatsby-remark-images-medium-zoom`, // Important!
+            options: {
+              //...
+            }
+          },          
+          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin-bottom: 1.0725rem`,
@@ -118,6 +125,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
+        plugins: [
+          `gatsby-remark-images`,
+          `gatsby-remark-images-medium-zoom` // Important!
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+              linkImagesToOriginal: false // Important!
+            }
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`, // Important!
+            options: {}
+          }
+        ],
         name: metaConfig.title,
         short_name: metaConfig.title,
         start_url: `/`,
