@@ -87,7 +87,7 @@ JavaScirpt를 통해서 동적으로 문서객체를 생성해보자.
 var h1 = document.createElement("h1")
 ```
 
-우선 document 객체에 접근해서 <h1> 태그를 생성한다.
+우선 document 객체에 접근해서 `<h1>` 태그를 생성한다.
 
 ```javascript
 var textNode = document.createTextNode("Hello World - DOM")
@@ -99,7 +99,7 @@ document 객체에 접근해서 TextNode를 생성하고 'Hello World - DOM'이�
 h1.appendChild(textNode)
 ```
 
-위에서 생성한 <h1> 태그에 자식노드를 추가한다.
+위에서 생성한 `<h1>` 태그에 자식노드를 추가한다.
 
 ```javascript
 document.body.appendChild(h1)
