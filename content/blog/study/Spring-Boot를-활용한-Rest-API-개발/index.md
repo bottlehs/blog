@@ -25,10 +25,15 @@ tags:
 ### 1주차 : 스프링 부트 프레임워크 구조
 
 - 스프링 부트 프로젝트 구조
+  - [스프링 부트 구조](https://www.bottlehs.com/springboot/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B5%AC%EC%A1%B0/ "스프링 부트 구조")
 - 스프링 프레임워크 기본 개념
+  - [스프링 부트 소개](https://www.bottlehs.com/springboot/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EC%86%8C%EA%B0%9C/ "스프링 부트 소개")
 - Gradle, Maven 기본 개념
+  - [Gradle, Maven 기본 개념과 Gradle Multi Project](https://www.bottlehs.com/springboot/gradle-maven-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90/ "Gradle, Maven 기본 개념과 Gradle Multi Project")
 - HTTP, HTTP2 기본 개념
+  - [HTTP, HTTP2 기본 개념](https://www.bottlehs.com/springboot/http-1-http2-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90/ "HTTP, HTTP2 기본 개념")
 - Custom Annotation(커스텀 어노테이션), GET 요청 ~ JSON 응답
+  - [스프링 부트 Custom Annotation(커스텀 어노테이션), GET 요청 ~ JSON 응답](https://www.bottlehs.com/springboot/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-custom-annotation/ "스프링 부트 Custom Annotation(커스텀 어노테이션), GET 요청 ~ JSON 응답")
 
 ### 2주차 : 스프링 부트 프레임워크 API 설계 및 Exception 처리
 
