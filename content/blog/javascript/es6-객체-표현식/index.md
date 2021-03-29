@@ -2,14 +2,16 @@
 templateKey: blog-post
 title: ES6 객체 표현식
 date: 2020-12-13T19:15:26.956Z
-description: ES6에서는 더욱 동적이고 간단하게 객체를 생성하고 할당하는 표현식을 제공한다. 만약, 객체의 속성을 변수명과 같은
+description:
+  ES6에서는 더욱 동적이고 간단하게 객체를 생성하고 할당하는 표현식을 제공한다. 만약, 객체의 속성을 변수명과 같은
   속성명으로 설정하려면 이를 간단하게 표현할 수 있다.
 tags:
   - ES6
   - 객체 표현식
   - JavaScript
-  - ECMAScript6  
+  - ECMAScript6
 ---
+
 ![ES6 객체 표현식](/assets/es6.png "ES6 객체 표현식")
 
 ES6에서는 더욱 동적이고 간단하게 객체를 생성하고 할당하는 표현식을 제공한다. 만약, 객체의 속성을 변수명과 같은 속성명으로 설정하려면 이를 간단하게 표현할 수 있다.
@@ -18,21 +20,21 @@ ES6에서는 더욱 동적이고 간단하게 객체를 생성하고 할당하�
 
 ```javascript
 // 코드1
-const coffee1 = "coffee1";
-const coffee2 = "coffee2";
+const coffee1 = "coffee1"
+const coffee2 = "coffee2"
 
 const obj = {
-   coffee1: coffee1,
-   coffee2: coffee2
-};
+  coffee1: coffee1,
+  coffee2: coffee2,
+}
 ```
 
 ```javascript
 // 코드2
 const obj = {
-   coffee1,
-   coffee2
-};
+  coffee1,
+  coffee2,
+}
 ```
 
 또한, 함수를 정의할 시에 function 키워드를 생략하고 getter 및 setter를 설정하는 것을 키워드를 통해 간단히 구현할 수 있다. 이는 속성명 앞에 get과 set을 붙여서 이용한다.
