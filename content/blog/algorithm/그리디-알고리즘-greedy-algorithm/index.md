@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: 그리디 알고리즘 (Greedy Algorithm)
 date: 2021-04-04T13:02:48.519Z
-category: Algorithm
+category: algorithm
 description:
   그리디 알고리즘, 탐욕 알고리즘 이라고도 부른다. 그리드 알고리즘은 최적해를 구하는 데에 사용되는 근사적인 방법으로,
   여러 경우 중 하나를 결정해야 할 때마다 그 순간에 최적이라고 생각 되는것을 선택해 나가는 방식이다.
