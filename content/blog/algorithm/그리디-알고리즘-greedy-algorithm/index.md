@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: 그리디 알고리즘 (Greedy Algorithm)
-date: 2021-04-01T13:02:48.519Z
+date: 2021-04-04T13:02:48.519Z
 category: Algorithm
 description:
   그리디 알고리즘, 탐욕 알고리즘 이라고도 부른다. 그리드 알고리즘은 최적해를 구하는 데에 사용되는 근사적인 방법으로,
