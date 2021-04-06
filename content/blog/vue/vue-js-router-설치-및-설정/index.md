@@ -147,8 +147,8 @@ src
 ├── components // 컴포넌트
 ├── router // 라우팅
 │── views // 화면
-│   ├── About.js // About 컴포넌트
-│   └── Home.js // Home 컴포넌트
+│   ├── About.vue // About 컴포넌트
+│   └── Home.vue // Home 컴포넌트
 │── main.js // 메인 (뷰인스턴스 초기화)
 └── App.vue // App 컴포넌트
 ```
