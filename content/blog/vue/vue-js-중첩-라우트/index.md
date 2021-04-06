@@ -38,7 +38,7 @@ tags:
 src
 │── components // 컴포넌트
 │   ├── Profile.vue // Profile 컴포넌트
-│   └── Posts.js // Posts 컴포넌트
+│   └── Posts.vue // Posts 컴포넌트
 ├── router // 라우팅
 │── views // 화면
 │   └── User.vue // User 컴포넌트
