@@ -45,7 +45,7 @@ tags:
 
 ## 설치
 
-Vue Router 는 프로젝트 생성시 기본 dependencies 로 추가 할수도 있고, npm or yarm 을 사용하여 필요에 따라 추가 할수 있다. 프로젝트 생성 이후 Vue Router 를 추가 하는 방법은 아래와 같다.
+Vue Router 는 프로젝트 생성시 기본 dependencies 로 추가 할수도 있고, npm or yarn 을 사용하여 필요에 따라 추가 할수 있다. 프로젝트 생성 이후 Vue Router 를 추가 하는 방법은 아래와 같다.
 
 터미널을 실행 한후 프로젝트 root 로 이동 해서 npm 으로 라이브러리를 추가 한다.
 
