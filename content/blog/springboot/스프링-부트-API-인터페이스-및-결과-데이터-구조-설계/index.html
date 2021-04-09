@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-api-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B0%8F-%EA%B2%B0%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0-%EC%84%A4%EA%B3%84">스프링 부트 API 인터페이스 및 결과 데이터 구조 설계</h1>
+<p><img src="/D:/bottlehs/blog/public/assets/springboot.png" alt="스프링 부트 API 인터페이스 및 결과 데이터 구조 설계" title="스프링 부트 API 인터페이스 및 결과 데이터 구조 설계"></p>
+<p>API 서버 개발 진행을 위해 api 인터페이스 및 결과 데이터의 구조를 살펴보고 확장 가능한 형태로 설계해 보자. api는 제공 대상이 클라이언트 App 또는 Web 개발자이다. 한번 배포되고 공유한 API는 구조를 쉽게 바꿀 수 없기 때문에, 처음부터 효율적이고 확장 가능한 형태로 모델을 설계하고 시작하는 것이 좋다. 그래서 아래와 같이 HttpMethod를 사용하고 Restful 한 API를 만들기 위해 몇 가지 규칙을 적용하도록 하겠다.</p>
+<h2 id="api-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4">API 인터페이스</h2>
+<h3 id="%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%9D%98-%EC%82%AC%EC%9A%A9%EB%AA%A9%EC%A0%81%EC%97%90-%EB%94%B0%EB%9D%BC-http-method-%EA%B5%AC%EB%B6%84">리소스의 사용목적에 따라 Http method 구분</h3>
+<p>Http 프로토콜은 여러 가지 사용목적에 따라 HttpMethod를 제공하고 있다. 여기서는 그중 아래의 5가지 HttpMethod를 상황에 맞게 api 구현에 사용하도록 하겠다.</p>
+<ul>
+<li>GET : 서버에 주어진 리소스의 정보를 요청.(읽기)</li>
+<li>POST : 서버에 리소스를 제출. (쓰기)</li>
+<li>PUT : 서버에 리소스를 제출, POST와 달리 리소스 갱신 시 사용한다.(수정)</li>
+<li>DELETE : 서버에 주어진 리소스를 삭제 요청한다.(삭제 시)</li>
+<li>FETCH : 서버에 리소스를 제출, PUT와 달리 특정 리소스 갱신 시 사용한다.(일부 수정)</li>
+</ul>
+<h3 id="%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%97%90-mapping%EB%90%9C-%EC%A3%BC%EC%86%8C-%EC%B2%B4%EA%B3%84-%EC%A0%95%ED%98%95%ED%99%94">리소스에 Mapping된 주소 체계 정형화</h3>
+<p>주소 체계는 아래처럼 정형화된 구조로 구성하고 HttpMethod를 통해 리소스의 사용목적을 판단되도록 한다.</p>
+<ul>
+<li>GET /api/v1/api/user/{userId} – 회원 userId에 해당하는 정보를 조회한다.</li>
+<li>GET /api/v1/users – 회원 리스트를 조회한다.</li>
+<li>POST /api/v1/user – 신규 회원정보를 입력한다.</li>
+<li>PUT /api/v1/user/{userId} – 기존 회원의 정보를 수정한다.</li>
+<li>DELETE /api/v1/user/{userId} – userId로 기존 회원의 정보를 삭제한다.</li>
+<li>PUT /api/v1/user/{userId} – 기존 회원의 특정 정보만을 수정한다.</li>
+</ul>
+<h3 id="%EA%B2%B0%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B5%AC%EC%A1%B0-%ED%91%9C%EC%A4%80%ED%99%94">결과 데이터 구조 표준화</h3>
+<p>결과 데이터는 아래의 샘플처럼 결과 데이터 + api요청 결과 데이터로 구성한다.</p>
+<h4 id="%EA%B2%B0%EA%B3%BC-%EB%AA%A8%EB%8D%B8%EC%9D%98-%EC%A0%95%EC%9D%98">결과 모델의 정의</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">// 기존 USER 정보</span>
+{
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"id@domain.com"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"user name"</span>
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 표준화한 USER 정보</span>
+{
+  <span class="hljs-attr">"data"</span>: {
+    <span class="hljs-attr">"email"</span>: <span class="hljs-string">"id@doamin.com"</span>,
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"user name"</span>
+  },
+  <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"code"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"성공하였습니다."</span>
+}
+</div></code></pre>
+<h2 id="%EA%B5%AC%ED%98%84">구현</h2>
+<h3 id="api%EC%9D%98-%EC%8B%A4%ED%96%89-%EA%B2%B0%EA%B3%BC%EB%A5%BC-%EB%8B%B4%EB%8A%94-%EA%B3%B5%ED%86%B5-%EB%AA%A8%EB%8D%B8">api의 실행 결과를 담는 공통 모델</h3>
+<p>api의 처리 상태 및 메시지를 내려주는 데이터로 구성된다. success는 api의 성공실패 여부를 나타내고 code, msg는 해당 상황에서의 응답 코드와 응답 메시지를 나타낸다.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@Getter</span>
+<span class="hljs-meta">@MappedSuperclass</span>
+<span class="hljs-meta">@EntityListeners</span>(AuditingEntityListener<span class="hljs-class">.<span class="hljs-keyword">class</span>)
+<span class="hljs-title">public</span> <span class="hljs-title">class</span> <span class="hljs-title">BaseEntity</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">9141498463876264960L</span>;
+
+  <span class="hljs-meta">@CreationTimestamp</span>
+  <span class="hljs-meta">@Temporal</span>(TemporalType.TIMESTAMP)
+  <span class="hljs-meta">@JsonFormat</span>(shape = JsonFormat.Shape.STRING, pattern = <span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>,
+      timezone = <span class="hljs-string">"Asia/Seoul"</span>)
+  <span class="hljs-meta">@Column</span>(name = <span class="hljs-string">"reg_dt"</span>, updatable = <span class="hljs-keyword">false</span>)
+  <span class="hljs-keyword">private</span> Date reg_dt;
+
+  <span class="hljs-meta">@UpdateTimestamp</span>
+  <span class="hljs-meta">@Temporal</span>(TemporalType.TIMESTAMP)
+  <span class="hljs-meta">@JsonFormat</span>(shape = JsonFormat.Shape.STRING, pattern = <span class="hljs-string">"yyyy-MM-dd HH:mm:ss"</span>,
+      timezone = <span class="hljs-string">"Asia/Seoul"</span>)
+  <span class="hljs-meta">@Column</span>(name = <span class="hljs-string">"mod_dt"</span>, updatable = <span class="hljs-keyword">true</span>)
+  <span class="hljs-keyword">private</span> Date mod_dt;
+
+  <span class="hljs-comment">// 변환 로직을 직접 구현</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Date <span class="hljs-title">getRegDt</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> reg_dt;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setRegDt</span><span class="hljs-params">(Date reg_dt)</span> </span>{
+    <span class="hljs-keyword">this</span>.reg_dt = reg_dt;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Date <span class="hljs-title">getModDt</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> mod_dt;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setModDt</span><span class="hljs-params">(Date mod_dt)</span> </span>{
+    <span class="hljs-keyword">this</span>.mod_dt = mod_dt;
+  }
+}
+
+</div></code></pre>
+<h3 id="%EA%B2%B0%EA%B3%BC%EA%B0%80-%EB%8B%A8%EC%9D%BC%EA%B1%B4%EC%9D%B8-api%EB%A5%BC-%EB%8B%B4%EB%8A%94-%EB%AA%A8%EB%8D%B8">결과가 단일건인 api를 담는 모델</h3>
+<p>Generic Interface에 <T>를 지정하여 어떤 형태의 값도 넣을 수 있도록 구현합니다. 또한 CommonResult를 상속받으므로 api요청 결과도 같이 출력되도록 합니다.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@Api</span>(tags = <span class="hljs-string">"공지사항"</span>)
+<span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">"/api"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoticeController</span> </span>{
+  ..code
+  <span class="hljs-meta">@ManyToMany</span>(fetch = FetchType.LAZY)
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"조회-단건"</span>, notes = <span class="hljs-string">"단건 조회"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@GetMapping</span>(value = <span class="hljs-string">"/notice/{id}"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Notice <span class="hljs-title">get</span><span class="hljs-params">(@PathVariable Integer id)</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.getId(id);
+  }
+  ..code
+}
+</div></code></pre>
+<h3 id="%EA%B2%B0%EA%B3%BC%EA%B0%80-%EC%97%AC%EB%9F%AC%EA%B1%B4%EC%9D%B8-api%EB%A5%BC-%EB%8B%B4%EB%8A%94-%EB%AA%A8%EB%8D%B8">결과가 여러건인 api를 담는 모델</h3>
+<p>api 결과가 다중 건인 경우에 대한 데이터 모델이다. 결과 필드를 List 형태로 선언하고 Generic Interface에 <T>를 지정하여 어떤 형태의 List값도 넣을 수 있도록 구현합니다. 또한 CommonResult를 상속받으므로 api요청 결과도 같이 출력되도록 합니다.</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@Api</span>(tags = <span class="hljs-string">"공지사항"</span>)
+<span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">"/api"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoticeController</span> </span>{
+  ..code
+  <span class="hljs-meta">@ManyToMany</span>(fetch = FetchType.LAZY)
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"조회"</span>, notes = <span class="hljs-string">"전체 조회"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@GetMapping</span>(value = <span class="hljs-string">"/notice"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Notice&gt; <span class="hljs-title">getAll</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.getAll();
+  }
+  ..code
+}
+</div></code></pre>
+<h3 id="%EA%B2%B0%EA%B3%BC-%EB%AA%A8%EB%8D%B8%EC%9D%84-%EC%B2%98%EB%A6%AC%ED%95%A0-service-%EC%A0%95%EC%9D%98">결과 모델을 처리할 Service 정의</h3>
+<p>결과 모델에 데이터를 넣어주는 역할을 할 Service를 정의합니다. api.service 하위에 service package를 생성하고 아래의 Service Class를 생성합니다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">NoticeService</span> </span>{
+  ..code
+  <span class="hljs-comment">// 조회</span>
+  <span class="hljs-function">List&lt;Notice&gt; <span class="hljs-title">getAll</span><span class="hljs-params">()</span></span>;
+
+  <span class="hljs-comment">// 조회-단건</span>
+  <span class="hljs-function">Notice <span class="hljs-title">getId</span><span class="hljs-params">(Integer id)</span></span>;
+  ..code
+}
+
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoticeServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">NoticeService</span> </span>{
+  ..code
+  <span class="hljs-comment">// 조회</span>
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Notice&gt; <span class="hljs-title">getAll</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> noticeRepository.findAll();
+  }
+
+  <span class="hljs-comment">// 조회-단건</span>
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Notice <span class="hljs-title">getId</span><span class="hljs-params">(Integer id)</span> </span>{
+    <span class="hljs-keyword">return</span> noticeRepository.getOne(id);
+  }
+  ..code
+}
+
+</div></code></pre>
+<h3 id="httpmethod%EC%99%80-%EC%A0%95%ED%98%95%ED%99%94%EB%90%9C-%EC%A3%BC%EC%86%8C%EC%B2%B4%EA%B3%84%EB%A5%BC-controller%EC%97%90-%EC%A0%95%EC%9D%98">HttpMethod와 정형화된 주소체계를 Controller에 정의</h3>
+<p>소스의 사용 목적에 따라 GetMapping, PostMapping, PutMapping, DeleteMapping, FetchMapping 사용</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@Api</span>(tags = <span class="hljs-string">"공지사항"</span>)
+<span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">"/api"</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoticeController</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> NoticeService noticeService;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NoticeController</span><span class="hljs-params">(NoticeService noticeService)</span> </span>{
+    <span class="hljs-keyword">this</span>.noticeService = noticeService;
+  }
+
+  <span class="hljs-meta">@ManyToMany</span>(fetch = FetchType.LAZY)
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"조회"</span>, notes = <span class="hljs-string">"전체 조회"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@GetMapping</span>(value = <span class="hljs-string">"/notice"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Notice&gt; <span class="hljs-title">getAll</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.getAll();
+  }
+
+  <span class="hljs-meta">@ManyToMany</span>(fetch = FetchType.LAZY)
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"조회-단건"</span>, notes = <span class="hljs-string">"단건 조회"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@GetMapping</span>(value = <span class="hljs-string">"/notice/{id}"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Notice <span class="hljs-title">get</span><span class="hljs-params">(@PathVariable Integer id)</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.getId(id);
+  }
+
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"등록"</span>, notes = <span class="hljs-string">"등록"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@PostMapping</span>(value = <span class="hljs-string">"/notice"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Notice <span class="hljs-title">add</span><span class="hljs-params">(@RequestBody Notice notice)</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.add(notice.getTitle(), notice.getCont(), notice.getTp());
+  }
+
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"삭제"</span>, notes = <span class="hljs-string">"전체 삭제"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@DeleteMapping</span>(value = <span class="hljs-string">"/notice"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeAll</span><span class="hljs-params">()</span> </span>{
+    noticeService.removeAll();
+  }
+
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"삭제-단건"</span>, notes = <span class="hljs-string">"단건 삭제"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@DeleteMapping</span>(value = <span class="hljs-string">"/notice/{id}"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(@PathVariable Integer id)</span> </span>{
+    noticeService.remove(id);
+  }
+
+  <span class="hljs-meta">@ApiOperation</span>(value = <span class="hljs-string">"수정"</span>, notes = <span class="hljs-string">"단건 수정"</span>, tags = <span class="hljs-string">"공지사항"</span>)
+  <span class="hljs-meta">@PutMapping</span>(value = <span class="hljs-string">"/notice/{id}"</span>)
+  <span class="hljs-meta">@ResponseStatus</span>(value = HttpStatus.OK)
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Notice <span class="hljs-title">modify</span><span class="hljs-params">(@PathVariable Integer id, @RequestBody Notice notice)</span> </span>{
+    <span class="hljs-keyword">return</span> noticeService.modify(id, notice.getTitle(), notice.getCont(), notice.getTp());
+  }
+}
+</div></code></pre>
+<p>api 서비스를 구축하기 위한 인터페이스 및 결과 구조 설계 방법 이다.</p>
+<p>자세한 소스 코드는 &quot;https://github.com/bottlehs/springboot-vue-starter-kit&quot; 참고 하길 바란다.</p>
+
+</body>
+</html>
