@@ -14,7 +14,7 @@ tags:
   - JavaScript
 ---
 
-![그리디 알고리즘 (Greedy Algorithm)](/assets/algorithm.jpg "그리디 알고리즘 (Greedy Algorithm)")
+![그리디 알고리즘 (Greedy Algorithm)](/assets/algorithm.png "그리디 알고리즘 (Greedy Algorithm)")
 
 그리디 알고리즘, 탐욕 알고리즘 이라고도 부른다. 그리드 알고리즘 정의는 아래와 같다.
 
