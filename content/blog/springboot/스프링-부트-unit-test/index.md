@@ -157,7 +157,7 @@ public class SampleSpringBootTest {
     public void hello() throws Exception {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("hello coffee"))
+                .andExpect(content().string("hello hs"))
                 .andDo(print());
     }
 }

@@ -8,6 +8,10 @@
     "url": "https://github.com/bottlehs/blog"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "bodymovin": "^4.13.0",
     "disqus-react": "^1.0.11",
     "gatsby": "^2.32.11",
@@ -19,6 +23,7 @@
     "gatsby-plugin-manifest": "^2.4.32",
     "gatsby-plugin-netlify-cms": "^4.3.16",
     "gatsby-plugin-offline": "^3.2.29",
+    "gatsby-plugin-page-progress": "^2.2.0",
     "gatsby-plugin-react-helmet": "^3.3.12",
     "gatsby-plugin-sharp": "^2.6.42",
     "gatsby-plugin-sitemap": "^2.4.16",
@@ -46,6 +51,8 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.23.1",
     "prettier": "2.1.2"
   },
   "homepage": "https://github.com/bottlehs/blog#readme",
