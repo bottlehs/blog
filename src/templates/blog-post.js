@@ -86,39 +86,47 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <a className="sponsor-button" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/bottlehs">
             <img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" /><span>Buy me a coffee</span>
           </a>
-        </div>        
+        </div>   
+        {(previous || next) && (      
+        <nav className="blog-post-nav">
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+            }}
+          >
+            {previous && (
+            <li className="prev">              
+              <Link to={previous.fields.slug} rel="prev">
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleLeft}  />
+                </div>                               
+                <div className="text">{previous.frontmatter.title}</div>
+              </Link>
+            </li>              
+            )}
+            {next && (          
+            <li className="next">
+              <Link to={next.fields.slug} rel="next">
+                <div className="text">{next.frontmatter.title}</div>                
+                <div className="icon">
+                  <FontAwesomeIcon icon={faArrowAltCircleRight}  />
+                </div>
+              </Link>
+            </li>
+            )}
+          </ul>
+        </nav>
+        )}       
         <DiscussionEmbed {...disqusConfig} />
         <hr />
         <footer>
           <Bio />
         </footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
