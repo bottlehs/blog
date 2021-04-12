@@ -19,7 +19,7 @@ tags:
 - MVC, MVVM 패턴의 차이를 이해 하고 개발 할 수 있다.
 - Vue OpenSource 를 활용 할 수 있다.
 - Axios 라이브러리를 활용하여 REST API 와 통신 하는 웹을 개발 할 수 있다.
-- Vue & Nuxt 를 활용한 JamStak 기반 블로그를 개발 할 수 있다.
+- Vue & Nuxt 를 활용한 JamStack 기반 블로그를 개발 할 수 있다.
 
 ## 커리큘럼
 
@@ -67,9 +67,9 @@ tags:
 
 - Netlify 란?
 - Vue 와 Nuxt
-- JAMStak 의 이해
+- JamStack 의 이해
 - JAMStack 기반 블로그 개발
 
 ### 5주차 : Vue & Nuxt 로 만드는 정적 블로그 개발 리뷰
 
-- JamStak 기반 블로그 개발 리뷰
+- JamStack 기반 블로그 개발 리뷰
