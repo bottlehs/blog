@@ -625,6 +625,7 @@ nav.container .title {
   margin-bottom: 15px;
   margin-left: 20px;
   margin-top: 0px;
+  display: none;
 }
 
 nav.container .contents ul {
@@ -661,7 +662,7 @@ nav.container .contents ul > li a.isCurrent {
 
 /* Media queries */
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1650px) {
   nav.container {
     position: sticky;
     top: 70px;
