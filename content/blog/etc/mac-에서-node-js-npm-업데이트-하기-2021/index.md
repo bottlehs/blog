@@ -3,7 +3,8 @@ templateKey: blog-post
 title: Mac 에서 Node.js, NPM 업데이트 하기 (2021)
 date: 2021-04-14T00:37:23.601Z
 category: etc
-description: NPM의 신규 or 업데이트된 JavaScript 라이브러는 최신 안정화 Node.js 버전이 필요하다. 따라서
+description:
+  NPM의 신규 or 업데이트된 JavaScript 라이브러는 최신 안정화 Node.js 버전이 필요하다. 따라서
   Node.js 를 주기적으로 업데이트를 해줘야 한다. Mac 기준 Node.js 를 가장 쉽게 업데이트 할수 있는 방법을 소개 하고자 한다.
 tags:
   - javascript
@@ -12,6 +13,7 @@ tags:
   - update
   - mac
 ---
+
 NPM의 신규 or 업데이트된 JavaScript 라이브러는 최신 안정화 Node.js 버전이 필요하다. 따라서 Node.js 를 주기적으로 업데이트를 해줘야 한다. Mac 기준 Node.js 를 가장 쉽게 업데이트 할수 있는 방법을 소개 하고자 한다.
 
 ![node.js](/assets/1200px-node.js_logo.svg.png "node.js")
@@ -44,7 +46,7 @@ LTS 버전 설치
 $ sudo n lts
 ```
 
-## 정상적으로 설치&업데이트 되었는지 확인 한다.
+### 정상적으로 설치&업데이트 되었는지 확인 한다.
 
 ```
 $ node -v
