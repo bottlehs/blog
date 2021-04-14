@@ -14,7 +14,7 @@ tags:
   - JDBC
 ---
 
-![스프링 부트 MariaDB 연동](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot.png "스프링 부트 MariaDB 연동")
+![스프링 부트 MariaDB 연동](//assets/springboot.png "스프링 부트 MariaDB 연동")
 
 스프링 부트 MariaDB 연동 순서는 아래와 같다.
 
@@ -101,7 +101,7 @@ JDBC API는 2-tier(2 계층)와 3-tier(3 계층)를 모두 지원한다.
 
 다음 그림은 2-tier와 3-tier를 표현한 것이다. 왼쪽부터 1-tier로 시작하여 오른쪽으로 갈수록 한 계층씩 증가한다.
 
-![JDBC 시스템 아키텍처 2-tier 와 3-tier 표현](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-jdbc-2-tier-3-tier.png "JDBC 시스템 아키텍처 2-tier 와 3-tier 표현")
+![JDBC 시스템 아키텍처 2-tier 와 3-tier 표현](//assets/springboot-jdbc-2-tier-3-tier.png "JDBC 시스템 아키텍처 2-tier 와 3-tier 표현")
 
 3-tier 아키텍처 같은 경우에는 중간 2-tier에 http, 코바(CORBA) 등을 지원하기 위한 응용 처리 서버(Application Server)가 온다.
 
@@ -123,13 +123,13 @@ MariaDB는 MariaDB사가 제작한 오픈소스 RDMBS 소프트웨어이다. MyS
 
 ### MariaDB 아키텍처
 
-![MariaDB 아키텍처](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-mariadb-architecture.png "MariaDB 아키텍처")
+![MariaDB 아키텍처](//assets/springboot-mariadb-architecture.png "MariaDB 아키텍처")
 
 > MariaDB는 근본적인 태생이 MySQL과 같기 때문에 pluggable Storage Engine의 종류만 조금 다를뿐 MySQL의 기본아케텍쳐와 동일하다.
 
 ### MariaDB 갈레아 클러스터
 
-![MariaDB Galera Cluster](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-mariadb-galera-cluster.png "MariaDB Galera Cluster")
+![MariaDB Galera Cluster](//assets/springboot-mariadb-galera-cluster.png "MariaDB Galera Cluster")
 
 MariaDB/Galera는 MariaDB의 Synchronous 방식 으로 동작하는 multi-master Cluster이다. MariaDB/Galera Cluster은 Galera 라이브러리를 사용하여 노드 간 데이터 복제를 수행한다.
 
@@ -145,7 +145,7 @@ https://mariadb.org/ 에 접속하여 환경에 맞는 제품군으로 설치해
 show databases;
 ```
 
-![show databases](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-show-databases.png "show databases")
+![show databases](//assets/springboot-show-databases.png "show databases")
 
 `show databases;` 는 현재 생성된 데이터베이스 목록을 출력 한다.
 
@@ -157,7 +157,7 @@ create database coffee;
 
 생성후 'show databases;' 를 입력하면 아래와 같이 `coffee` 데이터베이스를 확인할수 있다.
 
-![create databases](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-create-database.png "create databases")
+![create databases](//assets/springboot-create-database.png "create databases")
 
 ### 테이블 생성 밑 데이터 입력
 
@@ -175,7 +175,7 @@ use database coffee
 
 위와 같이 입력하면 `coffee` 데이터베이스를 사용되도록 지정이 된다.
 
-![use databases](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-use-database.png "use databases")
+![use databases](//assets/springboot-use-database.png "use databases")
 
 이제 아래와 같이 테이블을 추가해 보자
 
@@ -194,7 +194,7 @@ create table user (
 
 테이블 추가후 `show tables;` 를 입력 하면 아래와 같이 생성된 `user` 테이블을 확인할수 있다.
 
-![create table](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-create-table.png "create table")
+![create table](//assets/springboot-create-table.png "create table")
 
 이제 생성된 `user` 테이블에 데이터(행)을 추가해 보자.
 
@@ -207,7 +207,7 @@ values (1, 'bottlehs');
 select * from user;
 ```
 
-![insert table row](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-insert-row.png "insert table row")
+![insert table row](//assets/springboot-insert-row.png "insert table row")
 
 위와 같이 `user` 테이블에 데이터(행)을 추가 하고 `select` 명령어를 사용하여 추가된 데이터(행)를 확인 할수 있다.
 
@@ -231,15 +231,15 @@ Spring Boot 프로젝트는 `https://start.spring.io/` 에서 쉽게 생성이 �
 
 아래와 같이 설정하여 프로젝트를 생성 하도록 한다.
 
-![springboot initializr](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-initializr.png "springboot initializr")
+![springboot initializr](//assets/springboot-initializr.png "springboot initializr")
 
 프로젝트를 생성후 VS Code 로 실행 시키면 아래와 같이 Spring Boot 을 개발 & 테스트 할수 있는 환경이 셋팅 된다.
 
-![springboot initializr project](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-initializr-project.png "springboot initializr project")
+![springboot initializr project](//assets/springboot-initializr-project.png "springboot initializr project")
 
 아래 run 버튼을 누르면 Spring Boot 가 내장 톰캣으로 실행 된다.
 
-![springboot initializr project run](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-initializr-project-run2.png "springboot initializr project run")
+![springboot initializr project run](//assets/springboot-initializr-project-run2.png "springboot initializr project run")
 
 실행되면 기본적으로 8080 포트에서 확인이 가능 하다.
 
@@ -247,7 +247,7 @@ Spring Boot 프로젝트는 `https://start.spring.io/` 에서 쉽게 생성이 �
 http://localhost:8080/
 ```
 
-![springboot initializr project run localhost](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-initializr-project-run.png "springboot initializr project run localhost")
+![springboot initializr project run localhost](//assets/springboot-initializr-project-run.png "springboot initializr project run localhost")
 
 ## Spring JDBC 연결
 
@@ -263,10 +263,10 @@ spring.datasource.password=root123 // MariaDB 접속 비밀번호
 ```
 
 **실패**
-![springboot maria db failure](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-maria-db-failure.png "springboot maria db failure")
+![springboot maria db failure](//assets/springboot-maria-db-failure.png "springboot maria db failure")
 
 **성공**
-![springboot maria db succeed](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-maria-db-succeed.png "springboot maria db succeed")
+![springboot maria db succeed](//assets/springboot-maria-db-succeed.png "springboot maria db succeed")
 
 ## Spring Boot와 JPA
 
@@ -306,7 +306,7 @@ JPA는 여러 ORM 전문가가 참여한 EJB 3.0 스펙 작업에서 기존 EJB 
 
 프로젝트 생성시 JPA 관련 dependencies 를 추가 했다면 아래와 같이 dependencies 가 추가되어 있을 것이다.
 
-![springboot jpa dependencies](/Users/dataguru/Workspace/bottlehs/blog/static/assets/springboot-jap-dependencies.png "springboot jpa dependencies")
+![springboot jpa dependencies](//assets/springboot-jap-dependencies.png "springboot jpa dependencies")
 
 **spring-boot-stater-data-jpa**
 
