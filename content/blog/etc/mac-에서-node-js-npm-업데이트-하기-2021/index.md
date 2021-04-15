@@ -44,6 +44,9 @@ $ sudo n latest
 
 LTS 버전 설치
 $ sudo n lts
+
+특정 버전 설치
+$ sudo n <version>
 ```
 
 ### 정상적으로 설치&업데이트 되었는지 확인 한다.
@@ -64,5 +67,10 @@ $ npm -v
 ### npm 재설치
 
 ```
-$ sudo npm install -g npm
+$ sudo npm install -g n
+```
+
+### npm 특정 버전 재설치
+```
+$ sudo npm install -g n <version>
 ```

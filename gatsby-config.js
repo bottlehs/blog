@@ -1,4 +1,4 @@
-const metaConfig = require('./gatsby-meta-config')
+const metaConfig = require("./gatsby-meta-config")
 
 module.exports = {
   siteMetadata: metaConfig,
@@ -8,15 +8,15 @@ module.exports = {
       options: {
         siteUrl: `https://bottlehs.com`,
       },
-    },    
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-182874893-1",
         head: true,
-        anonymize: true
+        anonymize: true,
       },
-    },    
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -85,7 +85,7 @@ module.exports = {
           },
         ],
       },
-    },  
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -94,15 +94,15 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             },
-          },          
+          },
           {
             resolve: `gatsby-remark-images-medium-zoom`, // Important!
             options: {
               //...
-            }
-          },          
+            },
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -112,44 +112,27 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              inlineCodeMarker: '%',
+              inlineCodeMarker: "%",
             },
           },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: `anchor-header`, 
-              maintainCase: false, 
+              className: `anchor-header`,
+              maintainCase: false,
               removeAccents: true,
-              elements: [`h1`, `h2`, 'h3', `h4`, `h5`],
+              elements: [`h1`, `h2`, "h3", `h4`, `h5`],
             },
-          },             
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-emoji`,                   
+          `gatsby-remark-emoji`,
         ],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        plugins: [
-          `gatsby-remark-images`,
-          `gatsby-remark-images-medium-zoom` // Important!
-        ],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              linkImagesToOriginal: false // Important!
-            }
-          },
-          {
-            resolve: `gatsby-remark-images-medium-zoom`, // Important!
-            options: {}
-          }
-        ],
         name: metaConfig.title,
         short_name: metaConfig.title,
         start_url: `/`,
@@ -168,8 +151,8 @@ module.exports = {
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,    
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,    
+    `gatsby-transformer-sharp`,
   ],
 }
