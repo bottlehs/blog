@@ -9,7 +9,7 @@ tags:
   - 애자일
 ---
 
-![프로젝트 킥오프 가이드](/assets/kickoff-meeting.jpg "프로젝트 킥오프 가이드")
+![프로젝트 킥오프 가이드](/assets/kickoff-meeting.png "프로젝트 킥오프 가이드")
 
 ## 킥오프 미팅
 
