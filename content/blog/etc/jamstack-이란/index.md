@@ -23,7 +23,7 @@ Jamstack은 Javascript, API 및 Markup의 약자이며 2015 년 Netlify의 CEO �
 
 아래는 전통적인 웹 구조 이다.
 
-![전통적인 웹](/assets/jamstack-전통적인-웹.png "전통적인 웹")
+![전통적인 웹](/assets/jamstack-conventional-web.png "전통적인 웹")
 
 브라우저에서 데이터를 요청하면 DB 서버에 접근하여 요청한 데이터를 가져와 화면에 보여준다. 웹 개발 시 데이터 저장 및 출력을 어떻게 할지도 전부 설계를 하여 개발을 진행해야 하고, 관리도 필요하다.
 
