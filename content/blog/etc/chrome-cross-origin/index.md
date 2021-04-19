@@ -19,6 +19,7 @@ open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args
 
 ```
 "[PATH_TO_CHROME]\chrome.exe" --disable-web-security --disable-gpu --user-data-dir=~/chromeTemp
+"[PATH_TO_CHROME]\chrome.exe --user-data-dir="C://Chrome dev session" --disable-web-security"
 ```
 
 ## Linux
