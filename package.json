@@ -3,7 +3,7 @@
   "private": true,
   "description": "blog",
   "version": "0.0.1",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "ByungHun Jen <qudgns9@gmail.com>",
   "bugs": {
     "url": "https://github.com/bottlehs/blog"
   },
@@ -60,7 +60,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
