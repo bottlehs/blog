@@ -1,13 +1,32 @@
-import React from "react"
+import React, { useMemo } from 'react'
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
+import { Category } from '../components/category'
+import { useCategory } from '../hooks/useCategory'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { CATEGORY_TYPE } from '../constants'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const categories = useMemo(
+    () => _.uniq(posts.map(({ frontmatter }) => frontmatter.category)),
+    []
+  );
+
+  const [category, selectCategory] = useCategory()  
+  const refinedPosts = useMemo(() =>
+    posts
+      .filter(
+        ({ frontmatter }) => {
+          return category === CATEGORY_TYPE.ALL ||
+          frontmatter.category === category
+        }
+      )
+      .slice(0, 1000 /*count * countOfInitialPost*/)
+  )
 
   if (posts.length === 0) {
     return (
@@ -27,8 +46,13 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      <Category
+        categories={categories}
+        category={category}
+        selectCategory={selectCategory}
+      />      
       <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
+        {refinedPosts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
@@ -81,7 +105,9 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
+          category
           description
+          tags
         }
       }
     }
