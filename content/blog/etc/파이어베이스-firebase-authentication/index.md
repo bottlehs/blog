@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 파이어베이스(Firebase) Authentication
 date: 2020-12-18T09:59:14.435Z
+category: etc
 description: 파이어베이스 인증의 목표는 인증 시스템을 손쉽게 구축하도록 지원한다. 이메일/비밀번호 계정, 전화 인증, Google, Twitter, Facebook, Github 로그인 등을 지원하는 종합적인 ID 솔루션을 제공한다.
 tags:
   - 파이어베이스
@@ -12,6 +13,7 @@ tags:
   - Functions
   - Authentication
 ---
+
 ![파이어베이스(Firebase) Authentication](/assets/logo-standard.png "파이어베이스(Firebase) Authentication")
 
 파이어베이스 인증의 목표는 인증 시스템을 손쉽게 구축하도록 지원한다. 이메일/비밀번호 계정, 전화 인증, Google, Twitter, Facebook, Github 로그인 등을 지원하는 종합적인 ID 솔루션을 제공한다.
