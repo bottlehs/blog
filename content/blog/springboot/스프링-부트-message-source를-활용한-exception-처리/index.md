@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 MessageSource를 활용한 Exception 처리
 date: 2021-04-08T21:59:29.537Z
+category: springboot
 description: ApplicationContext는 다양한 기능을 상속하고 있다, 그중 MessageSource는 다국어 처리를 할 때 사용되는 객체이다. 스프링 부트를 사용한다면 별다른 설정 필요없이 messages.properties 로 정의하면 된다.
 tags:
   - 스프링
