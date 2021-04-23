@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 애자일 스크럼
 date: 2021-04-22T23:23:59.354Z
+category: etc
 description: 애자일의 스크럼(Scrum)은 특정 개발 언어나 방법론에 의존적이지 않으며, 제품 개발 뿐만 아니라 일반적인 프로젝트 관리에도 사용 가능한 프로세스 프레임워크입니다. 스크럼(Scrum)은 작은 주기(Sprint)로 개발 및 검토를 하며 효율적인 협업 방법을 제공한다.
 tags:
   - 스크럼
