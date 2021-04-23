@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js 뷰 중첩 라우트
 date: 2021-04-04T11:11:34.709Z
+category: vue
 description: 라우터 컴포넌트 안에 하위에 라우터 컴포넌트를 중첩하여 구성하는 방식이 중첩 라우트 이다.
 tags:
   - vue
