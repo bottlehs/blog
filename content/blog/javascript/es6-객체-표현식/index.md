@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: ES6 객체 표현식
 date: 2020-12-13T19:15:26.956Z
+category: javascript
 description:
   ES6에서는 더욱 동적이고 간단하게 객체를 생성하고 할당하는 표현식을 제공한다. 만약, 객체의 속성을 변수명과 같은
   속성명으로 설정하려면 이를 간단하게 표현할 수 있다.
