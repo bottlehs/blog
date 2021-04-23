@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 MariaDB 연동
 date: 2021-04-01T22:29:29.537Z
+category: springboot
 description: JDBC는 자바 프로그램이 DBMS에 일관된 방식으로 접근할 수 있도록 API를 제공하는 자바 클래스들의 모임이다. MariaDB 특징은 기존에 MySQL 엔터프라이즈에서 플러그인으로 제공한 쓰레드풀 기능이 내장됐으며, 스토리지 엔진을 활용한 샤딩 기술을 제공한다. 즉, MySQL의 오픈소스 버전을 넘어 모든 버전을 대체할 수 있는 특징들을 갖추고 있다. JPA는 여러 ORM 전문가가 참여한 EJB 3.0 스펙 작업에서 기존 EJB ORM이던 Entity Bean을 JPA라고 바꾸고 JavaSE, JavaEE를 위한 영속성(persistence) 관리와 ORM을 위한 표준 기술이다. JPA는 ORM 표준 기술로 Hibernate, OpenJPA, EclipseLink, TopLink Essentials과 같은 구현체가 있고 이에 표준 인터페이스가 바로 JPA이다.
 tags:
   - 스프링
