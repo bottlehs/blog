@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Link, graphql } from "gatsby"
-
+import _ from 'lodash'
 import Bio from "../components/bio"
 import { Category } from '../components/category'
 import { useCategory } from '../hooks/useCategory'
@@ -12,9 +12,9 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const categories = useMemo(
-    () => _.uniq(posts.map(({ frontmatter }) => frontmatter.category)),
+    () => _.uniq(posts.map(({ frontmatter }) => frontmatter.category ? frontmatter.category : false)),
     []
-  );
+  )
 
   const [category, selectCategory] = useCategory()  
   const refinedPosts = useMemo(() =>
@@ -28,7 +28,7 @@ const BlogIndex = ({ data, location }) => {
       .slice(0, 1000 /*count * countOfInitialPost*/)
   )
 
-  if (posts.length === 0) {
+  if (refinedPosts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
@@ -96,7 +96,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { ne: null } } }
+    ) {
       nodes {
         excerpt
         fields {
