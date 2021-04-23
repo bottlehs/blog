@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue JS Router 설치 및 설정
 date: 2021-04-04T10:11:34.709Z
+category: vue
 description: 웹에서의 라우팅은 웹 페이지 간의 이동 방법을 뜻 한다. 예를 들면 아래와 같다. Vue.js의 공식 라우트 이고, Vue.js 코어와 긴밀하게 연결되어 SPA를 쉽게 구축 할 수 있다. 그리고 화면 간의 이동 시, 깜빡거림 없이 매끄럽게 전환 할수 있다. (HTML History API)
 tags:
   - vue
