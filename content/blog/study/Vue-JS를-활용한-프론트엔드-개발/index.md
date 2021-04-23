@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue JS를 활용한 프론트엔드 개발
 date: 2021-03-17T20:29:29.537Z
+category: study
 description: Vue 와 ECMAScript6 을 활용하여 웹페이지 개발 방법에 대해 학습하고, JamStack 기반 블로그를 개발 합니다.
 tags:
   - Vue.js
