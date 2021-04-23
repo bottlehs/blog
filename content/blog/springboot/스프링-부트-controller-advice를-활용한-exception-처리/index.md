@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 ControllerAdvice를 활용한 Exception 처리
 date: 2021-04-08T21:29:29.537Z
+category: springboot
 description: 오류 처리는 프로그램을 개발하는데 있어서 매우 큰 부분을 차지한다. 오류를 예측해서 비정상적인 상황이 발생하지 않게 하는 것은 중요하다. 과하다할 만큼 상세하고 다양하게 예외를 잡아 처리해준다면, 클라이언트도 그렇고 서버도 그렇고 더 안정적인 프로그램이 될 수 있게 도와준다. 예외 처리에 집중 하다 보면, 비즈니스 로직에 집중하기 어렵고, 비즈니스 로직과 관련된 코드보다 예외 처리를 위한 코드가 더 많아지는 경우도 생기게 된다. 이런 문제를 조금이라도 개선하기 위해 @ExceptionHandler와 @ControllerAdvice를 사용한다.
 tags:
   - 스프링
