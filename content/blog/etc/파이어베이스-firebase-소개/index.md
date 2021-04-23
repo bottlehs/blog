@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 파이어베이스(Firebase) 소개
 date: 2020-12-13T19:44:35.960Z
+category: etc
 description: 파이어베이스(https://firebase.google.com)는 웹 모바일 개발에 필요한 통합 앱 플랫폼을 제공하는 BaaS(Backend as a Service) 이다. 초기에는 백엔드 데이터베이스를 구축할 필요 없이 API 형태로 데이터를 저장하고 자겨올 수 있는 기능에 국한되어 있었으나, 현재는 인증 및 실시간 데이터베이스, 클라우드 저장소, 호스팅, 애널리틱스 등 다양한 기능들이 통합되었다.
 tags:
   - 파이어베이스
@@ -12,6 +13,7 @@ tags:
   - Functions
   - Authentication
 ---
+
 ![파이어베이스(Firebase) 소개](/assets/logo-standard.png "파이어베이스(Firebase) 소개")
 
 ## 파이어베이스 소개
@@ -40,11 +42,11 @@ tags:
 
 ![파이어베이스 콘솔](/assets/파이어베이스-콘솔.jpg "파이어베이스 콘솔")
 
-* **Authentication** : 인증 부분
-* **Cloud Firestore** : NoSQL 데이터베이스
-* **Realtime Database** : 실시간 데이터베이스
-* **Storage** : 스토라지
-* **Hosting** : 호스팅
-* **Functions** : 클라우드 function
+- **Authentication** : 인증 부분
+- **Cloud Firestore** : NoSQL 데이터베이스
+- **Realtime Database** : 실시간 데이터베이스
+- **Storage** : 스토라지
+- **Hosting** : 호스팅
+- **Functions** : 클라우드 function
 
 파이어베이스 요금제는 무료인 Spark 버전 부터, 종량제인 Blaze 버전이 있다. 무료 버전은 기본적인 데이터베이스, 저장소, 함수, 호스팅 등을 사용이 가능하다. 만약, Google Cloud Platform으로 프로젝트를 확장하기 위해서는 Blaze 버전을 선택해야 하며, 이는 Spark 버전의 할당량만큼 무료로 사용 가능하다.
