@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 배움이란 모방에서 시작해 독창으로 나아가는 과정이다
 date: 2021-02-05T17:58:59.354Z
+category: etc
 description: 배움이란 모방에서 시작해 독창으로 나아가는 과정이다. 그래서 앞선 이가 남긴 발자국을 따라 밟을 때는 겸손해야 한다.
 tags:
   - 정약용

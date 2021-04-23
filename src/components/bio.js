@@ -34,17 +34,16 @@ const Bio = () => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-
-  const avatar = data?.avatar?.childImageSharp?.fixed
-
+  const author = data.site.siteMetadata.author
+  const social = data.site.siteMetadata.social
+  const avatar = data.avatar.childImageSharp.fixed
+  
   return (
     <div className="bio">
       {avatar && (
         <Image
           fixed={avatar}
-          alt={author?.name || ``}
+          alt={author.name || ``}
           className="bio-avatar"
           imgStyle={{
             borderRadius: `50%`,

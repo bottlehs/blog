@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 Custom Annotation(커스텀 어노테이션), GET 요청 ~ JSON 응답
 date: 2021-03-16T20:29:29.537Z
+category: springboot
 description: 프로그램에 관한 데이터를 제공하거나 코드에 정보를 추가할 때 사용하는 것을 어노테이션이라고 한다. 대표적인 어노테이션으로는 @Controller, @SpringBootApplication등이 있다. 하지만 위 예시 어노테이션들은 이미 만들어진 어노테이션들이고, 직접 커스텀해서 어노테이션을 만들 수 있는데, 이것을 커스텀 어노테이션이라고 한다.
 tags:
   - 스프링

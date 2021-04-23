@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: JavaScript 기본 문법 변수,조건문,반복문,함수
 date: 2021-03-21T09:06:14.444Z
+category: javascript
 description: 자바스크립트에는 적연 변수와 지역 변수가 있고 연산자는 산술, 증감, 비트, 시프트, 대입, 비교, 논리, 조건 등이 있다. 마지막으로 조건문는 if - else, switch 등이 있다. 자바스크립트 연산자는 산술, 증감, 비트, 시프트, 대입, 비교, 논리, 조건 등이 있다.
 tags:
   - Javascript

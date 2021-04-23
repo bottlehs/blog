@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js Redirect / Alias
 date: 2021-04-04T15:11:34.709Z
+category: vue
 description: 리디렉션은 routes 에서 설정 할 수 있습니다. 별칭은 /user의 별칭은 /post는 사용자가 /post를 방문했을 때 URL은 /post을 유지하지만 사용자가 /user를 방문한 것처럼 매칭하는것 이다. 아래 처럼 위 라우터를 구현 할수 있다.
 tags:
   - vue

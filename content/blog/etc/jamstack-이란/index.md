@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: JAMStack 이란
 date: 2021-04-18T22:11:34.709Z
+category: etc
 description: Jamstack은 Javascript, API 및 Markup의 약자이며 2015 년 Netlify의 CEO 인 Mathias Biilmann이 처음 만들어졌습니다. 서버 없이 배포 운영되는 모던 웹 개발 구조 이며, 장점으로는 높은 안정성, 빠른 성능, 확장성 및 낮은 비용, 쉬운 자동화 등이 있습니다.
 tags:
   - JAMStack

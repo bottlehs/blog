@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Spring Boot를 활용한 Rest API 개발
 date: 2021-03-17T20:29:29.537Z
+category: study
 description: 스프링 부트를 활용하여 REST API를 개발하고 Swagger UI 로 API 문서화 자동화에 대해 학습 하고, Spring Boot & MariaDB, & JPA 를 활용해 REST API 를 개발 합니다.
 tags:
   - 스프링

@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Gradle, Maven 기본 개념과 Gradle Multi Project
 date: 2021-03-23T20:29:29.537Z
+category: springboot
 description: Maven, Gradle은 라이브러리 관리, 프로젝트 관리, 단위 테스트 시 의존성 관리를 한다. Maven은 pom.xml을 이용한 정형화된 빌드 시스템, Gradle은 build.gradle을 이용한 정형화된 빌드 시스템 이다. Gradle은 Multi Project 를 구성 하여 공통된 부분을 효율적으로 활용 할수 있다.
 tags:
   - XML

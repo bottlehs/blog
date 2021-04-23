@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 API 인터페이스 및 결과 데이터 구조 설계
 date: 2021-04-08T20:29:29.537Z
+category: springboot
 description: Http 프로토콜은 여러 가지 사용목적에 따라 GET, POST, PUT, DELETE, FETCH.. 등 HttpMethod를 제공하고 있다. 주소 체계는 정형화된 구조로 구성하고 HttpMethod를 통해 리소스의 사용목적을 판단되도록 해야 한다.
 tags:
   - 스프링

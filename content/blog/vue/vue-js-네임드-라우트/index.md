@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js 뷰 네임드 라우트
 date: 2021-04-04T15:11:34.709Z
+category: vue
 description: 라우트에 연결하거나 탐색을 수행 할 때 이름이 있는 라우트를 사용할수 있다. 사용 법은 routes 에 name 옵션을 지정 하면 된다. 라우트 관리가 편리 하다 라는 장점이 있다.
 tags:
   - vue

@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: JavaScript MVC vs MVVM 개념의 이해
 date: 2021-03-20T09:03:14.444Z
+category: javascript
 description: MVC 모델이 가지고 있는 정보를 따로 저장해서는 안된다. 모델이나 컨트롤러와 같이 다른 구성 요소를 몰라야한다. 변경이 일어나면 변경 통지에 대한 처리 방법을 구현해야한다. 뷰는 사용자에게 데이타를 출력하고 표현하는 영역이다. 즉, 사용자가 눈으로 확인할 수 있는 UI 화면이다. 컨트롤러는 컨트롤러는 모델과 뷰의 중개자로써 사용자의 입력을 받고 처리하는 부분이다.
 tags:
   - Javascript

@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: RTPS 와 RebbleOS(Pebble)
 date: 2020-10-13T07:11:12.292Z
+category: rtos
 description: RTOS(←Real Time Operating System)는 실시간 응용 프로그램을 위해 개발된 운영 체제이다. Pebble OS 는 RTOS 에 기반하여 개발되었다.
 tags:
   - RTOS

@@ -3,7 +3,7 @@
   "private": true,
   "description": "blog",
   "version": "0.0.1",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "ByungHun Jen <qudgns9@gmail.com>",
   "bugs": {
     "url": "https://github.com/bottlehs/blog"
   },
@@ -20,6 +20,7 @@
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^2.6.0",
     "gatsby-plugin-google-analytics": "^2.4.0",
+    "gatsby-plugin-lodash": "^4.3.0",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-netlify-cms": "^4.3.16",
     "gatsby-plugin-offline": "^3.2.29",
@@ -39,6 +40,7 @@
     "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.12.1",
     "netlify-cms-app": "^2.14.33",
+    "lodash": "^4.17.21",
     "prismjs": "^1.23.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -46,6 +48,8 @@
     "react-icons": "^4.2.0",
     "react-share": "^4.4.0",
     "react-switch": "^5.0.1",
+    "smooth-scroll": "^16.0.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75"
   },
@@ -58,7 +62,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
