@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: ES6 For ... Of 루프
 date: 2020-11-24T19:22:59.726Z
+category: javascript
 description:
   기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할
   수 있는 기능을 제공한다. iterator는 어떤 데이터 집합을 순서대로 접근할 때 사용된다. for..of 는
@@ -13,6 +14,7 @@ tags:
   - ECMA2015
   - JS
 ---
+
 ![ES6 For ... Of 루프](/assets/es6.png "ES6 For ... Of 루프")
 
 기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할 수 있는 기능을 제공한다.
@@ -40,18 +42,13 @@ for (let char of "coffee") {
 }
 
 // 출력 결과
-("c")
-("o")
-("f")
-("f")
-("e")
-("e")
+"c"("o")("f")("f")("e")("e")
 ```
 
 DOM에 접근하여 반복된 리스트를 가져오는데 유용할 수 있다.
 
 ```javascript
-<ul>
+;<ul>
   <li>americano</li>
   <li>espresso</li>
 </ul>

@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Chrome cross origin
 date: 2020-10-18T07:11:12.292Z
+category: etc
 description: OSX, Windows Chrome cross origin
 tags:
   - OSX

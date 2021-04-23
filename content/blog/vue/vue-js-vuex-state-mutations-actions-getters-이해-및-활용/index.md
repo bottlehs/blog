@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js Vuex State, Mutations, Actions, Getters 이해 및 활용
 date: 2021-04-11T20:11:34.709Z
+category: vue
 description: Vuex State 는 데이터 상태를 관리 하며, Getters 를 사용하여 동일한 로직을 중앙에서 관리 하도록한다. Mutations 에는 순차적인 로직들만 선언하고 Actions 에는 비 순차적 또는 비동기 처리 로직들을 선언한다. 그리고 mapGetters, mapMutations, mapActions 등 헬퍼 함수가 있다.
 tags:
   - vue

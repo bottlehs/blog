@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 Unit Test
 date: 2021-04-08T23:19:29.537Z
+category: springboot
 description: 유닛 테스트(unit test)는 컴퓨터 프로그래밍에서 소스 코드의 특정 모듈이 의도된 대로 정확히 작동하는지 검증하는 절차다. JUnit 은 Java에서 독립된 단위테스트(Unit Test)를 지원해주는 프레임워크이다.
 tags:
   - 스프링

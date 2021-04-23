@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: 스프링 부트 Swagger API 문서 자동화
 date: 2021-04-01T23:39:29.537Z
+category: springboot
 description: Swagger는 개발자가 REST 웹 서비스를 설계, 빌드, 문서화, 소비하는 일을 도와주는 대형 도구 생태계의 지원을 받는 오픈 소스 소프트웨어 프레임워크이다. 대부분의 사용자들은 스웨거 UI 도구를 통해 스웨거를 식별하며 스웨거 툴셋에는 자동화된 문서화, 코드 생성, 테스트 케이스 생성 지원이 포함되며, 간단한 설정으로 프로젝트에서 지정한 URL들을 HTML화면으로 확인할 수 있게 해준다.
 tags:
   - 스프링

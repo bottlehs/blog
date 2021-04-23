@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: HTTP, HTTP2 기본 개념
 date: 2021-03-19T23:29:29.537Z
+category: springboot
 description: HTTP1.1은 1999년 출시 이후 지금까지 가장 많이 사용되고 있다. HTTP는 웹상에서 클라이언트와 웹서버간 통신을 위한 프로토콜 중 하나다. HTTP1.1은 기본적으로 연결당 하나의 요청과 응답을 처리하기 때문에 동시전송 문제와 다수의 리소스를 처리하기에 속도와 성능 이슈를 가지고 있다. HTTP2는 성능 뿐만 아니라 속도면에서도 월등하다. Multiplexed Streams(한 커넥션에 여러개의 메세지를 동시에 주고 받을 수 있다), Stream Prioritization(요청 리소스간 의존관계를 설정), Server Push(HTML문서상에 필요한 리소스를 클라이언트 요청없이 보내줄 수 있다), Header Compression(Header 정보를 HPACK압충방식을 이용하여 압축전송)을 사용하여 성능을 획기적으로 향상 시켰다.
 tags:
   - HTTP

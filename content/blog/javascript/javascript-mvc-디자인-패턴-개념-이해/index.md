@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: JavaScript MVC 디자인 패턴 개념 이해
 date: 2021-03-20T09:01:14.444Z
+category: javascript
 description: 사용자는 애플리케이션과 상호작용한다. 컨트롤러의 이벤트 헨들러가 작동된다. 컨트롤러는 모델로부터 데이터를 요구하고, 그 결과를 뷰로 전달한다. 뷰는 데이터를 사용자에게 보여준다.
 tags:
   - Javascript
