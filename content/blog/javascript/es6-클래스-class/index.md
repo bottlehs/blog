@@ -2,7 +2,9 @@
 templateKey: blog-post
 title: ES6 클래스 (Class)
 date: 2020-11-05T14:56:31.083Z
-description: 기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여
+category: javascript
+description:
+  기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여
   객체지향을 구현 할수 있다. ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으로 다룰 수 있게 한다. 클래스 자신도 함수이며,
   생성자를 가지고 함수를 생성하는 새로운 구문이다.
 tags:
@@ -12,6 +14,7 @@ tags:
   - Function
   - JavaScript
 ---
+
 ![ES6 클래스 (Class)](/assets/es6.png "ES6 클래스 (Class)")
 
 기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했다. ES6에서는 class 키워드를 사용하여 객체지향을 구현 할수 있다.
@@ -20,34 +23,34 @@ tags:
 
 ```javascript
 function Coffee(name) {
-   this.name = name;
+  this.name = name
 }
 
-Coffee.prototype.getName = function() {
-   return this.name;
+Coffee.prototype.getName = function () {
+  return this.name
 }
 
-var americano = new Coffee("americano");
-console.log(americano.getName()); // americano
+var americano = new Coffee("americano")
+console.log(americano.getName()) // americano
 ```
 
 ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으로 다룰 수 있게 한다. 여기서 클래스 자신도 함수이며, 생성자를 가지고 함수를 생성하는 새로운 구문이다. 아래는 클래스를 사용한 예시이다.
 
 ```javascript
 class Coffee {
-   constructor(name) {
-      this.name = name;
-      this.type = "americano";
-   }
+  constructor(name) {
+    this.name = name
+    this.type = "americano"
+  }
 
-   getName() {
-      return this.name;
-   }
+  getName() {
+    return this.name
+  }
 }
 
-let coffee = new Coffee("americano");
-console.log(coffee.getName()); // americano
-console.log(typeof Coffee);
+let coffee = new Coffee("americano")
+console.log(coffee.getName()) // americano
+console.log(typeof Coffee)
 ```
 
 class 키워드를 앞에 붙여 선언한다. 생성자 함수는 constructor로 정의하고, 속성과 멤버 변수를 설정할 수 있다.
@@ -56,15 +59,15 @@ class 키워드를 앞에 붙여 선언한다. 생성자 함수는 constructor�
 
 ```javascript
 class Americano extends Coffee {
-   constuctor(name) {
-      super(name);
-      this.type = "americano";
-   }
+  constuctor(name) {
+    super(name)
+    this.type = "americano"
+  }
 }
 
-let americano = new Americano("been");
-console.log(americano instanceof Coffee); // true
-console.log(americano.getName()); // been
+let americano = new Americano("been")
+console.log(americano instanceof Coffee) // true
+console.log(americano.getName()) // been
 ```
 
 extends 키워드를 활용해 Coffee 클래스로부터 상속을 받는다. 또한, 다른 객체지향 언어와 마찬가지와 부모 클래스 생성자를 호출하려면 super 키워드를 이용해 호출한다. Americano는 Coffee의 서브 클래스이므로 Coffee의 인스턴스로 확인되는 것을 확인할수 있다.
@@ -73,10 +76,10 @@ extends 키워드를 활용해 Coffee 클래스로부터 상속을 받는다. �
 
 ```javascript
 class Coffee {
-   static getName() {
-      return "Coffee";
-   }
-};
+  static getName() {
+    return "Coffee"
+  }
+}
 
-console.log(Coffee.getName()); // Coffee
+console.log(Coffee.getName()) // Coffee
 ```
