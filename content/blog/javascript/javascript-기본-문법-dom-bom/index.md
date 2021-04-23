@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: JavaScript 기본 문법 DOM, BOM
 date: 2021-03-20T09:05:14.444Z
+category: javascript
 description: JavaScript는 웹 브라우저 기반의 객체 위에서 동작합니다. 그래서 DOM 과 BOM에 대해 자세히 알 필요가 있다. DOM 은 Document Object Model 이다. BOM 은 Browser Object Model 이다.
 tags:
   - Javascript
