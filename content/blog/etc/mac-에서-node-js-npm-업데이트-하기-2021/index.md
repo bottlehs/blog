@@ -71,6 +71,7 @@ $ sudo npm install -g n
 ```
 
 ### npm 특정 버전 재설치
+
 ```
 $ sudo npm install -g n <version>
 ```
