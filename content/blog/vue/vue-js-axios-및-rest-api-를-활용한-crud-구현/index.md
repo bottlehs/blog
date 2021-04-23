@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js Axios 및 Rest Api 를 활용한 CRUD 구현
 date: 2021-04-11T23:11:34.709Z
+category: vue
 description: Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리이다. 비동기 방식은 웹페이지를 리로드하지 않고 데이터를 불러오는 방식이며,Ajax를 통해서 서버에 요청을 한 후 멈추어 있는 것이 아니라 그 프로그램은 계속 돌아간다는 의미를 내포하고 있다.
 tags:
   - vue
