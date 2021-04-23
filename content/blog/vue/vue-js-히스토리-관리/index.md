@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js 히스토리 관리
 date: 2021-04-04T15:11:34.709Z
+category: vue
 description: vue-router의 기본 모드는 hash mode 입니다. URL 해시를 사용하여 전체 URL을 시뮬레이트하므로 URL이 변경될 때 페이지가 다시 로드 되지 않는다. 해시를 제거하기 위해 라우터의 history 모드 를 사용할 수 있다. history.pushState API를 활용하여 페이지를 다시 로드하지 않고도 URL 탐색을 할 수 있다.
 tags:
   - vue
