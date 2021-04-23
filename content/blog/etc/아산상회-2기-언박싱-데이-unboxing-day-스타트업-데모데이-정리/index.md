@@ -4,9 +4,9 @@ title: 아산상회 2기 언박싱 데이 (Unboxing Day) - 스타트업 데모�
 date: 2021-04-23T23:22:55.354Z
 description: 아산나눔재단에서 주최하는 글로벌 팀창업 프로그램 아산상회 Unboxing Day 회사별 특징 정리
 tags:
-  - 스크럼
-  - 프로젝트
-  - 애자일
+  - 아산나눔재단
+  - 아산상회
+  - 데모데이
 ---
 
 ![아산상회 언박싱 데이 (Unboxing Day) - 스타트업 데모데이](/assets/asansanghoeunboxing.png "아산상회 언박싱 데이 (Unboxing Day) - 스타트업 데모데이")
