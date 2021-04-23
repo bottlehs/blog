@@ -2,6 +2,7 @@
 templateKey: blog-post
 title: Vue Js Vuex 저장소(store) 속성 및 모듈화
 date: 2021-04-11T21:11:34.709Z
+category: vue
 description: 중간 크기 이상의 복잡한 앱을 제작할 때 getters & mutations & actions 의 이름을 유일하게 정하지 않으면 namespace 충돌이 난다. 따라서, 네임스페이스를 구분하기 위해 types.js 로 각 속성의 이름들을 빼고 store.js 와 각 컴포넌트에 import 하여 사용하는 방법이 있다. 혹은 modules 라는 폴더로 만들어 각 단위별로 파일을 분리해서 관리하는 방법도 있다.
 
 tags:
