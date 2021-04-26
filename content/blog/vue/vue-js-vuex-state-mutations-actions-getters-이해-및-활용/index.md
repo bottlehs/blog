@@ -55,7 +55,7 @@ store 를 사용해 보기 위해 `views/Vuex.vue` 컴포넌트를 하나 생성
 
 그리고 아래와 같이 `$store.state.count` 를 사용하여 Vuex 컴포넌트에 사용해 보겠습니다.
 
-```vue
+```html
 <template>
   <div class="vuex">
     <h1>Vuex 화면 입니다.</h1>
@@ -172,7 +172,7 @@ getters 를 Vuex 에 등록하고 사용하였다. 참고로, computed 의 장�
 
 **view/Vuex.vue**
 
-```vue
+```html
 <template>
   <div class="vuex">
     <h1>Vuex 화면 입니다.</h1>
@@ -183,29 +183,29 @@ getters 를 Vuex 에 등록하고 사용하였다. 참고로, computed 의 장�
 </template>
 
 <script>
-import VuexChildA from "../components/VuexChildA"
-import VuexChildB from "../components/VuexChildB"
+  import VuexChildA from "../components/VuexChildA"
+  import VuexChildB from "../components/VuexChildB"
 
-export default {
-  name: "Vuex",
-  components: {
-    VuexChildA,
-    VuexChildB,
-  },
-}
+  export default {
+    name: "Vuex",
+    components: {
+      VuexChildA,
+      VuexChildB,
+    },
+  }
 </script>
 
 <style scoped>
-.main {
-  border: solid 5px #000;
-  padding: 100px;
-}
+  .main {
+    border: solid 5px #000;
+    padding: 100px;
+  }
 </style>
 ```
 
 **components/VuexChildA.vue**
 
-```vue
+```html
 <template>
   <div class="vuex-child-a">
     <h1>Vuex Child A</h1>
@@ -214,27 +214,27 @@ export default {
 </template>
 
 <script>
-export default {
-  name: "VuexChildA",
-  computed: {
-    count() {
-      return this.$store.getters.getCount
+  export default {
+    name: "VuexChildA",
+    computed: {
+      count() {
+        return this.$store.getters.getCount
+      },
     },
-  },
-}
+  }
 </script>
 
 <style scoped>
-.vuex-child-a {
-  border: solid 5px #000;
-  padding: 100px;
-}
+  .vuex-child-a {
+    border: solid 5px #000;
+    padding: 100px;
+  }
 </style>
 ```
 
 **components/VuexChildB.vue**
 
-```vue
+```html
 <template>
   <div class="vuex-child-b">
     <h1>Vuex Child B</h1>
@@ -243,21 +243,21 @@ export default {
 </template>
 
 <script>
-export default {
-  name: "VuexChildB",
-  computed: {
-    count() {
-      return this.$store.getters.getCount
+  export default {
+    name: "VuexChildB",
+    computed: {
+      count() {
+        return this.$store.getters.getCount
+      },
     },
-  },
-}
+  }
 </script>
 
 <style scoped>
-.vuex-child-b {
-  border: solid 5px #000;
-  padding: 100px;
-}
+  .vuex-child-b {
+    border: solid 5px #000;
+    padding: 100px;
+  }
 </style>
 ```
 
@@ -475,7 +475,7 @@ mapGetters 와 마찬가지로, Vuex 에 내장된 mapMutations 를 이용하여
 
 **components/VuexChildA.vue**
 
-```vue
+```html
 <template>
   <div class="vuex-child-a">
     <h1>Vuex Child A</h1>
@@ -485,29 +485,29 @@ mapGetters 와 마찬가지로, Vuex 에 내장된 mapMutations 를 이용하여
 </template>
 
 <script>
-import { mapMutations } from "vuex"
+  import { mapMutations } from "vuex"
 
-export default {
-  name: "VuexChildA",
-  // eslint-disable-next-line no-undef
-  computed: {
-    count() {
-      return this.$store.getters.getCount
+  export default {
+    name: "VuexChildA",
+    // eslint-disable-next-line no-undef
+    computed: {
+      count() {
+        return this.$store.getters.getCount
+      },
     },
-  },
-  methods: {
-    ...mapMutations({
-      addCount: "addCount", // 앞 addCounter 는 해당 컴포넌트의 메서드를, 뒤 addCounter 는 Vuex 의 Mutations 를 의미
-    }),
-  },
-}
+    methods: {
+      ...mapMutations({
+        addCount: "addCount", // 앞 addCounter 는 해당 컴포넌트의 메서드를, 뒤 addCounter 는 Vuex 의 Mutations 를 의미
+      }),
+    },
+  }
 </script>
 
 <style scoped>
-.vuex-child-a {
-  border: solid 5px #000;
-  padding: 100px;
-}
+  .vuex-child-a {
+    border: solid 5px #000;
+    padding: 100px;
+  }
 </style>
 ```
 
@@ -566,7 +566,7 @@ actions: {
 
 ![Vue Js Vuex Actions](/assets/vue-vuex-actions.png "Vue Js Vuex Actions")
 
-```vue
+```html
 <template>
   <div class="vuex">
     <h1>Vuex 화면 입니다.</h1>
@@ -579,26 +579,26 @@ actions: {
 </template>
 
 <script>
-import VuexChildA from "../components/VuexChildA"
-import VuexChildB from "../components/VuexChildB"
+  import VuexChildA from "../components/VuexChildA"
+  import VuexChildB from "../components/VuexChildB"
 
-export default {
-  name: "Vuex",
-  components: {
-    VuexChildA,
-    VuexChildB,
-  },
-  methods: {
-    // Mitations
-    addCount() {
-      this.$store.commit("addCount", 10)
+  export default {
+    name: "Vuex",
+    components: {
+      VuexChildA,
+      VuexChildB,
     },
-    // Actions
-    actionAddCount() {
-      this.$store.dispatch("addCount")
+    methods: {
+      // Mitations
+      addCount() {
+        this.$store.commit("addCount", 10)
+      },
+      // Actions
+      actionAddCount() {
+        this.$store.dispatch("addCount")
+      },
     },
-  },
-}
+  }
 </script>
 ```
 
@@ -652,7 +652,7 @@ export default new Vuex.Store({
 
 Vuex 에 내장된 helper 인 mapActions 를 사용하여 조금더 직관적으로 만들수 있다.
 
-```vue
+```html
 <template>
   <div class="vuex">
     <h1>Vuex 화면 입니다.</h1>
@@ -665,25 +665,25 @@ Vuex 에 내장된 helper 인 mapActions 를 사용하여 조금더 직관적으
 </template>
 
 <script>
-import VuexChildA from "../components/VuexChildA"
-import VuexChildB from "../components/VuexChildB"
+  import VuexChildA from "../components/VuexChildA"
+  import VuexChildB from "../components/VuexChildB"
 
-import { mapActions } from "vuex"
-export default {
-  name: "Vuex",
-  components: {
-    VuexChildA,
-    VuexChildB,
-  },
-  methods: {
-    ...mapActions({
-      actionsAddCount: "addCount",
-    }),
-    addCount() {
-      this.$store.commit("addCount", 10)
+  import { mapActions } from "vuex"
+  export default {
+    name: "Vuex",
+    components: {
+      VuexChildA,
+      VuexChildB,
     },
-  },
-}
+    methods: {
+      ...mapActions({
+        actionsAddCount: "addCount",
+      }),
+      addCount() {
+        this.$store.commit("addCount", 10)
+      },
+    },
+  }
 </script>
 ```
 

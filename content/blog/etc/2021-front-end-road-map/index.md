@@ -1,13 +1,13 @@
 ---
 templateKey: blog-post
-title: 2021 Front - end Road Map
+title: 2021 Front end Road Map
 date: 2021-04-25T17:58:59.354Z
 category: etc
 description: 2021년 Front End Road Map HTTP/S, HTML, CSS, JavaScript, NPM, BEM, Styled Component, CSS Module, Prettier, Jest, Cypress, Electron 등..
 tags:
-  - road map
+  - roadmap
   - frontend
-  - 2021
+  - 2021년
 ---
 
 2021년도에는 아래와 같은 순서로 하나하나 살펴 보고자 한다.
