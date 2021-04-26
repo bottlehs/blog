@@ -186,7 +186,7 @@ Method: DELETE
 4. `read()` 함수에서 axios 를 활용하여 sample api 를 GET 으로 호출 한다.
 5. 응답값 `response` 에서 items, totalItems, totalPages 를 각각 Vue data 변수에 대입해 준다.
 
-```vue
+```html
 <template>
   <div class="vuex">
     <h1>Sample 화면 입니다.</h1>
@@ -199,83 +199,83 @@ Method: DELETE
 </template>
 
 <script>
-import http from "../http"
+  import http from "../http"
 
-export default {
-  name: "Vuex",
-  components: {},
-  data() {
-    return {
-      items: [],
-      totalItems: 0,
-      totalPages: 0,
-    }
-  },
-  methods: {
-    delete(id) {
-      http
-        .delete("/api/sample/sample/" + id)
-        .then(response => {
-          const { data } = response
-          console.log(data)
-        })
-        .catch(error => {
-          alert(error)
-        })
+  export default {
+    name: "Vuex",
+    components: {},
+    data() {
+      return {
+        items: [],
+        totalItems: 0,
+        totalPages: 0,
+      }
     },
-    create(id, params) {
-      http
-        .post("/api/sample/sample/", params)
-        .then(response => {
-          const { data } = response
-          console.log(data)
-        })
-        .catch(error => {
-          alert(error)
-        })
+    methods: {
+      delete(id) {
+        http
+          .delete("/api/sample/sample/" + id)
+          .then(response => {
+            const { data } = response
+            console.log(data)
+          })
+          .catch(error => {
+            alert(error)
+          })
+      },
+      create(id, params) {
+        http
+          .post("/api/sample/sample/", params)
+          .then(response => {
+            const { data } = response
+            console.log(data)
+          })
+          .catch(error => {
+            alert(error)
+          })
+      },
+      update(id, params) {
+        http
+          .put("/api/sample/sample/" + id, {
+            params: params,
+          })
+          .then(response => {
+            const { data } = response
+            console.log(data)
+          })
+          .catch(error => {
+            alert(error)
+          })
+      },
+      read() {
+        let params = {}
+        http
+          .get("/api/sample/sample", {
+            params: params,
+          })
+          .then(response => {
+            const { data } = response
+            console.log(data)
+            this.items = data.items
+            this.totalItems = data.totalItems
+            this.totalPages = data.totalPages
+          })
+          .catch(error => {
+            alert(error)
+          })
+      },
     },
-    update(id, params) {
-      http
-        .put("/api/sample/sample/" + id, {
-          params: params,
-        })
-        .then(response => {
-          const { data } = response
-          console.log(data)
-        })
-        .catch(error => {
-          alert(error)
-        })
+    created() {
+      console.log(http)
+      this.read()
     },
-    read() {
-      let params = {}
-      http
-        .get("/api/sample/sample", {
-          params: params,
-        })
-        .then(response => {
-          const { data } = response
-          console.log(data)
-          this.items = data.items
-          this.totalItems = data.totalItems
-          this.totalPages = data.totalPages
-        })
-        .catch(error => {
-          alert(error)
-        })
-    },
-  },
-  created() {
-    console.log(http)
-    this.read()
-  },
-}
+  }
 </script>
 
 <style scoped>
-.main {
-  border: solid 5px #000;
-  padding: 100px;
-}
+  .main {
+    border: solid 5px #000;
+    padding: 100px;
+  }
 </style>
 ```

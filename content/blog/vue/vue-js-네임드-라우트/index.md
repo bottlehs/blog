@@ -41,11 +41,11 @@ const routes = [
 
 ```
 
-```vue
+```html
 <router-link to="/user/1">User 1</router-link>
 ```
 
-```vue
+```html
 <router-link :to="{ name: 'user', params: { id: '1' } }">User 1</router-link>
 ```
 
@@ -64,11 +64,11 @@ const routes = [
 
 ```
 
-```vue
+```html
 <router-link to="/user/profile/1">User 1</router-link>
 ```
 
-```vue
+```html
 <router-link :to="{name:"user", params : { id : 1 }}">User 1</router-link>
 ```
 

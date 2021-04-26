@@ -47,7 +47,7 @@ Vuex는 Vue.js 애플리케이션에 대한 상태 관리 패턴 + 라이브러�
 - view : 데이터가 표현될 template
 - actions : 사용자의 입력에 따라 반응할 methods
 
-```vue
+```html
 <!-- view -->
 <template>
   <div class="vuex">
@@ -57,20 +57,20 @@ Vuex는 Vue.js 애플리케이션에 대한 상태 관리 패턴 + 라이브러�
 </template>
 
 <script>
-export default {
-  // state
-  data() {
-    return {
-      counter: 0,
-    }
-  },
-  // actions
-  methods: {
-    ameriano() {
-      this.counter++
+  export default {
+    // state
+    data() {
+      return {
+        counter: 0,
+      }
     },
-  },
-}
+    // actions
+    methods: {
+      ameriano() {
+        this.counter++
+      },
+    },
+  }
 </script>
 ```
 

@@ -182,31 +182,31 @@ const routes = [
 
 **views/home**
 
-```vue
+```html
 <template>
   <div class="home"></div>
 </template>
 
 <script>
-export default {
-  name: "Home",
-  components: {},
-}
+  export default {
+    name: "Home",
+    components: {},
+  }
 </script>
 ```
 
 **views/about**
 
-```vue
+```html
 <template>
   <div class="about"></div>
 </template>
 
 <script>
-export default {
-  name: "About",
-  components: {},
-}
+  export default {
+    name: "About",
+    components: {},
+  }
 </script>
 ```
 

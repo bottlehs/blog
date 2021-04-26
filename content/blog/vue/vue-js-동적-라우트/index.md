@@ -56,16 +56,16 @@ const routes = [
 
 **views/Post.vue**
 
-```vue
+```html
 <template>
   <div class="post">{{ $route.params.id }}</div>
 </template>
 
 <script>
-export default {
-  name: "Post",
-  components: {},
-}
+  export default {
+    name: "Post",
+    components: {},
+  }
 </script>
 ```
 
