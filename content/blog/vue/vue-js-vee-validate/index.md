@@ -22,7 +22,7 @@ tags:
 
 ## Form Validation
 
-먼저 Vue 를 활용하여 Form Validation 을 구현해 볼것 이다. 아래와 같이 Form 이 주어지고 이메일, 비밀번호 검사를 해야한다고 가정해 보자
+먼저 Vue 를 활용하여 Form Validation 을 구현해 볼것 이다. 아래와 같이 Form 이 주어지고 이메일, 비밀번호 유효성 검사를 해야한다고 가정해 보자
 
 ```html
 <template>
