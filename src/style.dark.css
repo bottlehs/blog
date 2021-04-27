@@ -1,14 +1,3 @@
-:root {
-  --color-dark-bg: #1b1b1b; /* no */
-  --color-dark-primary: #a5a5a5; /* #000000 */
-  --color-dark-text: #a5a5a5; /* #1a1a1a */
-  --color-dark-text-hover: #1351f9; /* #057dbc */
-  --color-dark-text-light: #a5a5a5; /* #757575 */
-  --color-dark-heading: #a5a5a5; /* #000000 */
-  --color-dark-heading-black: #a5a5a5; /* black */
-  --color-dark-accent: #2f2f2f; /* #d1dce5 */
-}
-
 body.dark {
   background-color: var(--color-dark-bg);
   color: var(--color-dark-text);
@@ -58,4 +47,9 @@ body.dark .post-list-item h2 {
 
 body.dark .blog-post-tag li {
   color: var(--color-dark-text-light);
+}
+
+.body.dark .blog-post-tag li a {
+  background: var(--color-tag-bg);
+  color: var(--color-tag);
 }
