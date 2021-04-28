@@ -340,14 +340,25 @@ a:focus {
   opacity: 0.75;
 }
 
+/* theme */
+
 .theme {
-  text-align: right;
+  padding: var(--spacing-0) var(--spacing-5);
 }
 
-.theme svg {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
+.theme input {
+  display: none;
+}
+
+.theme label {
+  cursor: pointer;
+}
+
+.theme label svg {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: var(--lineHeight-tight);
+  color: var(--color-dark-mode);
 }
 
 .blog-post {

@@ -29,25 +29,23 @@ const Layout = ({ location, title, children }) => {
       <div className="theme">
         <ThemeToggler>
           {({ theme, toggleTheme }) => (
-            <Switch 
-              onChange={e => toggleTheme(theme === 'dark' ? 'light' : 'dark')} 
+            <div>
+            <input
+              id="toggle"
+              type="checkbox"
+              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
               checked={theme === 'dark'}
-              offColor="#b2dcf2"
-              onColor="#423090"
-              uncheckedIcon={
-                <IconContext.Provider value={{ color: "#f4da87", className: "theme-sun-icon" }}>
-                  <RiSunFill />
-                </IconContext.Provider>
+            />{' '}
+            <label for="toggle">
+              {theme === 'dark' 
+                ? <RiSunFill />                  
+                : <RiMoonClearFill />
               }
-              checkedIcon={
-                <IconContext.Provider value={{ color: "#e7eee5", className: "theme-moon-icon" }}>
-                  <RiMoonClearFill  />
-                </IconContext.Provider>
-              }
-              />
+            </label>
+          </div>
           )}
-        </ThemeToggler>        
-      </div> 
+        </ThemeToggler>
+      </div>
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
