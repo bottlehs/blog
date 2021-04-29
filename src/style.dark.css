@@ -1,10 +1,10 @@
 body.dark {
-  background-color: var(--color-dark-bg);
-  color: var(--color-dark-text);
+  background-color: var(--dark--color-bg);
+  color: var(--dark--color-text);
 }
 
 body.dark hr {
-  background: var(--color-dark-accent);
+  background: var(--dark--color-accent);
 }
 
 body.dark h2,
@@ -12,48 +12,48 @@ body.dark h3,
 body.dark h4,
 body.dark h5,
 body.dark h6 {
-  color: var(--color-dark-heading);
+  color: var(--dark--color-heading);
 }
 
 body.dark h1 {
-  color: var(--color-dark-heading-black);
+  color: var(--dark--color-heading-black);
 }
 
 body.dark blockquote {
-  color: var(--color-dark-text-light);
-  border-left-color: var(--color-dark-primary);
+  color: var(--dark--color-text-light);
+  border-left-color: var(--dark--color-primary);
 }
 
 body.dark table thead tr th {
-  border-bottom-color: var(--color-dark-accent);
+  border-bottom-color: var(--dark--color-accent);
 }
 
 /* Link */
 
 body.dark a {
-  color: var(--color-dark-primary);
+  color: var(--dark--color-primary);
 }
 
 body.dark a:hover,
 body.dark a:focus {
-  color: var(--color-dark-text-hover);
+  color: var(--dark--color-text-hover);
 }
 
 /* Custom classes */
 
 body.dark .post-list-item h2 {
-  color: var(--color-dark-primary);
+  color: var(--dark--color-primary);
 }
 
 body.dark .blog-post-tag li {
-  color: var(--color-dark-text-light);
+  color: var(--dark--color-text-light);
 }
 
 body.dark .blog-post-tag li a {
-  background: var(--color-tag-bg);
-  color: var(--color-tag);
+  background: var(--dark--colortag-bg);
+  color: var(--dark--color-tag);
 }
 
 body.dark .theme label svg {
-  font-size: 15px;
+  color: var(--dark--color-dark-mode);
 }

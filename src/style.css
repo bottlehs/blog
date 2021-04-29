@@ -343,7 +343,8 @@ a:focus {
 /* theme */
 
 .theme {
-  padding: var(--spacing-0) var(--spacing-5);
+  padding: var(--spacing-0) var(--spacing-0);
+  float: right;
 }
 
 .theme input {
