@@ -205,3 +205,540 @@ var router = new VueRouter({
   ],
 })
 ```
+
+## PHP, Vue 를 활용한 JWT 인증
+
+PHP JWT 생성 함수는 아래와 같다.
+
+### PHP JWT 생성 및 인증
+
+```php
+class Jwt {
+  protected $alg;
+  function __construct() {
+    //사용할 알고리즘
+    $this->alg = 'sha256';
+  }
+
+  function hashing(array $data) {
+    // 토큰의 헤더
+    $header = json_encode(array(
+      'alg'=>$this->alg,
+      'typ'=>'JWT'
+    ));
+
+    // 전달할 데이터
+    $payload = json_encode($data);
+
+    // 시그니처 토큰 확인에서 제일 중요
+    // 충분히 복잡하게 구현해야함
+    $signature = hash($this->alg, $header.$payload);
+
+    return base64_encode($header.'.'.$payload.'.'.$signature);
+  }
+
+  function dehashing($token) {
+    // 토큰 만들때의 구분자 . 으로 나누기
+    $parted = explode('.', base64_decode($token));
+    $signature = $parted[2];
+
+    // 위에서 토큰 만들때와 같은 방식으로 시그니처 만들고 비교
+    if(hash($this->alg, $parted[0].$parted[1]) == $signature) {
+      return '\n\ngood\n\n';
+    } else {
+      return '잘못된 signature 입니다';
+    }
+    /*
+
+          만료 확인 등 값 검사
+
+    */
+    $payload = json_decode($parted[1],true);
+    return $payload;
+  }
+}
+```
+
+### Vue JWT 인증
+
+Vue 는 로그인, 회원가입, 홈, 마이페이지로 구성 했다.
+
+#### Structure
+
+```sh
+src
+├── views
+│   ├── Home.vue
+│   ├── Login.vue
+│   ├── Mypage.vue
+│   └── Register.vue
+├── common
+│   └── jwt.js
+├── http
+│   └── index.js
+├── router
+│   └── index.js
+├── store
+│   └── index.js
+├── main.js
+└── App.vue
+```
+
+##### Home
+
+```html
+<template>
+  <div>
+    <h1>JWT 홈 화면 입니다.</h1>
+    {{ isAuthenticated ? "로그인됨" : "로그인 안됨" }}
+  </div>
+</template>
+
+<script>
+  import { mapGetters } from "vuex"
+
+  export default {
+    name: "JwtHome",
+    components: {},
+    computed: {
+      ...mapGetters(["isAuthenticated"]),
+    },
+    methods: {},
+  }
+</script>
+
+<style scoped></style>
+```
+
+isAuthenticated 를 로그인 여부를 체크한다.
+
+##### Login
+
+```html
+<template>
+  <div>
+    <h1>JWT 회원가입 화면 입니다.</h1>
+    <ValidationObserver>
+      <form @submit.prevent="formSubmit" method="post">
+        <ValidationProvider ref="refEmail" rules="required|email">
+          <div>
+            <label for="email">email</label>
+            <input id="email" type="text" v-model="email" />
+          </div>
+        </ValidationProvider>
+        <ValidationProvider
+          ref="refPassword"
+          rules="required|min:8|max:20|alpha_dash"
+        >
+          <div>
+            <label for="password">password</label>
+            <input id="password" type="text" v-model="password" />
+          </div>
+        </ValidationProvider>
+        <button type="submit">Register</button>
+      </form>
+    </ValidationObserver>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "JwtResiter",
+    components: {},
+    data() {
+      return {
+        email: "",
+        password: "",
+        name: "",
+      }
+    },
+    computed: {},
+    methods: {
+      async formSubmit() {
+        const refEmail = await this.$refs.refEmail.validate()
+        if (!refEmail.valid) {
+          alert(refEmail.errors[0])
+          return false
+        }
+        const refPassword = await this.$refs.refPassword.validate()
+        if (!refPassword.valid) {
+          alert(refPassword.errors[0])
+          return false
+        }
+
+        this.$store
+          .dispatch("login", {
+            email: this.email,
+            password: this.password,
+          })
+          .then(response => {
+            if (response.status == 200) {
+              this.$router.push({
+                name: "JwtMypage",
+              })
+            }
+          })
+          .catch(({ message }) => alert(message))
+
+        return true
+      },
+    },
+  }
+</script>
+
+<style scoped></style>
+```
+
+Vuex Actions 을 사용하여 로그인 요청을 비동기 처리 한다.
+
+##### Mypage
+
+```html
+<template>
+  <div>
+    <h1>JWT 마이페이지 화면 입니다.</h1>
+    <button @click="logout()">Logout</button>
+  </div>
+</template>
+
+<script>
+  import { mapGetters } from "vuex"
+
+  export default {
+    name: "JwtMypage",
+    components: {},
+    computed: {
+      ...mapGetters(["isAuthenticated"]),
+    },
+    methods: {
+      redirect() {
+        console.log("redirect")
+        console.log("isAuthenticated : " + this.isAuthenticated)
+        if (!this.isAuthenticated) {
+          this.$router.push({
+            name: "JwtHome",
+          })
+        }
+      },
+      logout() {
+        this.$store
+          .dispatch("logout", {})
+          .then(() => this.redirect())
+          .catch(({ message }) => alert(message))
+      },
+    },
+  }
+</script>
+
+<style scoped></style>
+```
+
+마이페이지 이며 로그아웃 버튼이 존재 한다.
+로그아웃시 Vuex Actions 을 사용하여 비동기 처리 한다.
+
+##### Register
+
+```html
+<template>
+  <div>
+    <h1>JWT 회원가입 화면 입니다.</h1>
+    <ValidationObserver>
+      <form @submit.prevent="formSubmit" method="post">
+        <ValidationProvider ref="refEmail" rules="required|email">
+          <div>
+            <label for="email">email</label>
+            <input id="email" type="text" v-model="email" />
+          </div>
+        </ValidationProvider>
+        <ValidationProvider
+          ref="refPassword"
+          rules="required|min:8|max:20|alpha_dash"
+        >
+          <div>
+            <label for="password">password</label>
+            <input id="password" type="text" v-model="password" />
+          </div>
+        </ValidationProvider>
+        <ValidationProvider ref="refName" rules="required">
+          <div>
+            <label for="name">name</label>
+            <input id="name" type="text" v-model="name" />
+          </div>
+        </ValidationProvider>
+        <button type="submit">Register</button>
+      </form>
+    </ValidationObserver>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "JwtResiter",
+    components: {},
+    data() {
+      return {
+        email: "",
+        password: "",
+        name: "",
+      }
+    },
+    computed: {},
+    methods: {
+      async formSubmit() {
+        const refEmail = await this.$refs.refEmail.validate()
+        if (!refEmail.valid) {
+          alert(refEmail.errors[0])
+          return false
+        }
+        const refPassword = await this.$refs.refPassword.validate()
+        if (!refPassword.valid) {
+          alert(refPassword.errors[0])
+          return false
+        }
+        const refName = await this.$refs.refName.validate()
+        if (!refName.valid) {
+          alert(refName.errors[0])
+          return false
+        }
+
+        this.$store
+          .dispatch("register", {
+            email: this.email,
+            password: this.password,
+            name: this.name,
+          })
+          .then(response => {
+            if (response.status == 200) {
+              this.$router.push({
+                name: "JwtMypage",
+              })
+            }
+          })
+          .catch(({ message }) => alert(message))
+
+        return true
+      },
+    },
+  }
+</script>
+
+<style scoped></style>
+```
+
+회원가입 화면이다. Vuex Actions 을 사용하여 회원가입 요청을 비동기로 처리 하낟.
+
+##### router
+
+```javascript
+import Vue from "vue"
+import VueRouter from "vue-router"
+
+import store from "../store"
+
+const beforeAuth = isAuth => (from, to, next) => {
+  const isAuthenticated = store.getters["isAuthenticated"]
+  if ((isAuthenticated && isAuth) || (!isAuthenticated && !isAuth)) {
+    return next()
+  } else {
+    // 홈 화면으로 이동
+    next("/jwt/home")
+  }
+}
+
+Vue.use(VueRouter)
+
+const routes = [
+  // code..
+  {
+    path: "/jwt/home",
+    name: "JwtHome",
+    component: () => import("../views/jwt/Home.vue"),
+  },
+  {
+    path: "/jwt/login",
+    name: "JwtLogin",
+    component: () => import("../views/jwt/Login.vue"),
+    beforeEnter: beforeAuth(false),
+  },
+  {
+    path: "/jwt/register",
+    name: "JwtRegister",
+    component: () => import("../views/jwt/Register.vue"),
+    beforeEnter: beforeAuth(false),
+  },
+  {
+    path: "/jwt/mypage",
+    name: "JwtMypage",
+    component: () => import("../views/jwt/Mypage.vue"),
+    beforeEnter: beforeAuth(true),
+  },
+]
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes,
+})
+
+export default router
+```
+
+beforeAuth 지역 라우터 가드를 사용하여 화면접근 예외처리를 한다.
+
+##### store
+
+```javascript
+import Vue from "vue"
+import Vuex from "vuex"
+
+Vue.use(Vuex)
+
+import jwt from "../common/jwt"
+import http from "../http"
+
+export default new Vuex.Store({
+  // count state 속성 추가
+  state: {
+    count: 0, // count 를 0 으로 초기화
+    token: {
+      accessToken: jwt.getToken(),
+    }, // 토큰정보
+    isAuthenticated: !!jwt.getToken(),
+  },
+  getters: {
+    getAccessToken: function (state) {
+      return state.token.accessToken
+    },
+    isAuthenticated: function (state) {
+      return state.isAuthenticated
+    },
+  },
+  mutations: {
+    logout: function (state, payload = {}) {
+      state.token.accessToken = ""
+      state.isAuthenticated = false
+      jwt.destroyToken()
+    },
+    login: function (state, payload = {}) {
+      state.token.accessToken = payload.accessToken
+      state.isAuthenticated = true
+      jwt.saveToken(payload.accessToken)
+    },
+  },
+  actions: {
+    logout: function (context, payload) {
+      return new Promise(resolve => {
+        setTimeout(function () {
+          context.commit("logout", payload)
+          resolve({})
+        }, 1000)
+      })
+    },
+    register: function (context, payload) {
+      let params = {
+        email: payload.email,
+        password: payload.password,
+        name: payload.name,
+      }
+      return new Promise((resolve, reject) => {
+        http
+          .post("/api/sample/register", params)
+          .then(response => {
+            const { data } = response
+            context.commit("login", {
+              accessToken: data.accessToken,
+            })
+
+            resolve(response)
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
+    },
+    login: function (context, payload) {
+      let params = {
+        email: payload.email,
+        password: payload.password,
+      }
+      return new Promise((resolve, reject) => {
+        http
+          .post("/api/sample/login", params)
+          .then(response => {
+            const { data } = response
+            context.commit("login", {
+              accessToken: data.accessToken,
+            })
+
+            resolve(response)
+          })
+          .catch(error => {
+            reject(error)
+          })
+      })
+    },
+  },
+  modules: { coffee, shop },
+})
+```
+
+Vuex 로그인,회원가입,로그인 처리.
+
+##### common/jwt
+
+```javascript
+const ID_TOKEN_KEY = "id_token"
+
+export const getToken = () => {
+  return window.localStorage.getItem(ID_TOKEN_KEY)
+}
+
+export const saveToken = token => {
+  window.localStorage.setItem(ID_TOKEN_KEY, token)
+}
+
+export const destroyToken = () => {
+  window.localStorage.removeItem(ID_TOKEN_KEY)
+}
+
+export default {
+  getToken,
+  saveToken,
+  destroyToken,
+}
+```
+
+token 정보를 유지하기 위해 localStorage 를 사용 한다.
+
+##### http
+
+```javascript
+import axios from "axios"
+import store from "../store"
+
+const http = axios.create({
+  baseURL: "https://testrestapi.cafe24.com",
+  headers: { "content-type": "application/json" },
+})
+
+http.interceptors.request.use(
+  config => {
+    const isAuthenticated = store.getters["isAuthenticated"]
+    if (isAuthenticated) {
+      config.headers.common["Authorization"] = store.getters["getAccessToken"]
+    }
+    return config
+  },
+  error => {
+    // Do something with request error
+    Promise.reject(error)
+  }
+)
+http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded"
+
+export default http
+```
+
+로그인이 되어 있을경우 모든 요청에 headers 에 Authorization 로 accessToken 을 담아서 보낸다.
+
+![Vue Js 뷰 JWT 기반 사용자 인증 헤더](/assets/vue-jwt-auth-jwt-header.png "Vue Js 뷰 JWT 기반 사용자 인증 헤더")

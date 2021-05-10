@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="vue-js-%EB%B7%B0-jwt-%EA%B8%B0%EB%B0%98-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%EC%A6%9D">Vue Js 뷰 JWT 기반 사용자 인증</h1>
+<p><img src="/D:/bottlehs/blog/static/assets/vue-logo.png" alt="Vue Js 뷰 JWT 기반 사용자 인증" title="Vue Js 뷰 JWT 기반 사용자 인증"></p>
+<h2 id="jwt--json-web-token--%EC%9D%B4%EB%9E%80">JWT ( JSON WEB TOKEN ) 이란?</h2>
+<p>JWT 는 JSON Web Token의 약자로 전자 서명 된 URL-safe (URL로 이용할 수있는 문자 만 구성된)의 JSON이다. 전자 서명은 JSON 의 변조를 체크 할 수 있게되어 있다. JWT는 속성 정보 (Claim)를 JSON 데이터 구조로 표현한 토큰으로 RFC7519 표준 이다. JWT는 서버와 클라이언트 간 정보를 주고 받을 때 Http 리퀘스트 헤더에 JSON 토큰을 넣은 후 서버는 별도의 인증 과정없이 헤더에 포함되어 있는 JWT 정보를 통해 인증한다. 이때 사용되는 JSON 데이터는 URL-Safe 하도록 URL에 포함할 수 있는 문자만으로 만든다. JWT는 HMAC 알고리즘을 사용하여 비밀키 또는 RSA를 이용한 Public Key/ Private Key 쌍으로 서명할 수 있다.</p>
+<h3 id="%ED%86%A0%ED%81%B0-%EA%B5%AC%EC%84%B1">토큰 구성</h3>
+<p><img src="/D:/bottlehs/blog/static/assets/vue-jwt-auth-jwt-stacks.png" alt="JWT 토큰 구성" title="JWT 토큰 구성"></p>
+<p>WT는 세 파트로 나누어지며, 각 파트는 점로 구분하여 xxxxx.yyyyy.zzzzz 이런식으로 표현된다. 순서대로 헤더 (Header), 페이로드 (Payload), 서명 (Sinature)로 구성한다. Base64 인코딩의 경우 “+”, “/”, “=”이 포함되지만 JWT는 URI에서 파라미터로 사용할 수 있도록 URL-Safe 한 Base64url 인코딩을 사용한다. Header는 토큰의 타입과 해시 암호화 알고리즘으로 구성되어 있습니다. 첫째는 토큰의 유형 (JWT)을 나타내고, 두 번째는 HMAC, SHA256 또는 RSA와 같은 해시 알고리즘을 나타내는 부분이다. Payload는 토큰에 담을 클레임(claim) 정보를 포함하고 있다. Payload 에 담는 정보의 한 ‘조각’ 을 클레임이라고 부르고, 이는 name / value 의 한 쌍으로 이뤄져있다. 토큰에는 여러개의 클레임 들을 넣을 수 있다. 클레임의 정보는 등록된 (registered) 클레임, 공개 (public) 클레임, 비공개 (private) 클레임으로 세 종류가 있다. 마지막으로 Signature는 secret key를 포함하여 암호화되어 있다.</p>
+<h3 id="process">PROCESS</h3>
+<p><img src="/D:/bottlehs/blog/static/assets/vue-jwt-auth-jwt-process.png" alt="JWT PROCESS" title="JWT PROCESS"></p>
+<ol>
+<li>사용자가 username(id)와 password를 입력하여 로그인을 시도한다.</li>
+<li>서버는 요청을 확인하고 secret key를 통해 Access token을 발급합니다.</li>
+<li>JWT 토큰을 클라이언트에 전달 합니다.</li>
+<li>클라이언트에서 API 을 요청할때 클라이언트가 Authorization header에 Access token을 담아서 보낸다.</li>
+<li>서버는 JWT Signature를 체크하고 Payload로부터 사용자 정보를 확인해 데이터를 반환한다.</li>
+<li>클라이언트의 로그인 정보를 서버 메모리에 저장하지 않기 때문에 토큰기반 인증 메커니즘을 제공한다.</li>
+</ol>
+<p>인증이 필요한 경로에 접근할 때 서버 측은 Authorization 헤더에 유효한 JWT 또는 존재하는지 확인한다. JWT에는 필요한 모든 정보를 토큰에 포함하기 때문에 데이터베이스과 같은 서버와의 커뮤니케이션 오버 헤드를 최소화 할 수 있다. Cross-Origin Resource Sharing (CORS)는 쿠키를 사용하지 않기 때문에 JWT를 채용 한 인증 메커니즘은 두 도메인에서 API를 제공하더라도 문제가 발생하지 않는다. 일반적으로 JWT 토큰 기반의 인증 시스템은 위와 같은 프로세스로 이루어진다. 처음 사용자를 등록할 때 Access token과 Refresh token이 모두 발급되어야 한다.</p>
+<h3 id="%EC%9E%A5%EC%A0%90">장점</h3>
+<ul>
+<li>URL 파라미터와 헤더로 사용</li>
+<li>수평 스케일이 용이</li>
+<li>디버깅 및 관리가 용이</li>
+<li>트래픽 대한 부담이 낮음</li>
+<li>REST 서비스로 제공 가능</li>
+<li>내장된 만료</li>
+<li>독립적인 JWT</li>
+</ul>
+<h3 id="%EB%8B%A8%EC%A0%90">단점</h3>
+<ul>
+<li>토큰은 클라이언트에 저장되어 데이터베이스에서 사용자 정보를 조작하더라도 토큰에 직접 적용할 수 없다.</li>
+<li>더 많은 필드가 추가되면 토큰이 커질 수 있다.</li>
+<li>비상태 애플리케이션에서 토큰은 거의 모든 요청에 대해 전송되므로 데이터 트래픽 크기에 영향을 미칠 수 있다.</li>
+</ul>
+<h2 id="vue-router-guards">Vue Router Guards</h2>
+<p>vue-router가 제공하는 네비게이션 가드는 주로 리디렉션하거나 취소하여 네비게이션을 보호하는 데 사용된다. 라우트 탐색 프로세스에 연결하는 방법에는 전역, 라우트별 또는 컴포넌트가 있다.</p>
+<h3 id="%EB%84%A4%EB%B9%84%EA%B2%8C%EC%9D%B4%EC%85%98-%EA%B0%80%EB%93%9C%EC%9D%98-%EC%A2%85%EB%A5%98">네비게이션 가드의 종류</h3>
+<p>네비게이션 가드의 종류는 아래와 같이 3가지가 있습니다.</p>
+<ul>
+<li>애플리케이션 전역에서 동작하는 전역 가드</li>
+<li>특정 URL에서만 동작하는 라우터 가드</li>
+<li>라우터 컴포넌트 안에 정의하는 컴포넌트 가드</li>
+</ul>
+<h3 id="%EC%A0%84%EC%97%AD-%EA%B0%80%EB%93%9C">전역 가드</h3>
+<p><code>router.beforeEach</code>를 사용하여 보호하기 이전에 전역 등록을 할 수 있다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({ ... })
+
+router.beforeEach(<span class="hljs-function">(<span class="hljs-params">to, <span class="hljs-keyword">from</span>, next</span>) =&gt;</span> {
+  <span class="hljs-comment">// to : 이동할 url</span>
+  <span class="hljs-comment">// from : 현재 url</span>
+  <span class="hljs-comment">// next : to에서 지정한 url로 이동하기 위해 꼭 호출해야 하는 함수</span>
+})
+</div></code></pre>
+<p>네비게이션이 트리거될 때마다 가드가 작성 순서에 따라 호출되기 전의 모든 경우에 발생한다. 가드는 비동기식으로 실행 될 수 있으며 네비게이션은 모든 훅이 해결되기 전까지 보류 중 으로 간주된다.</p>
+<p>모든 가드 기능은 세 가지 전달인자를 받는다.</p>
+<ul>
+<li>to : 이동할 url 정보가 담긴 라우터 객체</li>
+<li>from : 현재 url 정보가 담긴 라우터 객체</li>
+<li>next : to에서 지정한 url로 이동하기 위해 꼭 호출해야 하는 함수</li>
+</ul>
+<p>router.beforeEach()를 호출하고 나면 모든 라우팅이 대기 상태가 된다. 원래 url이 변경되고 나면 해당 url에 따라 화면이 자연스럽게 전환되어야 하는데 전역 가드를 설정했기 때문에 화면이 전환되지 않는다. 여기서 해당 url로 라우팅 하기 위해서는 next()를 호출해줘야 한다. next()가 호출되기 전까지 화면이 전환되지 않는다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  <span class="hljs-attr">routes</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/login"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+    },
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/register"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+    },
+  ],
+})
+
+router.beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">to, from, next</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"라우딩 대기"</span>)
+
+  <span class="hljs-comment">// code ..</span>
+
+  next() <span class="hljs-comment">// 원하는 url로 이동하고 싶으면 next()를 호출하면 된다.</span>
+})
+</div></code></pre>
+<h3 id="%EC%A0%84%EC%97%AD-%EA%B0%80%EB%93%9C%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B8%EC%A6%9D%ED%95%98%EA%B8%B0">전역 가드로 페이지 인증하기</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  <span class="hljs-attr">routes</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/login"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+    },
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/register"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+    },
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/mypage"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+      <span class="hljs-attr">meta</span>: { <span class="hljs-attr">authRequired</span>: <span class="hljs-literal">true</span> },
+    },
+  ],
+})
+
+router.beforeEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">to, from, next</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"라우딩 대기"</span>)
+
+  <span class="hljs-keyword">if</span> (
+    to.matched.some(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">routeInfo</span>) </span>{
+      <span class="hljs-keyword">return</span> routeInfo.meta.authRequired
+    })
+  ) {
+    <span class="hljs-comment">// 인증이 필요한 페이지일 경우 인증 체크</span>
+    <span class="hljs-keyword">if</span> (isAuth) {
+      next() <span class="hljs-comment">// 페이지 전환</span>
+    } <span class="hljs-keyword">else</span> {
+      alert(<span class="hljs-string">"로그인 필요"</span>)
+    }
+  } <span class="hljs-keyword">else</span> {
+    next() <span class="hljs-comment">// 페이지 전환</span>
+  }
+})
+</div></code></pre>
+<h3 id="%EB%9D%BC%EC%9A%B0%ED%84%B0-%EA%B0%80%EB%93%9C">라우터 가드</h3>
+<p>전체 라우팅이 아니라 특정 라우팅에 대해서 가드를 설정하는 방법은 아래와 같다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  <span class="hljs-attr">routes</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/mypage"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+      <span class="hljs-attr">beforeEnter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">to, from, next</span>) </span>{
+        <span class="hljs-comment">// 인증 값 검증 로직 추가</span>
+      },
+    },
+  ],
+})
+</div></code></pre>
+<h3 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EA%B0%80%EB%93%9C">컴포넌트 가드</h3>
+<p>라우터로 지정된 특정 컴포넌트에 가드를 설정하는 방법은 아래와 같다.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// view/Mypage.vue ( Mypage Components )</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"Mypage"</span>,
+  beforeRouteEnter(to, <span class="hljs-keyword">from</span>, next) {
+    <span class="hljs-comment">// Login 컴포넌트가 화면에 표시되기 전에 수행될 로직</span>
+    <span class="hljs-comment">// Login 컴포넌트는 아직 생성되지 않은 시점</span>
+  },
+  beforeRouteUpdate(to, <span class="hljs-keyword">from</span>, next) {
+    <span class="hljs-comment">// 화면에 표시된 컴포넌트가 변경될 때 수행될 로직</span>
+    <span class="hljs-comment">// `this`로 Login 컴포넌트를 접근할 수 있음</span>
+  },
+  beforeRouteLeave(to, <span class="hljs-keyword">from</span>, next) {
+    <span class="hljs-comment">// Login 컴포넌트를 화면에 표시한 url 값이 변경되기 직전의 로직</span>
+    <span class="hljs-comment">// `this`로 Login 컴포넌트를 접근할 수 있음</span>
+  },
+}
+
+<span class="hljs-comment">// route.js</span>
+<span class="hljs-keyword">var</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  <span class="hljs-attr">routes</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">"/mypage"</span>,
+      <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"컴포넌트"</span>),
+    },
+  ],
+})
+</div></code></pre>
+<h2 id="php-vue-%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-jwt-%EC%9D%B8%EC%A6%9D">PHP, Vue 를 활용한 JWT 인증</h2>
+<p>PHP JWT 생성 함수는 아래와 같다.</p>
+<h3 id="php-jwt-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%9D%B8%EC%A6%9D">PHP JWT 생성 및 인증</h3>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Jwt</span> </span>{
+  <span class="hljs-keyword">protected</span> $alg;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">//사용할 알고리즘</span>
+    <span class="hljs-keyword">$this</span>-&gt;alg = <span class="hljs-string">'sha256'</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hashing</span><span class="hljs-params">(array $data)</span> </span>{
+    <span class="hljs-comment">// 토큰의 헤더</span>
+    $header = json_encode(<span class="hljs-keyword">array</span>(
+      <span class="hljs-string">'alg'</span>=&gt;<span class="hljs-keyword">$this</span>-&gt;alg,
+      <span class="hljs-string">'typ'</span>=&gt;<span class="hljs-string">'JWT'</span>
+    ));
+
+    <span class="hljs-comment">// 전달할 데이터</span>
+    $payload = json_encode($data);
+
+    <span class="hljs-comment">// 시그니처 토큰 확인에서 제일 중요</span>
+    <span class="hljs-comment">// 충분히 복잡하게 구현해야함</span>
+    $signature = hash(<span class="hljs-keyword">$this</span>-&gt;alg, $header.$payload);
+
+    <span class="hljs-keyword">return</span> base64_encode($header.<span class="hljs-string">'.'</span>.$payload.<span class="hljs-string">'.'</span>.$signature);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dehashing</span><span class="hljs-params">($token)</span> </span>{
+    <span class="hljs-comment">// 토큰 만들때의 구분자 . 으로 나누기</span>
+    $parted = explode(<span class="hljs-string">'.'</span>, base64_decode($token));
+    $signature = $parted[<span class="hljs-number">2</span>];
+
+    <span class="hljs-comment">// 위에서 토큰 만들때와 같은 방식으로 시그니처 만들고 비교</span>
+    <span class="hljs-keyword">if</span>(hash(<span class="hljs-keyword">$this</span>-&gt;alg, $parted[<span class="hljs-number">0</span>].$parted[<span class="hljs-number">1</span>]) == $signature) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'\n\ngood\n\n'</span>;
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">'잘못된 signature 입니다'</span>;
+    }
+    <span class="hljs-comment">/*
+
+          만료 확인 등 값 검사
+
+    */</span>
+    $payload = json_decode($parted[<span class="hljs-number">1</span>],<span class="hljs-keyword">true</span>);
+    <span class="hljs-keyword">return</span> $payload;
+  }
+}
+</div></code></pre>
+<h3 id="vue-jwt-%EC%9D%B8%EC%A6%9D">Vue JWT 인증</h3>
+<p>Vue 는 로그인, 회원가입, 홈, 마이페이지로 구성 했다.</p>
+<h4 id="structure">Structure</h4>
+<pre class="hljs"><code><div>src
+├── views
+│   ├── Home.vue
+│   ├── Login.vue
+│   ├── Mypage.vue
+│   └── Register.vue
+├── common
+│   └── jwt.js
+├── http
+│   └── index.js
+├── router
+│   └── index.js
+├── store
+│   └── index.js
+├── main.js
+└── App.vue
+</div></code></pre>
+<h5 id="home">Home</h5>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JWT 홈 화면 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    {{ isAuthenticated ? "로그인됨" : "로그인 안됨" }}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> { mapGetters } <span class="hljs-keyword">from</span> <span class="hljs-string">"vuex"</span>
+
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtHome"</span>,
+    <span class="hljs-attr">components</span>: {},
+    <span class="hljs-attr">computed</span>: {
+      ...mapGetters([<span class="hljs-string">"isAuthenticated"</span>]),
+    },
+    <span class="hljs-attr">methods</span>: {},
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<p>isAuthenticated 를 로그인 여부를 체크한다.</p>
+<h5 id="login">Login</h5>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JWT 회원가입 화면 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ValidationObserver</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">"formSubmit"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ValidationProvider</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"refEmail"</span> <span class="hljs-attr">rules</span>=<span class="hljs-string">"required|email"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"email"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ValidationProvider</span>
+          <span class="hljs-attr">ref</span>=<span class="hljs-string">"refPassword"</span>
+          <span class="hljs-attr">rules</span>=<span class="hljs-string">"required|min:8|max:20|alpha_dash"</span>
+        &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"password"</span>&gt;</span>password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"password"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationObserver</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtResiter"</span>,
+    <span class="hljs-attr">components</span>: {},
+    data() {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">email</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">password</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">""</span>,
+      }
+    },
+    <span class="hljs-attr">computed</span>: {},
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-keyword">async</span> formSubmit() {
+        <span class="hljs-keyword">const</span> refEmail = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$refs.refEmail.validate()
+        <span class="hljs-keyword">if</span> (!refEmail.valid) {
+          alert(refEmail.errors[<span class="hljs-number">0</span>])
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+        <span class="hljs-keyword">const</span> refPassword = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$refs.refPassword.validate()
+        <span class="hljs-keyword">if</span> (!refPassword.valid) {
+          alert(refPassword.errors[<span class="hljs-number">0</span>])
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+
+        <span class="hljs-keyword">this</span>.$store
+          .dispatch(<span class="hljs-string">"login"</span>, {
+            <span class="hljs-attr">email</span>: <span class="hljs-keyword">this</span>.email,
+            <span class="hljs-attr">password</span>: <span class="hljs-keyword">this</span>.password,
+          })
+          .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+            <span class="hljs-keyword">if</span> (response.status == <span class="hljs-number">200</span>) {
+              <span class="hljs-keyword">this</span>.$router.push({
+                <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtMypage"</span>,
+              })
+            }
+          })
+          .catch(<span class="hljs-function">(<span class="hljs-params">{ message }</span>) =&gt;</span> alert(message))
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+      },
+    },
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<p>Vuex Actions 을 사용하여 로그인 요청을 비동기 처리 한다.</p>
+<h5 id="mypage">Mypage</h5>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JWT 마이페이지 화면 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"logout()"</span>&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> { mapGetters } <span class="hljs-keyword">from</span> <span class="hljs-string">"vuex"</span>
+
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtMypage"</span>,
+    <span class="hljs-attr">components</span>: {},
+    <span class="hljs-attr">computed</span>: {
+      ...mapGetters([<span class="hljs-string">"isAuthenticated"</span>]),
+    },
+    <span class="hljs-attr">methods</span>: {
+      redirect() {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"redirect"</span>)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"isAuthenticated : "</span> + <span class="hljs-keyword">this</span>.isAuthenticated)
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.isAuthenticated) {
+          <span class="hljs-keyword">this</span>.$router.push({
+            <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtHome"</span>,
+          })
+        }
+      },
+      logout() {
+        <span class="hljs-keyword">this</span>.$store
+          .dispatch(<span class="hljs-string">"logout"</span>, {})
+          .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.redirect())
+          .catch(<span class="hljs-function">(<span class="hljs-params">{ message }</span>) =&gt;</span> alert(message))
+      },
+    },
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<p>마이페이지 이며 로그아웃 버튼이 존재 한다.
+로그아웃시 Vuex Actions 을 사용하여 비동기 처리 한다.</p>
+<h5 id="register">Register</h5>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JWT 회원가입 화면 입니다.<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ValidationObserver</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> @<span class="hljs-attr">submit.prevent</span>=<span class="hljs-string">"formSubmit"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ValidationProvider</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"refEmail"</span> <span class="hljs-attr">rules</span>=<span class="hljs-string">"required|email"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"email"</span>&gt;</span>email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"email"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ValidationProvider</span>
+          <span class="hljs-attr">ref</span>=<span class="hljs-string">"refPassword"</span>
+          <span class="hljs-attr">rules</span>=<span class="hljs-string">"required|min:8|max:20|alpha_dash"</span>
+        &gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"password"</span>&gt;</span>password<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"password"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ValidationProvider</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"refName"</span> <span class="hljs-attr">rules</span>=<span class="hljs-string">"required"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"name"</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"name"</span> /&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>Register<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ValidationObserver</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtResiter"</span>,
+    <span class="hljs-attr">components</span>: {},
+    data() {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">email</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">password</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">name</span>: <span class="hljs-string">""</span>,
+      }
+    },
+    <span class="hljs-attr">computed</span>: {},
+    <span class="hljs-attr">methods</span>: {
+      <span class="hljs-keyword">async</span> formSubmit() {
+        <span class="hljs-keyword">const</span> refEmail = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$refs.refEmail.validate()
+        <span class="hljs-keyword">if</span> (!refEmail.valid) {
+          alert(refEmail.errors[<span class="hljs-number">0</span>])
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+        <span class="hljs-keyword">const</span> refPassword = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$refs.refPassword.validate()
+        <span class="hljs-keyword">if</span> (!refPassword.valid) {
+          alert(refPassword.errors[<span class="hljs-number">0</span>])
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+        <span class="hljs-keyword">const</span> refName = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.$refs.refName.validate()
+        <span class="hljs-keyword">if</span> (!refName.valid) {
+          alert(refName.errors[<span class="hljs-number">0</span>])
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>
+        }
+
+        <span class="hljs-keyword">this</span>.$store
+          .dispatch(<span class="hljs-string">"register"</span>, {
+            <span class="hljs-attr">email</span>: <span class="hljs-keyword">this</span>.email,
+            <span class="hljs-attr">password</span>: <span class="hljs-keyword">this</span>.password,
+            <span class="hljs-attr">name</span>: <span class="hljs-keyword">this</span>.name,
+          })
+          .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+            <span class="hljs-keyword">if</span> (response.status == <span class="hljs-number">200</span>) {
+              <span class="hljs-keyword">this</span>.$router.push({
+                <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtMypage"</span>,
+              })
+            }
+          })
+          .catch(<span class="hljs-function">(<span class="hljs-params">{ message }</span>) =&gt;</span> alert(message))
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+      },
+    },
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div></code></pre>
+<p>회원가입 화면이다. Vuex Actions 을 사용하여 회원가입 요청을 비동기로 처리 하낟.</p>
+<h5 id="router">router</h5>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>
+<span class="hljs-keyword">import</span> VueRouter <span class="hljs-keyword">from</span> <span class="hljs-string">"vue-router"</span>
+
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">"../store"</span>
+
+<span class="hljs-keyword">const</span> beforeAuth = <span class="hljs-function"><span class="hljs-params">isAuth</span> =&gt;</span> <span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">from</span>, to, next</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> isAuthenticated = store.getters[<span class="hljs-string">"isAuthenticated"</span>]
+  <span class="hljs-keyword">if</span> ((isAuthenticated &amp;&amp; isAuth) || (!isAuthenticated &amp;&amp; !isAuth)) {
+    <span class="hljs-keyword">return</span> next()
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// 홈 화면으로 이동</span>
+    next(<span class="hljs-string">"/jwt/home"</span>)
+  }
+}
+
+Vue.use(VueRouter)
+
+<span class="hljs-keyword">const</span> routes = [
+  <span class="hljs-comment">// code..</span>
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/jwt/home"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtHome"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"../views/jwt/Home.vue"</span>),
+  },
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/jwt/login"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtLogin"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"../views/jwt/Login.vue"</span>),
+    <span class="hljs-attr">beforeEnter</span>: beforeAuth(<span class="hljs-literal">false</span>),
+  },
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/jwt/register"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtRegister"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"../views/jwt/Register.vue"</span>),
+    <span class="hljs-attr">beforeEnter</span>: beforeAuth(<span class="hljs-literal">false</span>),
+  },
+  {
+    <span class="hljs-attr">path</span>: <span class="hljs-string">"/jwt/mypage"</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"JwtMypage"</span>,
+    <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">"../views/jwt/Mypage.vue"</span>),
+    <span class="hljs-attr">beforeEnter</span>: beforeAuth(<span class="hljs-literal">true</span>),
+  },
+]
+
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> VueRouter({
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">"history"</span>,
+  <span class="hljs-attr">base</span>: process.env.BASE_URL,
+  routes,
+})
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router
+</div></code></pre>
+<p>beforeAuth 지역 라우터 가드를 사용하여 화면접근 예외처리를 한다.</p>
+<h5 id="store">store</h5>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">"vue"</span>
+<span class="hljs-keyword">import</span> Vuex <span class="hljs-keyword">from</span> <span class="hljs-string">"vuex"</span>
+
+Vue.use(Vuex)
+
+<span class="hljs-keyword">import</span> jwt <span class="hljs-keyword">from</span> <span class="hljs-string">"../common/jwt"</span>
+<span class="hljs-keyword">import</span> http <span class="hljs-keyword">from</span> <span class="hljs-string">"../http"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> Vuex.Store({
+  <span class="hljs-comment">// count state 속성 추가</span>
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// count 를 0 으로 초기화</span>
+    <span class="hljs-attr">token</span>: {
+      <span class="hljs-attr">accessToken</span>: jwt.getToken(),
+    }, <span class="hljs-comment">// 토큰정보</span>
+    <span class="hljs-attr">isAuthenticated</span>: !!jwt.getToken(),
+  },
+  <span class="hljs-attr">getters</span>: {
+    <span class="hljs-attr">getAccessToken</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state</span>) </span>{
+      <span class="hljs-keyword">return</span> state.token.accessToken
+    },
+    <span class="hljs-attr">isAuthenticated</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state</span>) </span>{
+      <span class="hljs-keyword">return</span> state.isAuthenticated
+    },
+  },
+  <span class="hljs-attr">mutations</span>: {
+    <span class="hljs-attr">logout</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state, payload = {}</span>) </span>{
+      state.token.accessToken = <span class="hljs-string">""</span>
+      state.isAuthenticated = <span class="hljs-literal">false</span>
+      jwt.destroyToken()
+    },
+    <span class="hljs-attr">login</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state, payload = {}</span>) </span>{
+      state.token.accessToken = payload.accessToken
+      state.isAuthenticated = <span class="hljs-literal">true</span>
+      jwt.saveToken(payload.accessToken)
+    },
+  },
+  <span class="hljs-attr">actions</span>: {
+    <span class="hljs-attr">logout</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">context, payload</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> {
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+          context.commit(<span class="hljs-string">"logout"</span>, payload)
+          resolve({})
+        }, <span class="hljs-number">1000</span>)
+      })
+    },
+    <span class="hljs-attr">register</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">context, payload</span>) </span>{
+      <span class="hljs-keyword">let</span> params = {
+        <span class="hljs-attr">email</span>: payload.email,
+        <span class="hljs-attr">password</span>: payload.password,
+        <span class="hljs-attr">name</span>: payload.name,
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        http
+          .post(<span class="hljs-string">"/api/sample/register"</span>, params)
+          .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> { data } = response
+            context.commit(<span class="hljs-string">"login"</span>, {
+              <span class="hljs-attr">accessToken</span>: data.accessToken,
+            })
+
+            resolve(response)
+          })
+          .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+            reject(error)
+          })
+      })
+    },
+    <span class="hljs-attr">login</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">context, payload</span>) </span>{
+      <span class="hljs-keyword">let</span> params = {
+        <span class="hljs-attr">email</span>: payload.email,
+        <span class="hljs-attr">password</span>: payload.password,
+      }
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+        http
+          .post(<span class="hljs-string">"/api/sample/login"</span>, params)
+          .then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> { data } = response
+            context.commit(<span class="hljs-string">"login"</span>, {
+              <span class="hljs-attr">accessToken</span>: data.accessToken,
+            })
+
+            resolve(response)
+          })
+          .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+            reject(error)
+          })
+      })
+    },
+  },
+  <span class="hljs-attr">modules</span>: { coffee, shop },
+})
+</div></code></pre>
+<p>Vuex 로그인,회원가입,로그인 처리.</p>
+<h5 id="commonjwt">common/jwt</h5>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> ID_TOKEN_KEY = <span class="hljs-string">"id_token"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getToken = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">window</span>.localStorage.getItem(ID_TOKEN_KEY)
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> saveToken = <span class="hljs-function"><span class="hljs-params">token</span> =&gt;</span> {
+  <span class="hljs-built_in">window</span>.localStorage.setItem(ID_TOKEN_KEY, token)
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> destroyToken = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">window</span>.localStorage.removeItem(ID_TOKEN_KEY)
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  getToken,
+  saveToken,
+  destroyToken,
+}
+</div></code></pre>
+<p>token 정보를 유지하기 위해 localStorage 를 사용 한다.</p>
+<h5 id="http">http</h5>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">"axios"</span>
+<span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">"../store"</span>
+
+<span class="hljs-keyword">const</span> http = axios.create({
+  <span class="hljs-attr">baseURL</span>: <span class="hljs-string">"https://testrestapi.cafe24.com"</span>,
+  <span class="hljs-attr">headers</span>: { <span class="hljs-string">"content-type"</span>: <span class="hljs-string">"application/json"</span> },
+})
+
+http.interceptors.request.use(
+  <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> isAuthenticated = store.getters[<span class="hljs-string">"isAuthenticated"</span>]
+    <span class="hljs-keyword">if</span> (isAuthenticated) {
+      config.headers.common[<span class="hljs-string">"Authorization"</span>] = store.getters[<span class="hljs-string">"getAccessToken"</span>]
+    }
+    <span class="hljs-keyword">return</span> config
+  },
+  error =&gt; {
+    <span class="hljs-comment">// Do something with request error</span>
+    <span class="hljs-built_in">Promise</span>.reject(error)
+  }
+)
+http.defaults.headers.post[<span class="hljs-string">"Content-Type"</span>] = <span class="hljs-string">"application/x-www-form-urlencoded"</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> http
+</div></code></pre>
+<p>로그인이 되어 있을경우 모든 요청에 headers 에 Authorization 로 accessToken 을 담아서 보낸다.</p>
+<p><img src="/D:/bottlehs/blog/static/assets/vue-jwt-auth-jwt-header.png" alt="Vue Js 뷰 JWT 기반 사용자 인증 헤더" title="Vue Js 뷰 JWT 기반 사용자 인증 헤더"></p>
+
+</body>
+</html>
