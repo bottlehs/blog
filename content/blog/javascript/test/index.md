@@ -165,3 +165,61 @@ console.log(this.apple) // 출력 undefined
 var 키워드로 선언한 변수는 this 가 window 오브젝트를 참조하므로 접근할 수 있지만 const 은 접근 할수 없습니다.
 
 ES6 하위 호환성을 위해 var 키워드를 여전히 사용 가능하지만, ES6 에서 상수선언은 const 사용을 권장합니다.
+
+## 화살표 함수
+
+ES6에서는 **익명함수**를 표현하기 위해 화살표 함수(Arrow function) 표현식을 지원합니다.
+기존에는 아래와 같이 함수를 선언 하였습니다.
+
+```javascript
+var fruit = function (apple, pear) {
+  var cart = apple * pear
+  return cart
+}
+
+var result = fruit(10, 20)
+console.log(result) // 200
+```
+
+위와 같은 함수를 ES6 화살표 함수(Arrow function) 을 사용하면 아래와 같이 간결하게 선언할 수 있습니다.
+
+```javascript
+let fruit = (apple, pear) => {
+  return apple * pear
+}
+
+var result = fruit(10, 20)
+console.log(result) // 200
+```
+
+즉 function 이 생략되고 `=>` 기호가 그 자리에 추가 됩니다. 또한 아래와 같이 구문이 하나밖에 없으면 `{}` 기호를 생략할 수 있습니다.
+
+```javascript
+let fruit = (apple, pear) => apple * pear
+var result = fruit(10, 20)
+console.log(result) // 200
+```
+
+`return` 을 생략한 것으로서, `return apple * pear` 와 같습니다. 만약, 화살표 앞에 줄을 분리하면 SyntaxError 가 발생 합니다.
+
+```javascript
+let fruit = (apple,pear) = > apple * pear; // SyntaxError
+```
+
+파라미터가 하나이면 소괄호 `()`를 제외하고 해당 파라미터만 작성이 가능합니다.
+
+```javascript
+let fruit = apple => apple * 20
+var result = fruit(10)
+console.log(result) // 200
+```
+
+파라미터가 없는 경우, 소괄호 `()` 만 작성합니다.
+
+```javascript
+let fruit = () => 10 * 20
+var result = fruit()
+console.log(result) // 200
+```
+
+Arrow function은 IE환경에서 아직 제공하지 않습니다.
