@@ -223,3 +223,72 @@ console.log(result) // 200
 ```
 
 Arrow function은 IE환경에서 아직 제공하지 않습니다.
+
+## 클래스
+
+기존에는 객체지향을 구현하려고 할 때 function을 사용하여 구현 했습니다. ES6에서는 class 키워드를 사용하여 객체지향을 구현 할수 있습니다.
+
+기존에는 아래와 같이 객체지향을 구현 했습니다. new 키워드를 붙여 호출하면, 생성자로 동작하여 객체를 생성한 후, 이를 반환 합니다.
+
+```javascript
+function Fruit(name) {
+  this.name = name
+}
+
+Fruit.prototype.getName = function () {
+  return this.name
+}
+
+var apple = new Fruit("apple")
+console.log(apple.getName()) // apple
+```
+
+ES6 클래스는 생성자와 상속을 더욱 간단하고 명확한 구문으로 다룰 수 있게 합니다. 여기서 클래스 자신도 함수이며, 생성자를 가지고 함수를 생성하는 새로운 구문이다. 아래는 클래스를 사용한 예시입니다.
+
+```javascript
+class Fruit {
+  constructor(name) {
+    this.name = name
+    this.type = "apple"
+  }
+
+  getName() {
+    return this.name
+  }
+}
+
+let fruit = new Fruit("apple")
+console.log(fruit.getName()) // apple
+console.log(typeof Fruit)
+```
+
+class 키워드를 앞에 붙여 선언합니다. 생성자 함수는 constructor로 정의하고, 속성과 멤버 변수를 설정할 수 있습니다.
+
+객체지향의 특징 중의 하나인 상속도 아래와 같이 구현할수 있습니다.
+
+```javascript
+class Apple extends Fruit {
+  constuctor(name) {
+    super(name)
+    this.type = "apple"
+  }
+}
+
+let apple = new Apple("been")
+console.log(apple instanceof Fruit) // true
+console.log(apple.getName()) // been
+```
+
+extends 키워드를 활용해 Fruit 클래스로부터 상속을 받습니다. 또한, 다른 객체지향 언어와 마찬가지와 부모 클래스 생성자를 호출하려면 super 키워드를 이용해 호출합니다. Apple는 Fruit의 서브 클래스이므로 Fruit의 인스턴스로 확인되는 것을 확인할수 있습니다.
+
+또한, static 키워드를 활용하면, 정적 메서드를 구현할 수 있습니다. 클래스의 생성자를 만들 필요 없이 바로 정적 메서드 이름으로 함수를 호출할 수 있습니다.
+
+```javascript
+class Fruit {
+  static getName() {
+    return "Fruit"
+  }
+}
+
+console.log(Fruit.getName()) // Fruit
+```
