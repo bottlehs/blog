@@ -410,3 +410,75 @@ function fruit(apple, pear, ...arr) {
 }
 fruit(10, 20, 30, 40, 50)
 ```
+
+## Iterator & for-of
+
+기존 자바스크립트에서는 for, for..in 루프만 사용할 수 있었는데, for..of는 iterator 형태로 순환할 수 있는 기능을 제공합니다.
+
+iterator는 어떤 데이터 집합을 순서대로 접근할 때 사용됩니다. for..of 는 Symbol.iterator를 호출 하는데 배열과 문자열은 이 속성을 제공하고 있습니다. 즉, 배열을 순서대로 순회하며, 문자열은 문자를 하나씩 접근하게 됩니다. 또한, 사용자 정의 iterator을 커스텀 객체에 만들 수도 있습니다.
+
+```javascript
+let fruit = [10, 20, 30, 40, 50]
+
+for (let value of fruit) {
+  console.log(value)
+}
+
+// 출력 결과
+10
+20
+30
+40
+50
+```
+
+```javascript
+for (let char of "fruit") {
+  console.log(char)
+}
+
+// 출력 결과
+"c"("o")("f")("f")("e")("e")
+```
+
+DOM에 접근하여 반복된 리스트를 가져오는데 유용합니다.
+
+```html
+<ul>
+  <li>apple</li>
+  <li>pear</li>
+</ul>
+```
+
+```javascript
+let nodes = document.querySelectorAll("li")
+for (let node of codes) {
+  console.log(node.textContent)
+}
+
+// 출력 결과
+apple
+pear
+```
+
+`document.querySelectorAll("li")`는 `li` 엘리먼트를 모두 찾아 노드에 설정하는 것이고, 이러한 노드 리스트는 iterator 형태로 순환이 가능하기에 for..of 루프를 활용할 수 있습니다.
+
+한편, 오브젝트의 경우, iterator 형태로 순환할 수 없지만, Object keys 메서드를 활용해 이를 구현합니다.
+
+```javascript
+const fruit = {
+   apple: "사과",
+   pear: "배"
+}
+
+const keys = Object.keys(fruit)
+for (let key of keys) {
+   console.log(key, fruit[key])
+}
+
+// 출력 결과
+apple 사과
+pear 배
+```
+
+Object.keys를 활용하면 오브젝트에서 프로퍼티 키를 배열로 반환하게 됩니다. 이 배열은 iterator 형태로 순환이 가능하기 for..of 루프를 통해 해당 프로퍼티 값을 구합니다.
