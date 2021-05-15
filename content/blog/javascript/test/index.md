@@ -509,3 +509,32 @@ if (set.has("a")) {
 이 밖에도 WeakMap 과 WeakSet이 있는데, 이는 Map과 Set이 비슷하게 작동하지만, 다른곳에서 해당 변수에 대한 참조가 없어진다면, 자동으로 Map과 Set에 있는 데이터를 삭제하는 것에 차이점이 있습니다.
 
 메모리에 있는 객체 참조 퍼런스가 없어지면, 자바스크립트의 가비지 컬렉터가 해당 객체를 해제하게 됩니다. WeakMap과 WeakSet은 이러한 레퍼런스에 추가하지 않아 메모리가 해제되는 경우, 데이터 구조에서도 같이 삭제하게 됩니다. 즉, 메모리 누수에 영향을 받지 않고 이용할 수 있습니다.
+
+## 모듈 기능
+
+모듈 프로그래밍은 각 프로그램 파일을 모듈 단위로 분리하여, 이를 구조화할 수 있는 장점이 있습니다.
+
+ES5 이전의 자바스크립트는 모듈을 지원하지 않았기에 다양한 방식을 사용해 이를 구현해왔습니다. ES6부터 import, export 구문을 활용하면, 한 모듈이 특정 변수를 익스포트(export)하고 다른 모듈이 이를 임포트(import)하여 계층 관계를 만들 수 있습니다.
+
+ES6 모듈은 개별 .js 파일에 원하는 개수만큼 변수를 익스포트할 수 있습니다.
+모듈 익스포트를 위한 다양한 방법은 아래와 같습니다.
+
+### Export(익스포트)
+
+```javascript
+export {fruit}; // 변수 한개 익스포트
+export {fruit1, fruit2, fruit3}; // 변수 여러개 익스포트
+export {fruit as developfruit); // 해당 변수를 alias로 익스포트
+export {fruit1, fruit2} from "fruitModule"; // 하위모듈에서 해당 익스포트된 변수를 익스포트
+export * from "fruitModule"; // 하위 모듈에서 익스포트한 모든 변수를 익스포트
+```
+
+모듈을 임포트하는 형식은 아래와 같다.
+
+### Import(임포트)
+
+```javascript
+import { fruit1, fruit2 } from "fruitModule" // 기본 임포트
+import { fruit as developfruit } from "fruit" // 임포트 할 변수를 다른 변수로 alias
+import * as fruit from "developfruit" // 변수 전체를 임포트한 뒤 fruit 변수로 alias
+```
