@@ -370,3 +370,43 @@ console.log(name, job); // "name","Software Engineer"
 let arr = [10, 20, 30]
 let [a = 40, c = 50, b] = arr // a = 40, c = 50, b = 30
 ```
+
+## 함수 인자 기능
+
+ES6부터 가변 인자를 표현할 `...` 키워드가 추가 되었습니다. 기존에는 배열 값을 함수 임자로 넘기려면 `fruit()` 내장 메서드나 `argments` 를 통해 변수를 받아서, 이를 Array.prorotype.slice() 함수로 잘라내야 했지만 `...` 키워드를 이용하면 여러 개의 인자를 넘길 수 있습니다. 이는 Spread 연산자라고 합니다.
+
+```javascript
+function fruit(apple, pear) {
+  return apple + pear
+}
+const data = [10, 20]
+const result = fruit(...data)
+console.log(result) // 30
+```
+
+위와 같이 배열에 있는 요소를 자동으로 인자로 치환하여 fruit 함수를 호출합니다. 또한, 아래와 같이 Spread 연산자를 활용하여 배열을 작성할 수 있습니다.
+
+```javascript
+const fruit1 = [10, 20]
+const fruit2 = [30, 40]
+const result = [0, ...fruit1, ...fruit2, 50]
+
+console.log(result) // [0,10,20,30,40,50]
+console.log(result.length) // 6
+```
+
+문자열을 각 문자로 배열을 만들기 위하여 Spread 연산자를 활용할 수 있습니다.
+
+```javascript
+const result = [..."abcde"]
+console.log(result) // ["a","b","c","d","e"]
+```
+
+나머지(Rest) 연산자는 함수의 마지막 파라미터에 "..." 를 붙이는데, 아래와 같이 사용할 수 있습니다.
+
+```javascript
+function fruit(apple, pear, ...arr) {
+  console.log(arr) // 30,40,50;
+}
+fruit(10, 20, 30, 40, 50)
+```
