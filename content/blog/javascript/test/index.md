@@ -30,8 +30,6 @@ ES6에 추가된 주요 기능은 아래와 같습니다.
 - Map & Set : Map, Set 키워드 추가
 - 모듈 기능 : **import, export** 키워드 추가
 - Promise : **Promise** 모듈 추가
-- Proxy : Proxy 패턴의 기능을 기본 표준으로 추가
-- Symbol : 새로운 Symbole 추가
 
 ## let & cont
 
