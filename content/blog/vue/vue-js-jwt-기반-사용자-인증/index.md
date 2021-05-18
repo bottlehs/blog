@@ -24,7 +24,7 @@ JWT 는 JSON Web Token의 약자로 전자 서명 된 URL-safe (URL로 이용할
 
 ![JWT 토큰 구성](/assets/vue-jwt-auth-jwt-stacks.png "JWT 토큰 구성")
 
-WT는 세 파트로 나누어지며, 각 파트는 점로 구분하여 xxxxx.yyyyy.zzzzz 이런식으로 표현된다. 순서대로 헤더 (Header), 페이로드 (Payload), 서명 (Sinature)로 구성한다. Base64 인코딩의 경우 “+”, “/”, “=”이 포함되지만 JWT는 URI에서 파라미터로 사용할 수 있도록 URL-Safe 한 Base64url 인코딩을 사용한다. Header는 토큰의 타입과 해시 암호화 알고리즘으로 구성되어 있습니다. 첫째는 토큰의 유형 (JWT)을 나타내고, 두 번째는 HMAC, SHA256 또는 RSA와 같은 해시 알고리즘을 나타내는 부분이다. Payload는 토큰에 담을 클레임(claim) 정보를 포함하고 있다. Payload 에 담는 정보의 한 ‘조각’ 을 클레임이라고 부르고, 이는 name / value 의 한 쌍으로 이뤄져있다. 토큰에는 여러개의 클레임 들을 넣을 수 있다. 클레임의 정보는 등록된 (registered) 클레임, 공개 (public) 클레임, 비공개 (private) 클레임으로 세 종류가 있다. 마지막으로 Signature는 secret key를 포함하여 암호화되어 있다.
+JWT는 세 파트로 나누어지며, 각 파트는 점로 구분하여 xxxxx.yyyyy.zzzzz 이런식으로 표현된다. 순서대로 헤더 (Header), 페이로드 (Payload), 서명 (Sinature)로 구성한다. Base64 인코딩의 경우 “+”, “/”, “=”이 포함되지만 JWT는 URI에서 파라미터로 사용할 수 있도록 URL-Safe 한 Base64url 인코딩을 사용한다. Header는 토큰의 타입과 해시 암호화 알고리즘으로 구성되어 있습니다. 첫째는 토큰의 유형 (JWT)을 나타내고, 두 번째는 HMAC, SHA256 또는 RSA와 같은 해시 알고리즘을 나타내는 부분이다. Payload는 토큰에 담을 클레임(claim) 정보를 포함하고 있다. Payload 에 담는 정보의 한 ‘조각’ 을 클레임이라고 부르고, 이는 name / value 의 한 쌍으로 이뤄져있다. 토큰에는 여러개의 클레임 들을 넣을 수 있다. 클레임의 정보는 등록된 (registered) 클레임, 공개 (public) 클레임, 비공개 (private) 클레임으로 세 종류가 있다. 마지막으로 Signature는 secret key를 포함하여 암호화되어 있다.
 
 ### PROCESS
 
