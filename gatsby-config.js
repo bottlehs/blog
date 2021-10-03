@@ -162,6 +162,12 @@ module.exports = {
         icon: metaConfig.icon,
       },
     },
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: false,
+      },
+    },
     `gatsby-plugin-dark-mode`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
