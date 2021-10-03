@@ -19,9 +19,10 @@
     "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^2.6.0",
-    "gatsby-plugin-google-analytics": "^2.4.0",
+    "gatsby-plugin-google-gtag": "^3.14.0",
     "gatsby-plugin-lodash": "^4.6.0",
     "gatsby-plugin-manifest": "^2.12.1",
+    "gatsby-plugin-mixpanel": "^3.5.0",
     "gatsby-plugin-netlify-cms": "^5.0.0",
     "gatsby-plugin-offline": "^3.2.29",
     "gatsby-plugin-page-progress": "^2.2.0",
@@ -38,8 +39,8 @@
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-remark": "^2.13.1",
     "gatsby-transformer-sharp": "^2.12.1",
-    "netlify-cms-app": "^2.15.2",
     "lodash": "^4.17.21",
+    "netlify-cms-app": "^2.15.2",
     "prismjs": "^1.24.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -52,9 +53,12 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.6",
     "eslint": "^7.22.0",
     "eslint-plugin-react": "^7.23.1",
-    "prettier": "2.1.2"
+    "postcss": "^8.3.8",
+    "prettier": "2.1.2",
+    "tailwindcss": "^2.2.16"
   },
   "homepage": "https://github.com/bottlehs/blog#readme",
   "keywords": [

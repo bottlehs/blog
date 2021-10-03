@@ -10,11 +10,37 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-mixpanel",
       options: {
-        trackingId: "UA-182874893-1",
-        head: true,
-        anonymize: true,
+        apiToken: "c256295bc98ae68d932121c8a45215c4", // required
+        // optional fields, default values
+        enableOnDevMode: false, // if false mixpanel will be activated on NODE_ENV=production only
+        mixpanelConfig: null, // override specific config for mixpanel initialization https://github.com/mixpanel/mixpanel-js/blob/8b2e1f7b/src/mixpanel-core.js#L87-L110
+        pageViews: null, // see below
+        // set pageViews to 'all' and use this option to set the same event name for all page view events
+        trackPageViewsAs: null, // optionally: set an Event Name to use for all page views, eg: trackPageViewsAs: 'Page view'
+        getPageViewTransformerFn: null, // optionally: function body as a string to customize the event sent to mixpanel. Receives one parameter: location. Example 'return () => ({url: location.pathname})'
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-ZW5DGZGX8V", // Google Analytics / GA
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          optimize_id: "OPT-MDHVC7D",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
       },
     },
     {

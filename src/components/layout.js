@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { RiSunFill, RiMoonClearFill } from 'react-icons/ri';
+import { ThemeToggler } from "gatsby-plugin-dark-mode"
+import { RiSunFill, RiMoonClearFill } from "react-icons/ri"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -11,7 +11,9 @@ const Layout = ({ location, title, children }) => {
   if (isRootPath) {
     header = (
       <h1 className="main-heading">
-        <Link to="/" title={title}>{title}</Link>
+        <Link to="/" title={title}>
+          {title}
+        </Link>
       </h1>
     )
   } else {
@@ -28,19 +30,16 @@ const Layout = ({ location, title, children }) => {
         <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <div>
-            <input
-              id="toggle"
-              type="checkbox"
-              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-              checked={theme === 'dark'}
-            />{' '}
-            <label for="toggle">
-              {theme === 'dark' 
-                ? <RiSunFill />                  
-                : <RiMoonClearFill />
-              }
-            </label>
-          </div>
+              <input
+                id="toggle"
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+                checked={theme === "dark"}
+              />{" "}
+              <label for="toggle">
+                {theme === "dark" ? <RiSunFill /> : <RiMoonClearFill />}
+              </label>
+            </div>
           )}
         </ThemeToggler>
       </div>
@@ -49,7 +48,7 @@ const Layout = ({ location, title, children }) => {
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <a href="https://bottlehs.com">Bottlehs</a>     
+        <a href="https://bottlehs.com">Bottlehs</a>
       </footer>
     </div>
   )
