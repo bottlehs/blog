@@ -8,10 +8,13 @@
     "url": "https://github.com/bottlehs/blog"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "bodymovin": "^4.13.0",
     "disqus-react": "^1.0.11",
     "gatsby": "^2.32.11",
@@ -19,9 +22,11 @@
     "gatsby-plugin-canonical-urls": "^2.3.13",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^2.6.0",
-    "gatsby-plugin-google-gtag": "^4.1.0",
-    "gatsby-plugin-lodash": "^5.1.0",
+    "gatsby-plugin-google-analytics": "^2.4.0",
+    "gatsby-plugin-google-gtag": "^4.2.0",
+    "gatsby-plugin-lodash": "^5.2.0",
     "gatsby-plugin-manifest": "^2.12.1",
+    "gatsby-plugin-mdx": "^3.2.0",
     "gatsby-plugin-mixpanel": "^3.5.0",
     "gatsby-plugin-netlify-cms": "^4.3.16",
     "gatsby-plugin-offline": "^3.2.29",
@@ -53,12 +58,9 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "eslint": "^8.2.0",
-    "eslint-plugin-react": "^7.27.0",
-    "postcss": "^8.3.11",
-    "prettier": "2.4.1",
-    "tailwindcss": "^2.2.19"
+    "eslint": "^7.22.0",
+    "eslint-plugin-react": "^7.23.1",
+    "prettier": "2.1.2"
   },
   "homepage": "https://github.com/bottlehs/blog#readme",
   "keywords": [
