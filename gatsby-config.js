@@ -10,6 +10,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-9183634176096493`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-mixpanel",
       options: {
         apiToken: "c256295bc98ae68d932121c8a45215c4", // required
