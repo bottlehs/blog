@@ -77,7 +77,7 @@ export default {
 "검색어 : 한글"
 ```
 
-![Vue Js 한글 입력 과 IME 결과코드 1](/assets/Vue_Js_한글_입력_과_IME_1.gif "Vue Js 한글 입력 과 IME 결과코드 1")
+![Vue Js 한글 입력 과 IME 결과코드 1](/assets/vue-js-한글-입력-과-ime-1.gif "Vue Js 한글 입력 과 IME 결과코드 1")
 
 위와 같이 `한글` 을 입력 하면 처음에는 빈값 두번째 `글` 을 입력 했을때 `한` 이라고 출력 되는것을 확인 할수 있을것이다. 이렇게 입력 되는 이유는 컴퓨터 자판에 있는 글자수 보다 많은 글자를 입력 했기 때문이다. 그래서 Vue 공식문서에서 공개한 내용을 보면 아래와 같이 설명 되어 있다.
 
@@ -126,6 +126,6 @@ export default {
 "검색어 : 한글"
 ```
 
-![Vue Js 한글 입력 과 IME 결과코드 2](/assets/Vue_Js_한글_입력_과_IME_2.gif "Vue Js 한글 입력 과 IME 결과코드 2")
+![Vue Js 한글 입력 과 IME 결과코드 2](/assets/vue-js-한글-입력-과-ime-2.gif "Vue Js 한글 입력 과 IME 결과코드 2")
 
 [https://codepen.io/bottlehs/pen/abyeQNw](https://codepen.io/bottlehs/pen/abyeQNw "https://codepen.io/bottlehs/pen/abyeQNw")
