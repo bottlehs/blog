@@ -10,8 +10,7 @@ tags:
   - framework
   - frontend
   - web
-  - router
-  - named-routes
+  - ime
 ---
 
 ![Vue Js 한글 입력 과 IME](/assets/vue-logo.png "Vue Js 한글 입력 과 IME")
