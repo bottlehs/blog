@@ -129,5 +129,4 @@ export default {
 
 ![Vue Js 한글 입력 과 IME 결과코드 2](/assets/Vue_Js_한글_입력_과_IME_2.gif "Vue Js 한글 입력 과 IME 결과코드 2")
 
-**결과코드**
-[https://codepen.io/byunghun/pen/abyeQNw](https://codepen.io/byunghun/pen/abyeQNw "https://codepen.io/byunghun/pen/abyeQNw")
+[https://codepen.io/bottlehs/pen/abyeQNw](https://codepen.io/bottlehs/pen/abyeQNw "https://codepen.io/bottlehs/pen/abyeQNw")
