@@ -286,6 +286,8 @@ a:focus {
 }
 
 .bio .bio-social li {
+  display: inline-block;
+  padding-right: var(--spacing-2);
 }
 
 .bio .bio-social li a {

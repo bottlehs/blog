@@ -20,6 +20,7 @@ const SEO = ({ description, lang, meta, title }) => {
             description
             social {
               github
+              codepen
             }
           }
         }
@@ -38,7 +39,10 @@ const SEO = ({ description, lang, meta, title }) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
-        { name: 'naver-site-verification', content: 'b73acf83a828a251f44d6365070c9eaf1edd04c7' },
+        {
+          name: "naver-site-verification",
+          content: "b73acf83a828a251f44d6365070c9eaf1edd04c7",
+        },
         {
           name: `description`,
           content: metaDescription,

@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               slug
             }
             frontmatter {
-              title,
+              title
               tags
             }
           }
@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           group(field: frontmatter___tags) {
             fieldValue
           }
-        }        
+        }
       }
     `
   )
@@ -104,7 +104,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         tag: tag.fieldValue,
       },
     })
-  })  
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -143,7 +143,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      github: String
+      github: String,
+      codepen: String,
     }
 
     type MarkdownRemark implements Node {

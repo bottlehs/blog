@@ -27,6 +27,7 @@ const Bio = () => {
           }
           social {
             github
+            codepen
           }
         }
       }
@@ -37,7 +38,7 @@ const Bio = () => {
   const author = data.site.siteMetadata.author
   const social = data.site.siteMetadata.social
   const avatar = data.avatar.childImageSharp.fixed
-  
+
   return (
     <div className="bio">
       {avatar && (
@@ -52,14 +53,27 @@ const Bio = () => {
       )}
       {author?.name && (
         <div>
-          <p>Written by <strong>{author.name}</strong> {author?.summary || null}</p>
+          <p>
+            Written by <strong>{author.name}</strong> {author?.summary || null}
+          </p>
           <ul className="bio-social">
             <li>
-              <a href={`https://github.com/${social?.github || ``}`}>
+              <a
+                href={`https://github.com/${social?.github || ``}`}
+                target="_blank"
+              >
                 Github
               </a>
             </li>
-          </ul>    
+            <li>
+              <a
+                href={`https://codepen.io/${social?.codepen || ``}`}
+                target="_blank"
+              >
+                CodePen
+              </a>
+            </li>
+          </ul>
         </div>
       )}
     </div>

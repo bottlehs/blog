@@ -8,9 +8,24 @@ module.exports = {
   siteUrl: `https://bottlehs.com`,
   social: {
     github: `bottlehs`,
+    codepen: `bottlehs`,
   },
 
   icon: `content/assets/bottlehs-icon.png`,
-  keywords: [`blog`,`it`,`javascript`,`php`,`frontend`,`backend`,`ai`,`os`,`설계`,`테스트`,`java`,`Blockchain`,`tech blog`],
-  googleAnalyticsId: 'UA-180287321-1',
+  keywords: [
+    `blog`,
+    `it`,
+    `javascript`,
+    `php`,
+    `frontend`,
+    `backend`,
+    `ai`,
+    `os`,
+    `설계`,
+    `테스트`,
+    `java`,
+    `Blockchain`,
+    `tech blog`,
+  ],
+  googleAnalyticsId: "UA-180287321-1",
 }
