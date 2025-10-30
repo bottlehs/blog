@@ -1,10 +1,26 @@
 body.dark {
-  background-color: var(--dark--color-bg);
-  color: var(--dark--color-text);
+  /* Override base variables for dark theme */
+  --color-bg: #0d1117;
+  --color-text: #ffffff;
+  --color-text-hover: #e6edf3;
+  --color-primary: #ffffff;
+  --color-text-light: #c9d1d9;
+  --color-heading: #ffffff;
+  --color-heading-black: #ffffff;
+  --color-accent: #d1dce5;
+  --color-white: #ffffff;
+  --color-tag-bg: #30363d;
+  --color-tag: #c9d1d9;
+  --color-dark-mode: #ffffff; /* icon color for dark theme */
+  --color-surface: #1c1c1c;
+  --color-border: #2a2a2a;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 body.dark hr {
-  background: var(--dark--color-accent);
+  background: var(--color-accent);
 }
 
 body.dark h2,
@@ -12,48 +28,48 @@ body.dark h3,
 body.dark h4,
 body.dark h5,
 body.dark h6 {
-  color: var(--dark--color-heading);
+  color: var(--color-heading);
 }
 
 body.dark h1 {
-  color: var(--dark--color-heading-black);
+  color: var(--color-heading-black);
 }
 
 body.dark blockquote {
-  color: var(--dark--color-text-light);
-  border-left-color: var(--dark--color-primary);
+  color: var(--color-text-light);
+  border-left-color: var(--color-primary);
 }
 
 body.dark table thead tr th {
-  border-bottom-color: var(--dark--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 
 /* Link */
 
 body.dark a {
-  color: var(--dark--color-primary);
+  color: var(--color-primary);
 }
 
 body.dark a:hover,
 body.dark a:focus {
-  color: var(--dark--color-text-hover);
+  color: var(--color-text-hover);
 }
 
 /* Custom classes */
 
 body.dark .post-list-item h2 {
-  color: var(--dark--color-primary);
+  color: var(--color-primary);
 }
 
 body.dark .blog-post-tag li {
-  color: var(--dark--color-text-light);
+  color: var(--color-text-light);
 }
 
 body.dark .blog-post-tag li a {
-  background: var(--dark--colortag-bg);
-  color: var(--dark--color-tag);
+  background: var(--color-tag-bg);
+  color: var(--color-tag);
 }
 
 body.dark .theme label svg {
-  color: var(--dark--color-dark-mode);
+  color: var(--color-dark-mode);
 }

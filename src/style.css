@@ -392,7 +392,7 @@ a:focus {
 .blog-post-nav ul li a {
   text-decoration: none;
   cursor: pointer;
-  background: rgb(248, 249, 250);
+  background: var(--color-surface);
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
@@ -565,7 +565,7 @@ a:focus {
 }
 
 nav.container {
-  border-left: 2px solid rgb(233, 236, 239);
+  border-left: 2px solid var(--color-border);
   position: sticky;
   top: 70px;
   display: block;

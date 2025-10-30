@@ -54,16 +54,20 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-dark-mode: #0d1117;
-  --color-bg: #0d1117;
-  --color-primary: #292929;
+  /* Base (light) theme colors */
+  --color-dark-mode: #0d1117; /* icon color for light theme */
+  --color-bg: #ffffff;
+  --color-primary: #292929; /* links and accents */
   --color-text: #292929;
   --color-text-hover: #000000;
   --color-text-light: #757575;
   --color-heading: #292929;
-  --color-heading-black: black;
+  --color-heading-black: #000000;
   --color-accent: #d1dce5;
   --color-white: #ffffff;
   --color-tag-bg: rgb(242, 242, 242);
   --color-tag: rgba(117, 117, 117, 1);
+  /* Surfaces and borders used by components */
+  --color-surface: rgb(248, 249, 250);
+  --color-border: rgb(233, 236, 239);
 }

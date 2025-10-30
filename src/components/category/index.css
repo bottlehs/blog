@@ -1,15 +1,15 @@
 .category-container {
-  background-color: #fff;
-  border-bottom: solid 1px var(--color-tag);
+  background-color: var(--color-surface);
+  border-bottom: solid 1px var(--color-border);
 }
 
 .category-container .item {
-  border: 1px solid #fff;
-  background-color: #fff;
+  border: 1px solid var(--color-surface);
+  background-color: var(--color-surface);
 }
 
 .category-container .item a {
-  color: #666;
+  color: var(--color-text-light);
 }
 
 .category-container .item[aria-selected="true"] {
@@ -18,32 +18,10 @@
 }
 
 .category-container .item[aria-selected="true"] div {
-  color: #fff;
+  color: var(--color-white);
 }
 
-/* dark start */
-body.dark .category-container {
-  background-color: #1c1c1c;
-}
-
-body.dark .category-container .item {
-  border: 1px solid #1c1c1c;
-  background-color: #1c1c1c;
-}
-
-body.dark .category-container .item a {
-  color: #d8d7d7;
-}
-
-body.dark .category-container .item[aria-selected="true"] {
-  border: 1px solid #757575;
-  background-color: #757575;
-}
-
-body.dark .category-container .item[aria-selected="true"] a {
-  color: #fff;
-}
-/* dark end */
+/* variables above handle dark mode; explicit body.dark overrides removed */
 
 .category-container {
   position: sticky;

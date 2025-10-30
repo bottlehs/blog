@@ -12,7 +12,6 @@ import "./src/style.css"
 // custom dark CSS styles
 import "./src/style.dark.css"
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
-// import "prismjs/themes/prism-tomorrow.css"
-// import "prismjs/themes/prism-twilight.css"
+// Highlighting for code blocks (auto-switch with theme)
+import "./src/prism.light.css"
+import "./src/prism.dark.css"

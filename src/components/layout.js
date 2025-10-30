@@ -24,6 +24,24 @@ const Layout = ({ location, title, children }) => {
     )
   }
 
+  const updateThemeColorMeta = themeName => {
+    if (typeof document === "undefined") return
+    const color = themeName === "dark" ? "#0d1117" : "#ffffff"
+    let meta = document.querySelector('meta[name="theme-color"]')
+    if (!meta) {
+      meta = document.createElement("meta")
+      meta.setAttribute("name", "theme-color")
+      document.head.appendChild(meta)
+    }
+    meta.setAttribute("content", color)
+  }
+
+  React.useEffect(() => {
+    if (typeof document === "undefined") return
+    const isDark = document.body.classList.contains("dark")
+    updateThemeColorMeta(isDark ? "dark" : "light")
+  }, [])
+
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <div className="theme">
@@ -33,7 +51,11 @@ const Layout = ({ location, title, children }) => {
               <input
                 id="toggle"
                 type="checkbox"
-                onChange={e => toggleTheme(e.target.checked ? "dark" : "light")}
+                onChange={e => {
+                  const next = e.target.checked ? "dark" : "light"
+                  toggleTheme(next)
+                  updateThemeColorMeta(next)
+                }}
                 checked={theme === "dark"}
               />{" "}
               <label for="toggle">
