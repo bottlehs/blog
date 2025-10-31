@@ -63,6 +63,9 @@
     "eslint-plugin-react": "^7.23.1",
     "prettier": "2.1.2"
   },
+  "overrides": {
+    "cheerio": "0.22.0"
+  },
   "homepage": "https://github.com/bottlehs/blog#readme",
   "keywords": [
     "gatsby"
