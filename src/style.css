@@ -381,6 +381,40 @@ a:focus {
   color: var(--color-text-light);
 }
 
+/* Markdown content list styling */
+.blog-post section ul,
+.blog-post section ol {
+  padding-left: 1.5rem;
+  margin-left: var(--spacing-0);
+  margin-right: var(--spacing-0);
+  margin-bottom: var(--spacing-8);
+  list-style-position: outside;
+  list-style-image: none;
+}
+
+.blog-post section ul li,
+.blog-post section ol li {
+  padding-left: 0.5rem;
+  margin-bottom: calc(var(--spacing-8) / 2);
+  line-height: var(--lineHeight-relaxed);
+}
+
+.blog-post section li > p {
+  margin-bottom: calc(var(--spacing-8) / 2);
+}
+
+.blog-post section li *:last-child {
+  margin-bottom: var(--spacing-0);
+}
+
+.blog-post section li > ul,
+.blog-post section li > ol {
+  margin-left: var(--spacing-8);
+  margin-top: calc(var(--spacing-8) / 2);
+  margin-bottom: calc(var(--spacing-8) / 2);
+  padding-left: 1.5rem;
+}
+
 .blog-post-nav {
   margin-bottom: var(--spacing-6);
 }
@@ -656,6 +690,16 @@ nav.container .contents ul > li span {
   ul,
   ol {
     list-style-position: inside;
+  }
+  /* Override for blog post content lists - keep outside position */
+  .blog-post section ul,
+  .blog-post section ol {
+    list-style-position: outside;
+    padding-left: 1.25rem;
+  }
+  .blog-post section li > ul,
+  .blog-post section li > ol {
+    padding-left: 1.25rem;
   }
 }
 

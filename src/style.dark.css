@@ -73,3 +73,14 @@ body.dark .blog-post-tag li a {
 body.dark .theme label svg {
   color: var(--color-dark-mode);
 }
+
+/* Blog post list styling for dark theme */
+body.dark .blog-post section ul,
+body.dark .blog-post section ol {
+  color: var(--color-text);
+}
+
+body.dark .blog-post section ul li,
+body.dark .blog-post section ol li {
+  color: var(--color-text);
+}
