@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-title: 채팅GPT의 비밀 공개: LLM이 당신과 대화하는 진짜 원리
-date: 2025-11-01T00:00:00.000Z
+title: 채팅GPT의 비밀 공개 LLM이 당신과 대화하는 진짜 원리
+date: 2025-11-01T12:00:00.000Z
 category: ai
 description:
   채팅GPT의 핵심 기술인 LLM이 어떻게 우리와 대화하는지 쉽게 설명합니다.

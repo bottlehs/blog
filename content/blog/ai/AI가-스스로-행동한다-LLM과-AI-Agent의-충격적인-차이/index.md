@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: AI가 스스로 행동한다? LLM과 AI Agent의 충격적인 차이
-date: 2025-11-01T00:00:00.000Z
+date: 2025-11-01T14:00:00.000Z
 category: ai
 description:
   AI Agent의 정의와 작동 원리를 비유로 설명합니다.

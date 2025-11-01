@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: AI 환각을 막는다? RAG가 만드는 신뢰할 수 있는 AI
-date: 2025-11-01T00:00:00.000Z
+date: 2025-11-01T13:00:00.000Z
 category: ai
 description:
   RAG(검색 기반 생성)가 LLM의 한계를 어떻게 극복하는지 설명합니다.
