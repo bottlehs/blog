@@ -21,6 +21,8 @@ body {
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
+  margin-top: var(--spacing-12);
+  border-top: 1px solid var(--color-accent);
 }
 
 footer a {
@@ -161,10 +163,33 @@ table {
   margin-bottom: var(--spacing-8);
   border-collapse: collapse;
   border-spacing: 0.25rem;
+  overflow-x: auto;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+}
+
+table thead,
+table tbody,
+table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 table thead tr th {
   border-bottom: 1px solid var(--color-accent);
+}
+
+/* Responsive table styling */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  table th,
+  table td {
+    padding: var(--spacing-2);
+  }
 }
 
 /* Link */
@@ -189,6 +214,19 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 768px) {
+  .global-wrapper {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .global-wrapper {
+    padding: var(--spacing-4) var(--spacing-3);
+  }
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -265,6 +303,19 @@ a:focus {
 .bio {
   display: flex;
   margin-bottom: var(--spacing-16);
+}
+
+/* Responsive bio layout */
+@media (max-width: 480px) {
+  .bio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .bio-avatar {
+    margin-bottom: var(--spacing-2);
+    margin-right: var(--spacing-0);
+  }
 }
 
 .bio p {
@@ -357,6 +408,22 @@ a:focus {
   cursor: pointer;
   height: 24px;
   display: block;
+  padding: var(--spacing-2);
+  margin: calc(-1 * var(--spacing-2));
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.theme label:hover {
+  background-color: var(--color-surface);
+}
+
+/* Improve touch target size on mobile */
+@media (max-width: 768px) {
+  .theme label {
+    padding: var(--spacing-3);
+    margin: calc(-1 * var(--spacing-3));
+  }
 }
 
 .theme label svg {
@@ -563,6 +630,19 @@ a:focus {
 
 .blog-post section img {
   max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Improve blog post content readability */
+.blog-post section {
+  max-width: 100%;
+  line-height: var(--lineHeight-relaxed);
+}
+
+.blog-post section p {
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .blog-post-tag {
@@ -590,6 +670,7 @@ a:focus {
   margin-bottom: var(--spacing-8);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border-radius: 6px;
 }
 
 .gatsby-highlight pre {
@@ -597,6 +678,8 @@ a:focus {
   word-wrap: break-word;
   white-space: pre;
   max-width: 100%;
+  margin: 0;
+  padding: var(--spacing-4);
 }
 
 .gatsby-highlight pre code {
@@ -605,6 +688,25 @@ a:focus {
   word-wrap: break-word;
   white-space: pre;
   max-width: 100%;
+}
+
+/* Custom scrollbar for code blocks */
+.gatsby-highlight::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gatsby-highlight::-webkit-scrollbar-track {
+  background: var(--color-surface);
+  border-radius: 4px;
+}
+
+.gatsby-highlight::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+.gatsby-highlight::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-light);
 }
 
 /* Inline code styling */
@@ -757,5 +859,13 @@ nav.container .contents ul > li span {
     width: 100%;
     /* height: auto; */
     height: 100px;
+  }
+  
+  .global-header {
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .blog-post header h1 {
+    font-size: var(--fontSize-5);
   }
 }

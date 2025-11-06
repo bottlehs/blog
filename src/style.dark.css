@@ -3,7 +3,7 @@ body.dark {
   --color-bg: #161b22; /* Slightly brighter than #0d1117 for better readability */
   --color-text: #e6edf3; /* Softer white, less harsh than #ffffff */
   --color-text-hover: #ffffff; /* Full white on hover for contrast */
-  --color-primary: #58a6ff; /* Softer blue for links, easier on eyes */
+  --color-primary: #e6edf3; /* Link color matching text color for consistency */
   --color-text-light: #c9d1d9; /* Good gray for secondary text */
   --color-heading: #e6edf3; /* Softer white for headings */
   --color-heading-black: #ffffff; /* Full white for main headings */
