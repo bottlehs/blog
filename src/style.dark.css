@@ -52,7 +52,7 @@ body.dark a {
 
 body.dark a:hover,
 body.dark a:focus {
-  color: var(--color-text-hover);
+  color: #ffffff !important; /* Explicit white color for dark mode hover */
 }
 
 /* Custom classes */
