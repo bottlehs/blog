@@ -588,6 +588,30 @@ a:focus {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gatsby-highlight pre {
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre;
+  max-width: 100%;
+}
+
+.gatsby-highlight pre code {
+  display: block;
+  overflow-x: auto;
+  word-wrap: break-word;
+  white-space: pre;
+  max-width: 100%;
+}
+
+/* Inline code styling */
+.blog-post section code:not([class*="language-"]) {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .tocWrapper {

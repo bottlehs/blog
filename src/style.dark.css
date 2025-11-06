@@ -1,19 +1,19 @@
 body.dark {
-  /* Override base variables for dark theme */
-  --color-bg: #0d1117;
-  --color-text: #ffffff;
-  --color-text-hover: #e6edf3;
-  --color-primary: #ffffff;
-  --color-text-light: #c9d1d9;
-  --color-heading: #ffffff;
-  --color-heading-black: #ffffff;
-  --color-accent: #d1dce5;
+  /* Override base variables for dark theme - eye-friendly colors */
+  --color-bg: #161b22; /* Slightly brighter than #0d1117 for better readability */
+  --color-text: #e6edf3; /* Softer white, less harsh than #ffffff */
+  --color-text-hover: #ffffff; /* Full white on hover for contrast */
+  --color-primary: #58a6ff; /* Softer blue for links, easier on eyes */
+  --color-text-light: #c9d1d9; /* Good gray for secondary text */
+  --color-heading: #e6edf3; /* Softer white for headings */
+  --color-heading-black: #ffffff; /* Full white for main headings */
+  --color-accent: #30363d; /* Softer accent color */
   --color-white: #ffffff;
   --color-tag-bg: #30363d;
   --color-tag: #c9d1d9;
-  --color-dark-mode: #ffffff; /* icon color for dark theme */
-  --color-surface: #1c1c1c;
-  --color-border: #2a2a2a;
+  --color-dark-mode: #e6edf3; /* icon color for dark theme */
+  --color-surface: #21262d; /* Slightly brighter surface */
+  --color-border: #30363d; /* Softer border */
 
   background-color: var(--color-bg);
   color: var(--color-text);

@@ -26,7 +26,7 @@ const Layout = ({ location, title, children }) => {
 
   const updateThemeColorMeta = themeName => {
     if (typeof document === "undefined") return
-    const color = themeName === "dark" ? "#0d1117" : "#ffffff"
+    const color = themeName === "dark" ? "#161b22" : "#ffffff"
     let meta = document.querySelector('meta[name="theme-color"]')
     if (!meta) {
       meta = document.createElement("meta")

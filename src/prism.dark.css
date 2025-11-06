@@ -1,13 +1,13 @@
 /* Prism dark theme scoped to dark mode (based on prism-tomorrow) */
 body.dark code[class*="language-"],
 body.dark pre[class*="language-"] {
-  color: #ccc;
-  background: #2d2d2d;
+  color: #e6edf3; /* Softer text color */
+  background: #21262d; /* Slightly brighter to match page background */
   text-shadow: none;
 }
 
 body.dark .gatsby-highlight {
-  background: #2d2d2d;
+  background: #21262d; /* Match page background */
 }
 
 /* Tokens */
