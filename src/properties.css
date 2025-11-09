@@ -11,7 +11,7 @@
   --maxWidth-3xl: 48rem;
   --maxWidth-4xl: 56rem;
   --maxWidth-full: "100%";
-  --maxWidth-wrapper: var(--maxWidth-4xl);
+  --maxWidth-wrapper: var(--maxWidth-3xl);
   --spacing-px: "1px";
   --spacing-0: 0;
   --spacing-1: 0.25rem;
@@ -27,13 +27,13 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-family-sans-serif: "Inter", "Pretendard Variable", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: "JetBrains Mono", SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   --font-body: var(--font-family-sans-serif);
-  --font-heading: var(--font-family-monospace);
+  --font-heading: var(--font-family-sans-serif);
   --fontWeight-normal: 400;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
@@ -42,18 +42,18 @@
   --fontWeight-black: 900;
   --fontSize-root: 16px;
   --lineHeight-none: 1;
-  --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
-  /* 1.200 Minor Third Type Scale */
-  --fontSize-0: 0.833rem;
-  --fontSize-1: 1rem;
-  --fontSize-2: 1.2rem;
-  --fontSize-3: 1.44rem;
-  --fontSize-4: 1.728rem;
-  --fontSize-5: 2.074rem;
-  --fontSize-6: 2.488rem;
-  --fontSize-7: 2.986rem;
+  --lineHeight-tight: 1.2;
+  --lineHeight-normal: 1.55;
+  --lineHeight-relaxed: 1.7;
+  /* Modular scale tuned for readability */
+  --fontSize-0: 0.875rem;
+  --fontSize-1: 0.975rem;
+  --fontSize-2: 1.125rem;
+  --fontSize-3: 1.3125rem;
+  --fontSize-4: 1.5rem;
+  --fontSize-5: 1.75rem;
+  --fontSize-6: 2rem;
+  --fontSize-7: 2.25rem;
   /* Base (light) theme colors */
   --color-dark-mode: #0d1117; /* icon color for light theme */
   --color-bg: #ffffff;
