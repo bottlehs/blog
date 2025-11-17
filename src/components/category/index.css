@@ -21,6 +21,11 @@
   color: var(--color-white);
 }
 
+/* Dark mode override for selected category item text */
+body.dark .category-container .item[aria-selected="true"] div {
+  color: var(--color-bg) !important;
+}
+
 /* variables above handle dark mode; explicit body.dark overrides removed */
 
 .category-container {
