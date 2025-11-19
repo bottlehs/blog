@@ -6,7 +6,8 @@ import { Category } from '../components/category'
 import { useCategory } from '../hooks/useCategory'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { CATEGORY_TYPE } from '../constants'
+import AdSense from '../components/adsense'
+import { CATEGORY_TYPE, ADSENSE_SLOTS } from '../constants'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -46,6 +47,12 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
+      {/* 메인 페이지 상단 광고 */}
+      <AdSense 
+        adSlot={ADSENSE_SLOTS.HOME} 
+        adFormat="auto"
+        fullWidthResponsive={true}
+      />
       <Category
         categories={categories}
         category={category}
@@ -83,6 +90,12 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      {/* 메인 페이지 하단 광고 */}
+      <AdSense 
+        adSlot={ADSENSE_SLOTS.HOME_BOTTOM} 
+        adFormat="auto"
+        fullWidthResponsive={true}
+      />
     </Layout>
   )
 }

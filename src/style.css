@@ -424,6 +424,33 @@ a:focus {
   color: #fff;
 }
 
+/* AdSense 광고 스타일 */
+.adsense-container {
+  margin: var(--spacing-8) 0;
+  padding: var(--spacing-4) 0;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adsense-container ins {
+  display: block;
+  width: 100%;
+}
+
+/* 블로그 포스트 내 광고 스타일 */
+.blog-post .adsense-container {
+  margin: var(--spacing-6) 0;
+}
+
+/* 메인 페이지 광고 스타일 */
+.post-list-item + .adsense-container,
+.adsense-container + .post-list-item {
+  margin-top: var(--spacing-8);
+}
+
 .share {
   margin-bottom: 10px;
 }

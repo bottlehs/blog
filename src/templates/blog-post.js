@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import Tag from "../components/tag"
 import Share from "../components/share"
 import TableOfContents from '../components/tableOfContents';
+import AdSense from '../components/adsense';
+import { ADSENSE_SLOTS } from '../constants';
 import { DiscussionEmbed } from "disqus-react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -76,9 +78,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
+        {/* 상단 광고 */}
+        <AdSense 
+          adSlot={ADSENSE_SLOTS.TOP} 
+          adFormat="auto"
+          fullWidthResponsive={true}
+        />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+        />
+        {/* 본문 하단 광고 */}
+        <AdSense 
+          adSlot={ADSENSE_SLOTS.BOTTOM} 
+          adFormat="auto"
+          fullWidthResponsive={true}
         />
         <Share title={post.frontmatter.title} url={location.href} content={post.frontmatter.description} twitterHandle={twitterHandle} tags={post.frontmatter.tags}/>
         <Tag tags={post.frontmatter.tags} />
@@ -120,7 +134,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </ul>
         </nav>
-        )}       
+        )}
+        {/* 댓글 위 광고 */}
+        <AdSense 
+          adSlot={ADSENSE_SLOTS.COMMENT} 
+          adFormat="auto"
+          fullWidthResponsive={true}
+        />
         <DiscussionEmbed {...disqusConfig} />
         <hr />
         <footer>
