@@ -1162,3 +1162,4 @@ React와 Next.js는 현대적 웹 개발의 핵심 기술이다. 이 글에서 �
 - [TanStack Query 문서](https://tanstack.com/query/latest)
 - [Zustand 문서](https://zustand-demo.pmnd.rs/)
 
+
