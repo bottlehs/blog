@@ -47,12 +47,6 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      {/* 메인 페이지 상단 광고 */}
-      <AdSense 
-        adSlot={ADSENSE_SLOTS.HOME} 
-        adFormat="auto"
-        fullWidthResponsive={true}
-      />
       <Category
         categories={categories}
         category={category}
@@ -61,8 +55,8 @@ const BlogIndex = ({ data, location }) => {
       <ol style={{ listStyle: `none` }}>
         {refinedPosts.map((post, index) => {
           const title = post.frontmatter.title || post.fields.slug
-          // 3개 포스트마다 광고 삽입 (첫 번째 포스트 이후부터)
-          const shouldShowAd = index > 0 && (index + 1) % 3 === 0
+          // 5개 포스트마다 광고 삽입 (첫 번째 포스트 이후부터)
+          const shouldShowAd = index > 0 && (index + 1) % 5 === 0
 
           return (
             <React.Fragment key={post.fields.slug}>
