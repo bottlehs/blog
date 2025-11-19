@@ -59,34 +59,47 @@ const BlogIndex = ({ data, location }) => {
         selectCategory={selectCategory}
       />      
       <ol style={{ listStyle: `none` }}>
-        {refinedPosts.map(post => {
+        {refinedPosts.map((post, index) => {
           const title = post.frontmatter.title || post.fields.slug
+          // 3개 포스트마다 광고 삽입 (첫 번째 포스트 이후부터)
+          const shouldShowAd = index > 0 && (index + 1) % 3 === 0
 
           return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url" title={title}>
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
+            <React.Fragment key={post.fields.slug}>
+              {shouldShowAd && (
+                <li key={`ad-${index}`} style={{ listStyle: 'none' }}>
+                  <AdSense 
+                    adSlot={ADSENSE_SLOTS.HOME_INLINE} 
+                    adFormat="auto"
+                    fullWidthResponsive={true}
                   />
-                </section>
-              </article>
-            </li>
+                </li>
+              )}
+              <li>
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2>
+                      <Link to={post.fields.slug} itemProp="url" title={title}>
+                        <span itemProp="headline">{title}</span>
+                      </Link>
+                    </h2>
+                    <small>{post.frontmatter.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              </li>
+            </React.Fragment>
           )
         })}
       </ol>

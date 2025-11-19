@@ -18,5 +18,8 @@ export const ADSENSE_SLOTS = {
   
   // 메인 페이지 하단 광고
   HOME_BOTTOM: process.env.GATSBY_ADSENSE_SLOT_HOME_BOTTOM || "3372939267",
+  
+  // 메인 페이지 포스트 사이 광고 (순환 사용)
+  HOME_INLINE: process.env.GATSBY_ADSENSE_SLOT_HOME_INLINE || "3372939267", // 기본값은 HOME_BOTTOM과 동일
 }
 
