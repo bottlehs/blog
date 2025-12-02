@@ -945,3 +945,4 @@ OAuth 2.0과 JWT는 현대적인 인증/인가 시스템의 핵심이다. 이 �
 - [OAuth 2.0 Security Best Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics)
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
+
