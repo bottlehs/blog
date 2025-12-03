@@ -767,3 +767,4 @@ PostgreSQL의 고급 기능들을 적절히 활용하면 강력하고 효율적�
 - [PostgreSQL Partitioning](https://www.postgresql.org/docs/current/ddl-partitioning.html)
 
 
+
