@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://bottlehs.com`,
+        siteUrl: `https://www.bottlehs.com`,
       },
     },
     {
@@ -113,7 +113,7 @@ module.exports = {
             output: "/rss.xml",
             title: "Bottlehs RSS Feed",
             match: "^/blog/",
-            link: "http://bottlehs.com",
+            link: "https://www.bottlehs.com",
           },
         ],
       },

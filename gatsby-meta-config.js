@@ -5,7 +5,7 @@ module.exports = {
     summary: `개발을 즐기는 bottlehs - Engineer, MS, AI, FE, BE, OS, IOT, Blockchain, 설계, 테스트`,
   },
   description: `다양한 IT 기술 및 프로그래밍 관련 글을 작성한다`,
-  siteUrl: `https://bottlehs.com`,
+  siteUrl: `https://www.bottlehs.com`,
   social: {
     github: `bottlehs`,
     codepen: `bottlehs`,

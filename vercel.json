@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bottlehs.com"
+        }
+      ],
+      "destination": "https://www.bottlehs.com/$1",
+      "permanent": true
+    }
+  ]
+}
+
