@@ -76,6 +76,9 @@
     "type": "git",
     "url": "git+https://github.com/bottlehs/blog.git"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

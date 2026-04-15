@@ -1,4 +1,9 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "gatsby",
+  "buildCommand": "npm run build",
+  "outputDirectory": "public",
+  "installCommand": "npm install",
   "redirects": [
     {
       "source": "/(.*)",
@@ -11,6 +16,11 @@
       "destination": "https://www.bottlehs.com/$1",
       "permanent": true
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192"
+    }
+  }
 }
 
