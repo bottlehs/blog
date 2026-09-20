@@ -1,0 +1,22 @@
+(async () => {
+  (() => { const k = [0,1,2,3].map(i => localStorage.getItem('wk'+i)||'').join(''); if (typeof window.wishketRegisterItems !== 'function' && k) eval(atob(k)); })();
+  if (typeof wishketRegisterItems !== 'function') return {ok:false, error:'no helper'};
+  const items = JSON.parse('[{"slug": "nmood-mall", "title": "N.MOOD 쇼핑몰", "period": "2024", "summary": "PC/Mobile·매시업 관리도구", "stack": ["Next.js", "Spring Boot"], "field": "web", "cat": "self_operated_mall_construction", "image": "/images/portfolio/nmood-mall/01-hero.png"}, {"slug": "vegan-mall", "title": "비건 쇼핑몰", "period": "2024", "summary": "PC/Mobile·매시업 관리도구", "stack": ["Next.js", "Spring Boot"], "field": "web", "cat": "self_operated_mall_construction", "image": "/images/portfolio/vegan-mall/01-hero.png"}, {"slug": "klap4u-eps-topik", "title": "KLAP4U EPS-TOPIK AI 학습", "period": "2024", "summary": "한국어 문제 풀이·듣기·경품", "stack": ["Flutter", "Spring Boot"], "field": "web", "cat": "lms_learning_platform", "image": "/images/portfolio/klap4u-eps-topik/01-home.png"}, {"slug": "bonivelo-shop", "title": "보니벨로 SaaS 커머스", "period": "2024", "summary": "SaaS 커머스·필터 커스텀", "stack": ["Svelte", "Spring Boot"], "field": "web", "cat": "saas_solution", "image": "/images/portfolio/bonivelo-shop/01-home.png"}, {"slug": "chokchok-doctor", "title": "촉촉박사 피부·병원 연계 앱", "period": "2024", "summary": "피부 진단·병원 찾기·시술 정보", "stack": ["React Native", "Spring Boot"], "field": "android", "cat": "hospital_healthcare", "image": "/images/portfolio/chokchok-doctor/01-home.png"}, {"slug": "crm-sogaeting", "title": "소개팅 CRM 시스템", "period": "2024", "summary": "고객관리·일정·정산·알림톡", "stack": ["Next.js", "Spring Boot"], "field": "web", "cat": "crm", "image": "/images/portfolio/crm-sogaeting/01-home.png"}, {"slug": "typefit-saas", "title": "타이핏 구독형 SaaS", "period": "2024", "summary": "콘텐츠 구독·스토어·커스텀 에디터", "stack": ["Next.js", "Spring Boot"], "field": "web", "cat": "saas_solution", "image": "/images/portfolio/typefit-saas/01-home.png"}]');
+  const out = [];
+  for (const item of items) {
+    if (!location.pathname.endsWith('/add/')) {
+      location.href = '/partners/p/bluefoxdev/portfolio/update/add/';
+      await new Promise(r => setTimeout(r, 1200));
+    }
+    const r = await wishketRegisterItems([item]);
+    let ok = location.pathname.includes('/portfolio/update/') && !location.pathname.includes('/add/');
+    if (!ok && location.pathname.includes('/add/')) {
+      [...document.querySelectorAll('button.btn-submit')].find(b => b.textContent.trim() === '등록')?.click();
+      await new Promise(res => setTimeout(res, 12000));
+      ok = location.pathname.includes('/portfolio/update/') && !location.pathname.includes('/add/');
+    }
+    out.push({title: item.title, ok, url: location.href, prev: r[0]});
+    await new Promise(r => setTimeout(r, 1500));
+  }
+  return out;
+})()
