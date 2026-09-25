@@ -52,6 +52,7 @@ JSON 데이터를 다룰 때 유용한 도구들이다.
 | **JSON Formatter** | https://jsonformatter.org/ | JSON 미니파이, 포맷팅 |
 | **JSON Crack** | https://jsoncrack.com/ | JSON 시각화 및 탐색 |
 | **JSON Editor Online** | https://jsoneditoronline.org/ | JSON 편집 및 검증 |
+| **JSONing** | https://jsoning.com/formatter/ | JSON 이스케이프 및 포맷팅 |
 
 ### 활용 시나리오
 
